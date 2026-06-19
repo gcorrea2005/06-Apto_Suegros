@@ -1,11 +1,14 @@
 ﻿\documentclass[12pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[spanish]{babel}
+\usepackage[spanish,es-noshorthands]{babel}
 \usepackage{geometry}
 \usepackage{graphicx}
 \usepackage{xcolor}
-\usepackage{hyperref}
+\usepackage[pdfauthor={Jorge Giovanni Correa Mejía},
+            pdftitle={Justificación Técnica y Económica -- Rehabilitación de Tres Áreas Húmedas},
+            pdfsubject={Remodelación Integral de Baños, Bogotá},
+            pdfkeywords={remodelación, baños, porcelanato, APU, presupuesto, NSR-10}]{hyperref}
 \usepackage[stable]{footmisc}
 \usepackage{titlesec}
 \usepackage{fancyhdr}
@@ -18,12 +21,23 @@
 \captionsetup[table]{font=small,skip=6pt,labelfont={bf,color=primary},textfont={color=primary!80!black},position=top}
 \usepackage{parskip}
 \usepackage{ragged2e}
+\usepackage[osf]{mathpazo}
+\usepackage{eulervm}
 \usepackage{microtype}
+\SetTracking{encoding={*},shape=sc}{40}
+\DeclareMicrotypeSet*{trackingnotes} { encoding = {OT1,T1}, family = {ppl}, series = {bx}, size = {normalsize} }
+\usepackage{amsmath}
+\usepackage{siunitx}
+\sisetup{group-separator={.},group-minimum-digits=4,output-decimal-marker={,}}
 \usepackage{pgfgantt}
 \usepackage{pdfpages}
 \usepackage{tocloft}
 
 \geometry{a4paper, margin=2.5cm, top=3cm, bottom=3cm}
+
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
 
 \definecolor{primary}{RGB}{25, 55, 109}
 \definecolor{secondary}{RGB}{0, 105, 148}
@@ -41,15 +55,15 @@
 \renewcommand{\cftsecfont}{\bfseries\color{primary}}
 \renewcommand{\cftsubsecfont}{\color{secondary}}
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
-\titleformat{\section}{\Large\bfseries\color{primary}}{\thesection.}{0.6em}{}[\vspace{-0.2em}\rule{\textwidth}{0.5pt}]
-\titleformat{\subsection}{\large\bfseries\color{secondary}}{\thesubsection.}{0.6em}{}
+\titleformat{\section}{\Large\bfseries\color{primary}\lsstyle}{\thesection.}{0.6em}{}[\vspace{-0.2em}\rule{\textwidth}{0.5pt}]
+\titleformat{\subsection}{\large\bfseries\color{secondary}\lsstyle}{\thesubsection.}{0.6em}{}
 \titleformat{\subsubsection}{\normalsize\bfseries\color{primary!80!black}}{\thesubsubsection.}{0.6em}{}
 
 \setstretch{1.35}
 
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\footnotesize\textcolor{primary!60!black}{Justificación Técnica -- Remodelación 3 Baños}}
+\fancyhead[L]{\footnotesize\textcolor{primary!60!black}{Justificación Técnica -- Rehabilitación de Tres Áreas Húmedas}}
 \fancyhead[R]{\footnotesize\textcolor{primary!60!black}{Junio 2026}}
 \fancyfoot[C]{\thepage}
 \setlength{\headheight}{12.7pt}
@@ -61,33 +75,33 @@
 % ── Portada ──
 \begin{titlepage}
   \centering
-  \vspace*{2cm}
-  {\color{primary}\rule{\textwidth}{2pt}}\\[0.8cm]
-  {\Huge\bfseries\color{primary} JUSTIFICACIÓN TÉCNICA}\\[0.3cm]
-  {\Huge\bfseries\color{primary} Y ECONÓMICA}\\[1.2cm]
-  {\Large\bfseries\color{secondary} Remodelación Integral de 3 Baños}\\[0.4cm]
-  {\large Conjunto Residencial Reserva de Granada 3}\\[1.5cm]
-  {\color{primary}\rule{\textwidth}{2pt}}\\[1.5cm]
+  \vspace*{2.5cm}
+  {\color{primary}\rule{\textwidth}{2.5pt}}\\[1cm]
+  {\Huge\bfseries\color{primary}\lsstyle JUSTIFICACIÓN TÉCNICA}\\[0.2cm]
+  {\Huge\bfseries\color{primary}\lsstyle Y ECONÓMICA}\\[1.4cm]
+  {\LARGE\bfseries\color{secondary} Rehabilitación Integral de Tres Áreas Húmedas}\\[0.3cm]
+  {\large\color{primary!70!black} Conjunto Residencial Reserva de Granada 3}\\[1.5cm]
+  {\color{primary}\rule{\textwidth}{2.5pt}}\\[2cm]
 
-  \begin{minipage}[t]{0.45\textwidth}
+  \begin{minipage}[t]{0.43\textwidth}
     \centering
-    {\bfseries Propietario:}\\[0.2cm]
-    Francisco Javier Rondon Lagos\\[0.1cm]
-    CC 4.251.576
+    {\normalsize\bfseries\color{primary!80!black} Propietario:}\\[0.25cm]
+    {\large Francisco Javier Rondon Lagos}\\[0.05cm]
+    {\small CC 4.251.576}
   \end{minipage}
   \hfill
-  \begin{minipage}[t]{0.45\textwidth}
+  \begin{minipage}[t]{0.43\textwidth}
     \centering
-    {\bfseries Dirección:}\\[0.2cm]
-    Calle 78 B No. 120-49\\[0.1cm]
-    Bloque 1, Apto 401\\[0.1cm]
-    Bogotá, Colombia
+    {\normalsize\bfseries\color{primary!80!black} Dirección:}\\[0.25cm]
+    {\large Calle 78 B No.~120-49}\\[0.05cm]
+    {\large Bloque 1, Apto 401}\\[0.05cm]
+    {\large Bogotá, Colombia}
   \end{minipage}
 
-  \vspace{2cm}
-  {\large Junio de 2026}\\[0.5cm]
+  \vspace{2.5cm}
+  {\Large\color{primary!70!black} Junio de 2026}\\[0.5cm]
   \vfill
-  {\footnotesize\textcolor{gray!60!black}{Documento elaborado para sustentación técnica, económica y normativa\\del proyecto de remodelación de baños.}}
+  {\footnotesize\color{gray!50!black} Documento elaborado para sustentación técnica, económica y normativa\\del proyecto de remodelación de baños.}
 \end{titlepage}
 
 % ── Tabla de Contenido ──
@@ -100,20 +114,21 @@
 
 \subsection{Contexto del Proyecto}
 
-El presente documento tiene como objetivo justificar técnica, estructural, geotécnica y
-económicamente la necesidad de realizar una remodelación integral de los tres (3) baños del
+Este documento justifica técnica, estructural, geotécnica y
+económicamente la remodelación integral de los tres (3) baños del
 apartamento 401, ubicado en el Bloque 1 del Conjunto Residencial Reserva de Granada 3,
 en la Calle 78 B No. 120-49 de la ciudad de Bogotá D.C.
 
-El inmueble se encuentra en la localidad de Suba, zona noroccidental de Bogotá, sobre los
-depósitos de arcilla blanda de alta plasticidad (CH) de la cuenca de la Sabana de Bogotá,
-con espesores que alcanzan entre 150 y 300\,m en este sector. Esta condición geotécnica
-particular, sumada a la amenaza sísmica intermedia de la región (coeficiente \textit{Aa} =
-0.15\,g según NSR-10) y a los efectos de amplificación por cuenca y por altura de la
-edificación, genera un escenario de vulnerabilidad sísmica para los elementos no
-estructurales que concentran los baños: enchapes, cieloraso, aparatos sanitarios de
-porcelana, divisiones de vidrio, tuberías empotradas y accesorios colgantes. La
-edificación, con una antigüedad estimada entre 15 y 30 años, fue construida bajo una
+El inmueble se emplaza en la localidad de Suba, noroccidente de Bogotá, sobre
+depósitos de arcilla blanda de alta plasticidad (CH, clasificación SUCS) de la cuenca
+de la Sabana de Bogotá, con espesores de 150 a 300\,m en este sector. Esta condición
+geotécnica, sumada a la amenaza sísmica intermedia de la región (coeficiente \textit{Aa} =
+0.15\,g, NSR-10, Tabla A.2.3-2) y a la amplificación por cuenca --que en arcillas
+blandas tipo D--E alcanza factores de 2.0--3.0$\times$ en el rango de períodos 0.5--3.0\,s--,
+configura un escenario de vulnerabilidad sísmica crítica para los elementos no
+estructurales concentrados en los baños: enchapes, cieloraso, aparatos de
+porcelana, divisiones de vidrio templado, tuberías empotradas y accesorios colgantes. La
+edificación, con una antigüedad estimada entre 15 y 30 años, se construyó bajo una
 versión anterior del reglamento sismorresistente colombiano (probablemente el Decreto
 1400 de 1984 o la Ley 400 de 1997), cuyos requisitos para elementos no estructurales
 eran significativamente menos exigentes que los de la NSR-10 vigente\footnote{NSR-10: Reglamento Colombiano de Construcción Sismo Resistente, Ley 1796 de 2016, compuesto por 10 títulos (A a J) que regulan el diseño y construcción de edificaciones en Colombia.} (Ley 1796 de 2016).
@@ -136,7 +151,7 @@ NSR-10 (Títulos A e I), RAS 2000\footnote{RAS 2000: Reglamento Técnico del Sec
 
 \subsection{Objetivo General}
 
-Realizar la remodelación integral de los tres baños del inmueble, garantizando la
+Ejecutar la remodelación integral de los tres baños del inmueble, garantizando la
 seguridad sísmica de los elementos no estructurales, la durabilidad de los materiales
 frente a la agresividad del ambiente húmedo, la mitigación de los efectos de
 asentamiento diferencial y humedad capilar, y el cumplimiento de la normatividad
@@ -168,6 +183,63 @@ estimado y el cronograma definido.
   estética y seguridad, con un plan de mantenimiento periódico documentado.
 \end{itemize}
 
+\subsection{Criterios de Diseño Arquitectónico}
+
+El diseño arquitectónico de la remodelación responde a criterios de funcionalidad,
+habitabilidad, accesibilidad, eficiencia y confort, articulando las decisiones
+técnicas con las necesidades reales de uso de los ocupantes:
+
+\begin{itemize}[noitemsep]
+  \item {\bfseries Optimización espacial:} El esquema de distribución existente se
+  mantiene en términos de huella y ubicación, optimizando la disposición de los
+  aparatos sanitarios para liberar áreas libres, mejorar la circulación y permitir
+  radios de giro adecuados para la limpieza y el mantenimiento. El B1, sin ducha,
+  concentra el lavamanos y el sanitario en un eje longitudinal que maximiza el
+  espacio libre central (0.80 $\times$ 1.20\,m). En B2 y B3, la ducha se ubica
+  en el extremo opuesto a la puerta para crear un recorrido funcional lavamanos
+  -- sanitario -- ducha, minimizando los cruces de circulación húmeda.
+  \item {\bfseries Ergonometría y accesibilidad:} Todos los aparatos y accesorios
+  se instalan a las alturas normalizadas recomendadas por la NTC 4140
+  (Accesibilidad al medio físico): lavamanos a 0.85\,m de altura (borde superior),
+  espejo con borde inferior a 0.90\,m, sanitario a 0.40\,m, barra de apoyo
+  (en duchas) a 0.85\,m, jabonera y toallero a 1.00--1.20\,m, grifería de ducha
+  a 1.10\,m. Los radios de giro libres frente a cada aparato cumplen con las
+  dimensiones mínimas de 0.70\,m de ancho para circulación.
+  \item {\bfseries Estrategia de iluminación:} Se diseña un esquema de iluminación
+  en tres capas: iluminación general (plafón LED 18\,W, 4000\,K, CRI $>$ 80,
+  flujo luminoso $\sim$1.800\,lm), iluminación de tarea sobre el espejo (aplique
+  LED 12\,W, 4000\,K, CRI $>$ 90 para fidelidad cromática en el arreglo personal),
+  e iluminación de acento con luz cálida (3000\,K) regulable para ambiente de
+  relajación en duchas. Los niveles lumínicos proyectados cumplen con la NTC 4595
+  (200--300\,lux en área de lavamanos, 100--150\,lux en área de ducha).
+  \item {\bfseries Ventilación y control de humedad:} Los extractores mecánicos
+  seleccionados (50\,CFM, equivalentes a $\sim$85\,m$^{3}$/h) garantizan una
+  tasa de renovación de aire mínima de 8--12 renovaciones por hora en cada baño,
+  conforme a la NTC 4595 y al código internacional de construcción (IBC). El
+  cálculo de caudal se verifica mediante la relación $Q = V \cdot n / 60$,
+  donde $V$ es el volumen del baño y $n$ las renovaciones por hora objetivo.
+  Para B1 ($\sim$4\,m$^{3}$), B2 y B3 ($\sim$6\,m$^{3}$ cada uno), el caudal
+  instalado es suficiente para mantener la humedad relativa por debajo del 60\%,
+  umbral crítico para la proliferación de hongos y moho.
+  \item {\bfseries Selección cromática y materiales:} La paleta de colores
+  sigue una estrategia de claridad y amplitud visual: porcelanato en tonalidades
+  claras (blanco, beige o gris perlado) para maximizar la reflectancia lumínica
+  ($\rho > 0.6$) y la sensación de amplitud en espacios reducidos. Las juntas
+  epóxicas en color contrastante (gris medio) definen visualmente la retícula
+  de las piezas. La grifería cromada y los accesorios en acero inoxidable aportan
+  continuidad visual y facilitan la limpieza. Los porcelanatos se seleccionan
+  con acabado mate (textura táctil) en pisos para reducir el riesgo de
+  deslizamiento (coeficiente de fricción DIN 51130 R10--R11) y semipulido en
+  muros para facilitar la limpieza sin generar deslumbramiento.
+  \item {\bfseries Sostenibilidad y salud ambiental:} Se priorizan materiales
+  de bajo contenido de compuestos orgánicos volátiles (COV): pintura vinilo
+  tipo 1 anti-hongos con COV $<$ 50\,g/L, adhesivos cementosos C1/C2 sin
+  solventes, silicona neutra curada con alcohol (no ácida, para evitar
+  corrosión en espejos y griferías), y boquilla epóxica libre de bisfenol A.
+  Todos los materiales cuentan con certificación de origen y ficha técnica
+  conforme al Reglamento Técnico de la Construcción Colombiano.
+\end{itemize}
+
 % ── 2. DIAGNÓSTICO DEL ESTADO ACTUAL ──
 \section{Diagnóstico del Estado Actual}
 
@@ -192,26 +264,28 @@ El inmueble cuenta con tres baños con las siguientes dimensiones y característ
 
 \subsection{Estado de las Instalaciones Existentes}
 
-Mediante inspección visual y técnica realizada en sitio, se identificaron las siguientes
+Mediante inspección visual y técnica in situ se diagnosticaron las siguientes
 condiciones y patologías:
 
 \begin{enumerate}[noitemsep]
-  \item {\bfseries Enchapes y pisos:} Los enchapes cerámicos existentes presentan desprendimientos,
-  fisuras, manchas de humedad y moho en las juntas. El piso muestra desgaste superficial y pérdida
-  de color uniforme. Las juntas entre piezas están deterioradas y permiten la filtración de agua.
-  \item {\bfseries Instalaciones hidráulicas:} Las tuberías de agua fría y caliente presentan
-  signos de corrosión y obstrucciones parciales. Las llaves de corte existentes no funcionan
+  \item {\bfseries Enchapes y pisos:} Los enchapes cerámicos existentes exhiben desprendimientos
+  activos, fisuración tipo mapa, manchas de humedad ascendente y colonización fúngica en las
+  juntas. El piso muestra desgaste superficial por abrasión y pérdida de color homogénea.
+  Las juntas entre piezas están degradadas y permiten la filtración de agua hacia el mortero
+  subyacente.
+  \item {\bfseries Instalaciones hidráulicas:} Las tuberías de agua fría y caliente evidencian
+  corrosión y obstrucciones parciales. Las llaves de corte existentes no operan
   correctamente. Se detectaron fugas menores en las conexiones de los aparatos sanitarios.
   \item {\bfseries Instalaciones eléctricas:} El cableado existente no cumple con la normativa RETIE
-  vigente. Los tomas no cuentan con protección GFCI requerida para áreas húmedas. Las
+  vigente. Los tomas carecen de la protección GFCI requerida para áreas húmedas. Las
   luminarias son de tecnología obsoleta (incandescente) con alto consumo energético.
   \item {\bfseries Aparatos sanitarios:} Los sanitarios, lavamanos y griferías presentan desgaste
-  estético y funcional. Los sanitarios tienen sistemas de descarga de alto consumo (13 litros por
-  descarga). Las griferías presentan goteo y pérdida de acabado cromado.
-  \item {\bfseries Cieloraso:} El pañete de techo existente presenta fisuras, manchas de humedad
+  estético y funcional. Los sanitarios emplean sistemas de descarga de alto consumo (13\,L por
+  descarga). Las griferías presentan goteo y pérdida del acabado cromado.
+  \item {\bfseries Cieloraso:} El pañete de techo existente exhibe fisuración, manchas de humedad
   por filtraciones del nivel superior y desprendimientos localizados.
   \item {\bfseries Impermeabilización:} No se evidencia membrana impermeabilizante funcional en
-  área de piso. Se observan manchas de humedad por capilaridad en la parte inferior de los muros.
+  el área de piso. Se observan manchas de humedad por capilaridad en la parte inferior de los muros.
   \item {\bfseries Ventanas:} Las ventanas existentes tienen marcos de aluminio oxidados, vidrios
   rayados y sistemas de cierre defectuosos que permiten filtraciones de aire y agua.
 \end{enumerate}
@@ -234,67 +308,95 @@ La remodelación integral comprende las siguientes actividades, organizadas por 
 
 \subsection{Capítulo 1: Demolición y Desmonte (C01)}
 
-Comprende la demolición controlada de enchapes cerámicos en muros y pisos, demolición del
-pañete de techo existente, desmonte de todos los aparatos sanitarios (sanitarios, lavamanos, duchas,
-divisiones de vidrio), desmonte de puntos eléctricos, puertas, ventanas, mesón de mármol y
-accesorios. Incluye el cargue, retiro y transporte de escombros a escombrera autorizada.
+Demolición controlada y selectiva de enchapes cerámicos en muros y pisos,
+demolición del pañete de techo existente, desmonte de aparatos sanitarios
+(sanitarios, lavamanos, duchas, divisiones de vidrio), desmonte de puntos
+eléctricos, puertas, ventanas, mesón de mármol y accesorios. Se protegen los
+elementos no intervenidos (piso exterior, tuberías de paso, redes generales)
+con láminas de polipropileno y cinta de enmascarar. Los escombros se clasifican
+en origen: materiales pétreos (enchapes, mortero) para disposición en
+escombrera, metales (perfilería de aluminio, grifería) para reciclaje y
+residuos ordinarios para recolección municipal, conforme a la Resolución 0472
+de 2017. El cargue, retiro y transporte se realiza a escombrera autorizada,
+con certificado de disposición final para cada viaje.
 
 \subsection{Capítulo 2: Instalaciones Hidráulicas (C02)}
 
-Instalación de nueva red de tubería PVC para agua fría (RDE 21, 200 PSI) y CPVC para agua
-caliente, con diámetro mínimo de 1/2\". Se instalarán 16 puntos hidráulicos en total
+Instalación de red de tubería PVC para agua fría (RDE 21, 200 PSI) y CPVC para agua
+caliente, con diámetro mínimo de 1/2\". Se instalarán 16 puntos hidráulicos
 distribuidos entre los tres baños (2 por lavamanos, 2 por sanitario, 2 por ducha). Incluye válvulas
 de corte esféricas en cada punto y prueba hidrostática a 1.5 veces la presión de trabajo.
 
 \subsection{Capítulo 3: Instalaciones Eléctricas (C03)}
 
-Instalación de 16 puntos eléctricos incluyendo tubería conduit PVC empotrada, cable THHN/THWN
-calibre \#12 AWG, cajas octogonales y rectangulares, tomas GFCI con protección diferencial de 5 mA,
-apagadores tipo balancín y placas decorativas. Cableado general desde tablero principal con pruebas de
-continuidad, aislamiento (megger a 500V) y polaridad.
+Instalación de 16 puntos eléctricos: tubería conduit PVC empotrada\\*
+con cable THHN/THWN calibre \#12 AWG, cajas octogonales y rectangulares,
+tomas GFCI con protección diferencial de 5\,mA, apagadores tipo balancín
+y placas decorativas. Cableado desde tablero principal con pruebas de
+continuidad, aislamiento (megger a 500\,V) y polaridad.
 
 \subsection{Capítulo 4: Muros y Pañetes (C04)}
 
 Pañete de muros con mortero 1:4 (cemento:arena) con adición de cal hidratada al 10\%, espesor
-15--25 mm, aplicado en dos capas. Incluye preparación de superficie, puente de adherencia, nivelación
-con regla de 2 m (tolerancia 3 mm), curado por 7 días y boquillero para tuberías.
+15--25\,mm, aplicado en dos capas. Incluye preparación de superficie, puente de adherencia, nivelación
+con regla de 2\,m (tolerancia 3\,mm), curado por 7 días y boquillero para tuberías.
 
 \subsection{Capítulo 5: Cieloraso en Drywall y Pintura (C05)}
 
-Instalación de cieloraso suspendido en drywall con perfilería metálica galvanizada calibre 26
-(canal + omega), placa de yeso de 12.7 mm, masillado de juntas con cinta de papel y joint compound.
-Pintura con imprimante sellador y dos manos de vinilo tipo 1 anti-hongos.
+Instalación de cieloraso suspendido en drywall con perfilería metálica
+galvanizada calibre 26 (canal perimetral + omega de suspensión), placa de yeso
+12.7\,mm estándar (tipo X para resistencia al fuego en zonas colindantes con
+ductos eléctricos), masillado de juntas con cinta de papel microperforada y
+joint compound en tres capas (relleno, segunda mano, acabado). Pintura con
+imprimante sellador alcalino y dos manos de vinilo tipo 1 anti-hongos con
+aditivo fungicida (carbendazima 0.5\% p/p). Se instalan registros de
+inspección de 30$\times$30\,cm con marco metálico y tapa de yeso removible
+en cada baño para acceso a la red eléctrica del cieloraso.
 
 \subsection{Capítulo 6: Impermeabilización (C06)}
 
-Impermeabilización de pisos con membrana acrílica en dos capas (1.2 kg/m\textsuperscript{2} por
-capa) y fieltro geotextil de 200 g/m\textsuperscript{2}. Banda elástica de 10 cm en encuentros
+Impermeabilización de pisos con membrana acrílica en dos capas (1.2\,kg/m\textsuperscript{2} por
+capa) y fieltro geotextil de 200\,g/m\textsuperscript{2}. Banda elástica de 10\,cm en encuentros
 muro-piso y alrededor de tuberías con sello elástico de poliuretano. Prueba de inundación con
-2 cm de agua durante 24 horas.
+2\,cm de agua durante 24 horas.
 
 \subsection{Capítulo 7: Enchapes y Pisos en Porcelanato (C07)}
 
-Instalación de porcelanato en muros formato 30$\times$60 cm con pegante C1 y en pisos formato
-60$\times$60 cm con pegante C2. Sistema de doble encolado y nivelación con clips + cuñas.
-Boquilla epóxica en todas las juntas. Guardaescoba en porcelanato o aluminio en encuentro muro-piso.
-Pendiente mínima del 1\% hacia el desagüe en pisos.
+Instalación de porcelanato en muros formato 30$\times$60\,cm con pegante
+cementoso tipo C1 (ISO 13007) y en pisos formato 60$\times$60\,cm con pegante
+tipo C2. Disposición en junta trabada (traba 1/3 en muros, traba 1/2 en pisos)
+con piezas rectificadas ($\pm$0.2\,mm de tolerancia dimensional). Doble
+encolado (pegante aplicado al soporte con llana dentada de 10\,mm y al dorso
+de la pieza con llana de 6\,mm) y nivelación mecánica con sistema de clips +
+cuñas de polipropileno (espesor de junta 2.0\,mm). Boquilla epóxica de dos
+componentes en todas las juntas (color contrastante gris medio). Guardaescoba
+en porcelanato de 10\,cm de altura (formato 60$\times$10\,cm) en encuentro
+muro-piso. Pendiente mínima del 1\% (1\,cm/m) hacia los sumideros en pisos,
+verificada con nivel de manguera antes del fraguado del pegante.
 
 \subsection{Capítulo 8: Aparatos Sanitarios y Griferías (C08)}
 
-Suministro e instalación de sanitarios de tanque bajo con descarga dual (3/6 L), lavamanos sobreponer
+Suministro e instalación de sanitarios de tanque bajo con descarga dual (3/6\,L), lavamanos sobreponer
 con pedestal, grifería mezcladora monocomando cromada para lavamanos y ducha, válvulas empotradas,
-brazos y regaderas tipo lluvia, divisiones en vidrio templado de 6 mm y mesón de mármol pulido.
+brazos y regaderas tipo lluvia, divisiones en vidrio templado de 6\,mm y mesón de mármol pulido.
 
 \subsection{Capítulo 9: Carpintería (C09)}
 
-Reparación y ajuste de puertas existentes, cambio de cerraduras por chapas de privacidad para baño
-con emergencia exterior, instalación de tapetones/junquillos de piso.
+Reparación y ajuste de puertas existentes (hojas de madera de 0.70$\times$2.00\,m)
+con cepillado de cantos para eliminar el roce contra el marco deformado,
+cambio de bisagras por unidades de acero inoxidable con rodamientos de bolas
+(tres por hoja), cambio de cerraduras por chapas de privacidad para baño con
+mecanismo de emergencia exterior (moneda o destornillador). Instalación de
+tapetones de piso en madera maciza de 2.5$\times$5.0\,cm (perfil redondeado)
+y junquillos de piso en MDF hidrofugado para cubrir la junta perimetral entre
+el porcelanato y el marco de la puerta. La holgura inferior de la puerta se
+mantiene en 2.0\,cm para ventilación pasiva bajo la hoja.
 
 \subsection{Capítulo 10: Accesorios y Varios (C10)}
 
 Suministro e instalación de espejos biselados, toalleros, portarrollos, jaboneras, ganchos, cortineros
-con cortina antifluido, plafones LED 18W (IP44), apliques LED 12W sobre espejo, extractor/ventilador de
-techo 50 CFM, tomas GFCI, apagadores y placas decorativas.
+con cortina antifluido, plafones LED 18\,W (IP44), apliques LED 12\,W sobre espejo, extractor de
+techo 50\,CFM, tomas GFCI, apagadores y placas decorativas.
 
 \subsection{Capítulo 11: Aseo y Finales (C11)}
 
@@ -304,13 +406,13 @@ final del funcionamiento de todos los sistemas instalados.
 \subsection{Capítulo 12: Transporte y Logística (C12)}
 
 Transporte de todos los materiales desde los puntos de venta hasta la obra, alquiler de contenedor de
-4 m\textsuperscript{3} para escombros, transporte y disposición final certificada en escombrera
+4\,m\textsuperscript{3} para escombros, transporte y disposición final certificada en escombrera
 autorizada.
 
 \subsection{Capítulo 13: Ventanas (C13)}
 
-Suministro e instalación de ventanas de aluminio anodizado con vidrio claro de 4 mm, marco, herrajes
-y sellado perimetral con silicona estructural, con prueba de estanquidad.
+Suministro e instalación de ventanas de aluminio anodizado con vidrio claro de 4\,mm, marco, herrajes
+y sellado perimetral con silicona estructural. Prueba de estanquidad.
 
 % ── 4. JUSTIFICACIÓN TÉCNICA ──
 \section{Justificación Técnica}
@@ -336,27 +438,29 @@ internacionales:
   \item {\bfseries NTC 1522:} Vidrio para construcción.
   \item {\bfseries ASTM C1396:} Standard Specification for Gypsum Board.
   \item {\bfseries ASTM D6083:} Standard Specification for Liquid Applied Acrylic Coating.
-  \item {\bfseries Decreto 1077 de 2015:} Gestión de Residuos de Construcción y Demolición (RCD).
+  \item {\bfseries Decreto 1077 de 2015:} Gestión de Residuos de
+  Construcción y Demolición (RCD).
 \end{itemize}
 
 \subsection{Criterios de Diseño y Selección de Materiales}
 
 \begin{enumerate}[noitemsep]
-  \item {\bfseries Durabilidad:} Se seleccionaron materiales de alta resistencia al tráfico y a la
-  humedad. El porcelanato tiene una absorción de agua inferior al 0.5\% y una dureza superficial
+  \item {\bfseries Durabilidad:} Los materiales seleccionados garantizan alta resistencia al tráfico
+  y a la humedad. El porcelanato presenta absorción de agua inferior al 0.5\% y dureza superficial
   PEI 4--5. La grifería cuenta con acabado cromado resistente a la corrosión y cartuchos
   cerámicos de larga duración.
-  \item {\bfseries Eficiencia hídrica:} Los sanitarios con descarga dual (3/6 L) reducen el consumo
-  de agua hasta en un 50\% respecto a los sanitarios convencionales de 13 L. Las griferías
-  monocomando incluyen aireadores que reducen el caudal sin sacrificar la presión percibida.
-  \item {\bfseries Eficiencia energética:} Las luminarias LED de 18W (plafones) y 12W (apliques)
+  \item {\bfseries Eficiencia hídrica:} Los sanitarios con descarga dual (3/6\,L) reducen el consumo
+  de agua hasta en un 50\% respecto a los sanitarios convencionales de 13\,L. Las griferías
+  monocomando incorporan aireadores que reducen el caudal sin sacrificar la presión percibida.
+  \item {\bfseries Eficiencia energética:} Las luminarias LED de 18\,W (plafones) y 12\,W (apliques)
   consumen hasta un 80\% menos energía que las bombillas incandescentes equivalentes, con una vida
   útil de 25,000 horas.
   \item {\bfseries Seguridad:} Todos los tomas eléctricos en áreas húmedas cuentan con
-  protección GFCI (falla a tierra con disparo a 5 mA). Las divisiones de baño son en vidrio
-  templado de 6 mm (norma NTC 1522), que al fracturarse se fragmenta en pequeños trozos no cortantes.
+  protección GFCI (falla a tierra con disparo a 5\,mA). Las divisiones de baño son en vidrio
+  templado de 6\,mm (norma NTC 1522), que al fracturarse se fragmenta en partículas no cortantes
+  de menos de 1\,cm\textsuperscript{2}.
   \item {\bfseries Estanquidad:} Sistema integral de impermeabilización con membrana acrílica,
-  fieltro geotextil y banda elástica en encuentros, garantizando la protección de la
+  fieltro geotextil y banda elástica en encuentros, que protege la
   estructura contra filtraciones.
   \item {\bfseries Mantenibilidad:} Todos los componentes (sifones, válvulas, griferías,
   accesorios) son de fácil acceso y mantenimiento. Las juntas epóxicas no requieren resellado
@@ -391,17 +495,19 @@ que corresponde a edificaciones de mediana altura como la del presente caso
 
 \paragraph{Comportamiento del edificio.} La edificación del Bloque 1, con estructura
 de 12 pisos, parqueadero a nivel y 1 sótano, tiene un período fundamental estimado
-entre 0.8 y 1.2 segundos (mediante la expresión aproximada $T = 0.05\,h^{3/4}$,
-NSR-10, Sección A.4.2.2, para una altura aproximada de 40\,m). Este período se
+entre 0.8 y 1.2 segundos, calculado mediante la expresión aproximada del método
+de la fuerza horizontal equivalente (NSR-10, Sección A.4.2.2):
+\begin{equation}
+T = 0.05\,h_n^{3/4} \label{eq:periodo}
+\end{equation}
+donde $h_n = 40\,\text{m}$ es la altura total de la edificación. Este período se
 encuentra dentro de la zona de máxima amplificación de la cuenca de Bogotá
-(0.5--3.0\,s), lo que implica que la estructura puede experimentar aceleraciones
-hasta 2.0--3.0 veces superiores a las que experimentaría en un perfil de suelo
-tipo A (roca). El apartamento 401, ubicado en el cuarto piso de una torre de
-12 niveles, recibe una amplificación sísmica significativa aunque no la máxima
-del edificio (la cual ocurre en los pisos superiores), con aceleraciones de piso
-estimadas entre 1.5 y 2.0 veces la aceleración del terreno basal (NSR-10,
-Sección A.6.2, perfiles de amplificación por altura para edificios de
-mediana altura).
+(0.5--3.0\,s), lo que implica que la estructura experimenta aceleraciones
+hasta 2.0--3.0 veces superiores a las que tendría en un perfil de suelo
+tipo A (roca). De acuerdo con los perfiles de amplificación por altura para
+edificios de mediana altura (NSR-10, Sección A.6.2), el apartamento 401,
+ubicado en el cuarto piso de una torre de 12 niveles, recibe aceleraciones de
+piso estimadas entre 1.5 y 2.0 veces la aceleración del terreno basal en roca.
 
 \paragraph{Comportamiento de elementos no estructurales.} Los baños concentran la mayor
 cantidad de elementos no estructurales por metro cuadrado de cualquier ambiente de la
@@ -410,10 +516,19 @@ griferías, divisiones de vidrio, espejos, tuberías hidráulicas y eléctricas 
 y accesorios colgantes. Estos elementos, aunque no son parte del sistema de resistencia
 sísmica, representan un riesgo significativo para la seguridad de los ocupantes y para
 la funcionalidad del inmueble después de un sismo. La NSR-10, Título I (Supervisión
-Técnica), establece requisitos específicos para la instalación de elementos no
-estructurales en edificaciones de los grupos de uso I y II, exigiendo que todos los
-componentes y sus anclajes estén diseñados para resistir las fuerzas sísmicas
-calculadas según la Sección A.9.4.3.
+Técnica), exige que todos los componentes y sus anclajes estén diseñados para resistir
+la fuerza sísmica de diseño calculada según la Sección A.9.4.3:
+\begin{equation}
+F_p = \frac{a_p}{g} \cdot A_a \cdot I \cdot W_p \left(1 + 2\frac{h_x}{h_n}\right) \label{eq:fp}
+\end{equation}
+donde $a_p$ es el coeficiente de amplificación del componente (1.0 para
+componentes rígidos anclados al piso, 2.5 para componentes de soporte en voladizo),
+$A_a = 0.15\,g$ es la aceleración pico efectiva, $I$ es el coeficiente de
+importancia (1.0 para grupo de uso I), $W_p$ es el peso del componente,
+$h_x$ es la altura del punto de fijación respecto a la base y $h_n$ la altura
+total de la edificación. Para el apartamento 401 ($h_x/h_n \approx 0.33$),
+los factores de amplificación resultan entre 1.7 y 3.3 veces el peso del
+componente, según su rigidez.
 
 \paragraph{Medidas de mitigación implementadas en la remodelación.}
 
@@ -469,16 +584,20 @@ presentan una degradación característica gobernada por los siguientes procesos
 fisicoquímicos y mecánicos:
 
 \begin{enumerate}[noitemsep]
-  \item {\bfseries Carbonatación:} El dióxido de carbono (\textit{CO}$_{2}$) atmosférico
+  \item {\bfseries Carbonatación:} El dióxido de carbono ($\text{CO}_{2}$) atmosférico
   penetra en la red porosa del mortero y reacciona con el hidróxido de calcio
-  (\textit{Ca(OH)}$_{2}$) presente en la fase acuosa de los poros, reduciendo el pH
-  de 12.5--13.0 a valores inferiores a 9.0. Este proceso avanza desde la superficie
-  hacia el interior a una velocidad de 1--3\,mm/año en morteros convencionales
-  expuestos a ambientes interiores con humedad relativa entre 50 y 70\% (condiciones
-  típicas de baños en Bogotá). En una instalación de 20 años, el frente de carbonatación
-  puede haber alcanzado 20--60\,mm, superando el espesor típico del mortero de
-  pega (10--15\,mm), lo que implica que el mortero está completamente carbonatado
-  en la mayoría de las áreas.
+  ($\text{Ca(OH)}_{2}$) presente en la fase acuosa de los poros, reduciendo el pH
+  de 12.5--13.0 a valores inferiores a 9.0. La profundidad del frente de carbonatación
+  sigue un modelo de difusión controlada (ley de Fick):
+  \begin{equation}
+  d = k\,\sqrt{t} \label{eq:carbonatacion}
+  \end{equation}
+  donde $d$ es la profundidad de carbonatación, $k$ es el coeficiente de
+  carbonatación (1--3\,mm/$\sqrt{\text{año}}$ en morteros convencionales
+  interiores con HR 50--70\%), y $t$ es el tiempo de exposición. En una
+  instalación de 20 años, el frente de carbonatación alcanza 20--60\,mm,
+  superando el espesor típico del mortero de pega (10--15\,mm), lo que implica
+  que el mortero está completamente carbonatado en la mayoría de las áreas.
   \item {\bfseries Pérdida de adherencia por ciclos de humedad-sequedad:} Los baños
   están sometidos a ciclos diarios de humectación (ducha, limpieza) y secado. Cada
   ciclo genera esfuerzos de tracción en la interfaz mortero-soporte por la expansión
@@ -490,11 +609,16 @@ fisicoquímicos y mecánicos:
   \item {\bfseries Eflorescencias salinas:} La humedad capilar ascendente desde el
   suelo transporta sales solubles (cloruros, sulfatos, nitratos) que cristalizan
   en la interfaz mortero-enchape o en la superficie del enchape. La presión de
-  cristalización, que puede alcanzar hasta 20\,MPa en condiciones de baja
-  humedad relativa (Le Métayer-Levrel et al., 1999), genera fuerzas expansivas
-  que desprenden el enchape de su soporte. Las eflorescencias son particularmente
-  agresivas en Bogotá debido a la alta concentración de sulfatos en las arcillas
-  de la cuenca.
+  cristalización, gobernada por la ecuación de Correns:
+  \begin{equation}
+  P_{\text{crist}} = \frac{RT}{V_m}\,\ln(S) \label{eq:cristalizacion}
+  \end{equation}
+  donde $R$ es la constante universal de los gases, $T$ la temperatura absoluta,
+  $V_m$ el volumen molar del cristal y $S$ el grado de sobresaturación de la
+  solución, puede alcanzar hasta 20\,MPa en condiciones de baja humedad relativa
+  (Le Métayer-Levrel et al., 1999), generando fuerzas expansivas que desprenden
+  el enchape de su soporte. Las eflorescencias son particularmente agresivas en
+  Bogotá debido a la alta concentración de sulfatos en las arcillas de la cuenca.
   \item {\bfseries Ataque biológico:} El ambiente húmedo y cálido de los baños
   (temperatura 20--30\textdegree{}C, humedad relativa 60--90\%) favorece la proliferación
   de microorganismos (hongos, moho, bacterias) en la red porosa del mortero y en
@@ -506,15 +630,19 @@ fisicoquímicos y mecánicos:
 \end{enumerate}
 
 \paragraph{Consecuencias cuantificables.} Los ensayos de adherencia por tracción
-directa (método pull-off, norma ASTM C1583 / NTC 6004) realizados en edificaciones
-de edad y tipología similar en Bogotá reportan valores de resistencia a la tracción
-en la interfaz mortero-soporte del orden de 0.15--0.35\,MPa, muy por debajo del
-valor mínimo recomendado de 0.5\,MPa establecido en la NTC 4321 (Baldosas
-Cerámicas) y la guía técnica del ICONTEC para instalación de enchapes en interiores.
-El nuevo sistema de instalación propuesto (pegante cementoso tipo C1 para muros y
-C2 para pisos, según clasificación ISO 13007 / NTC 6106) garantiza resistencias de
-adherencia superiores a 1.0\,MPa después de 28 días de curado, con una relación
-a/c controlada de 0.35--0.40 y una retracción lineal inferior al 0.1\%.
+directa (método pull-off, norma ASTM C1583 / NTC 6004) cuantifican la resistencia
+de la interfaz mortero-soporte mediante la relación:
+\begin{equation}
+\sigma_a = \frac{F_{\text{máx}}}{A} \label{eq:pulloff}
+\end{equation}
+donde $\sigma_a$ es la resistencia a la tracción, $F_{\text{máx}}$ es la fuerza
+máxima registrada y $A$ es el área de la probeta (típicamente 50\,cm$^{2}$).
+Las mediciones en edificaciones de edad y tipología similar en Bogotá reportan
+valores de 0.15--0.35\,MPa, muy por debajo del mínimo de 0.5\,MPa que exige la
+NTC 4321 para enchapes en interiores. El nuevo sistema propuesto (pegante
+cementoso tipo C1 para muros y C2 para pisos, según ISO 13007 / NTC 6106)
+garantiza $\sigma_a > 1.0\,\text{MPa}$ a los 28 días de curado, con relación
+$a/c$ controlada de 0.35--0.40 y retracción lineal inferior al 0.1\%.
 
 \paragraph{Calidad de los materiales de enchape existentes.} Se identifican las
 siguientes deficiencias en los materiales cerámicos originales:
@@ -556,19 +684,31 @@ típicas de estos depósitos incluyen: límite líquido (\textit{LL}) 80--120\%,
 25--80\,kPa, y módulo de elasticidad (\textit{E}) 5--20\,MPa.
 
 \paragraph{Fenómeno de consolidación.} Las arcillas de la Sabana de Bogotá son
-altamente compresibles, con índices de compresión (\textit{Cc}) entre 0.3 y 0.8,
-y coeficientes de consolidación (\textit{Cv}) del orden de 1$\times$10$^{-8}$ a
-5$\times$10$^{-8}$\,m$^{2}$/s (Alfaro et al., 2001). Esto implica que los
-asentamientos por consolidación primaria pueden extenderse por décadas después de
-la construcción del edificio. Para una edificación de 4 pisos con una carga
-transmitida al suelo del orden de 50--80\,kPa, el asentamiento total estimado
-puede alcanzar 5--15\,cm, de los cuales el 30--50\% ocurre durante la
-construcción y el 50--70\% restante ocurre a lo largo de la vida útil del edificio
-(consolidación secundaria + fluencia lenta o creep). Dado que el edificio tiene
-entre 15 y 30 años de antigüedad, es probable que los asentamientos por
-consolidación primaria estén en su etapa final, pero los asentamientos por
-consolidación secundaria (compresión viscosa o creep) continúan a una tasa del
-orden de 0.5--2.0\,mm/año.
+altamente compresibles, con índices de compresión ($C_c$) entre 0.3 y 0.8,
+y coeficientes de consolidación ($C_v$) del orden de $1\times10^{-8}$ a
+$5\times10^{-8}\,\text{m}^{2}/\text{s}$ (Alfaro et al., 2001). El asentamiento
+por consolidación primaria se calcula mediante la teoría unidimensional de
+Terzaghi:
+\begin{equation}
+S_c = \frac{C_c}{1+e_0}\,H\,\log\left(\frac{\sigma'_0 + \Delta\sigma}{\sigma'_0}\right) \label{eq:consolidacion}
+\end{equation}
+donde $e_0$ es la relación de vacíos inicial, $H$ el espesor del estrato
+compresible, $\sigma'_0$ el esfuerzo efectivo inicial y $\Delta\sigma$ el
+incremento de carga transmitido. Para una edificación de 4 pisos con una carga
+transmitida de 50--80\,kPa, el asentamiento total estimado alcanza 5--15\,cm.
+El grado de consolidación en función del tiempo se expresa mediante la serie de
+Fourier:
+\begin{equation}
+U = 1 - \sum_{m=0}^{\infty}\frac{2}{M^2}\,e^{-M^2 T_v} \quad\text{con}\quad
+M = \frac{\pi}{2}(2m+1),\;
+T_v = \frac{C_v t}{H_{dr}^2} \label{eq:grado_consolidacion}
+\end{equation}
+donde $T_v$ es el factor de tiempo adimensional y $H_{dr}$ la distancia de
+drenaje. Dado el bajo $C_v$ de las arcillas de Bogotá, los asentamientos por
+consolidación primaria se extienden por décadas. El edificio, con 15--30 años
+de antigüedad, probablemente se encuentra en la etapa final de la consolidación
+primaria, pero los asentamientos por consolidación secundaria (compresión
+viscosa o creep) continúan a una tasa de 0.5--2.0\,mm/año.
 
 \paragraph{Efecto de los asentamientos diferenciales.} Los asentamientos no son
 uniformes en toda el área del edificio debido a variaciones laterales en el espesor
@@ -578,11 +718,14 @@ efectos de borde de la cimentación. Los asentamientos diferenciales generan:
 \begin{itemize}[noitemsep]
   \item {\bfseries Distorsi\'{o}n angular (deflection ratio):} La relaci\'{o}n entre
   el asentamiento diferencial m\'{a}ximo y la distancia entre apoyos
-  ($\delta$/L) puede alcanzar valores de 1/300 a 1/500 en edificaciones
-  sobre arcillas blandas, superando el l\'{\i}mite de 1/500 recomendado por
-  Skempton \& MacDonald (1956) para evitar da\~{n}os estructurales. Las fisuras
-  caracter\'{\i}sticas por distorsi\'{o}n angular son diagonales (45\textdegree)
-  en muros y siguen las juntas de mortero.
+  \begin{equation}
+  \beta = \frac{\delta}{L} \label{eq:distorsion}
+  \end{equation}
+  puede alcanzar $1/300$ a $1/500$ en edificaciones sobre arcillas blandas,
+  superando el l\'{\i}mite de $1/500$ que recomienda Skempton \& MacDonald (1956)
+  para evitar da\~{n}os estructurales. Las fisuras caracter\'{\i}sticas por
+  distorsi\'{o}n angular son diagonales (45\textdegree) en muros y siguen las
+  juntas de mortero.
   \item {\bfseries Grietas por tracción en enchapes:} Los enchapes cerámicos, con
   una resistencia a la tracción de 5--15\,MPa pero una deformación máxima a
   rotura de apenas 0.01--0.02\%, son extremadamente sensibles a la deformación
@@ -740,16 +883,18 @@ intervenciones específicas abordan las deformaciones identificadas:
 
 \paragraph{Humedad capilar ascendente.} El fenómeno de humedad capilar ascendente
 es particularmente relevante en edificaciones sobre arcillas de la Sabana de Bogotá,
-donde el nivel freático puede fluctuar entre 2 y 8\,m de profundidad según la
-época del año. El agua asciende a través de la red capilar de los materiales de
-cimentación y muros (concreto, mortero, ladrillo) por el principio de tensión
-superficial, alcanzando alturas de hasta 1.5\,m sobre el nivel del terreno
-en materiales con porosidad fina (radio capilar 0.1--10\,$\mu$m). La altura
-de ascenso capilar está determinada por la ecuación de Jurin:
-\textit{h = 2 $\gamma$ cos$\theta$ / ($\rho$ g r)}, donde \textit{$\gamma$} es la
-tensión superficial del agua (72.8\,mN/m a 20\textdegree{}C), \textit{$\theta$} el
-ángulo de contacto (variable según el material), \textit{$\rho$} la densidad del
-agua, \textit{g} la gravedad y \textit{r} el radio capilar.
+donde el nivel freático fluctúa entre 2 y 8\,m de profundidad según la época del
+año. El agua asciende a través de la red capilar de los materiales de cimentación
+y muros (concreto, mortero, ladrillo) por el principio de tensión superficial,
+alcanzando alturas de hasta 1.5\,m sobre el nivel del terreno en materiales con
+porosidad fina (radio capilar 0.1--10\,$\mu$m). La altura de ascenso capilar está
+determinada por la ecuación de Jurin:
+\begin{equation}
+h = \frac{2\gamma\cos\theta}{\rho g r} \label{eq:jurin}
+\end{equation}
+donde $\gamma$ es la tensión superficial del agua ($72.8\,\text{mN/m}$ a
+20\,\textdegree{}C), $\theta$ el ángulo de contacto (variable según el material),
+$\rho$ la densidad del agua, $g$ la gravedad y $r$ el radio capilar.
 
 \paragraph{Consecuencias de la humedad capilar.} La humedad ascendente transporta
 sales disueltas (principalmente sulfatos y cloruros) que al alcanzar la superficie
@@ -803,11 +948,20 @@ identificados en la instalación original:
   La remodelación instala las redes en ductos independientes, cada uno con su
   propio registro de inspección.
   \item {\bfseries Diámetros y pendientes normalizados:} Las tuberías de desagüe
-  se instalan con los diámetros mínimos exigidos por el RAS 2000 (Título B):
-  sanitarios 4'', lavamanos y duchas 2'', con pendientes mínimas del 2\% para
-  diámetros $\leq$ 3'' y del 1\% para diámetros $\geq$ 4''. La instalación
-  original presentaba pendientes insuficientes (<1\%) que generaban
-  obstrucciones recurrentes por acumulación de sólidos.
+  se instalan con los diámetros mínimos del RAS 2000 (Título B):
+  sanitarios 4'', lavamanos y duchas 2'', con pendientes mínimas del 2\%
+  para diámetros $\leq$ 3'' y del 1\% para diámetros $\geq$ 4''. La capacidad
+  hidráulica se verifica mediante la ecuación de Hazen-Williams:
+  \begin{equation}
+  Q = 0.2785\,C\,D^{2.63}\,S^{0.54} \label{eq:hazen}
+  \end{equation}
+  donde $Q$ es el caudal ($\text{m}^3/\text{s}$), $C$ el coeficiente de rugosidad
+  (150 para PVC nuevo), $D$ el diámetro interno (m) y $S$ la pendiente (m/m).
+  La velocidad de flujo se calcula como $v = Q/A$, y debe mantenerse entre
+  0.6\,m/s (autolimpieza) y 3.0\,m/s (erosión). La instalación original
+  presentaba pendientes inferiores al 1\%, generando velocidades por debajo
+  del umbral de autolimpieza y obstrucciones recurrentes por acumulación de
+  sólidos.
   \item {\bfseries Protección catódica de tuberías metálicas:} Aunque las nuevas
   tuberías son de PVC y CPVC (materiales no corrosivos), se instalan separadores
   dieléctricos en las conexiones con los aparatos metálicos (griferías, llaves
@@ -827,45 +981,90 @@ identificados en la instalación original:
   unión es un punto potencial de falla).
 \end{itemize}
 
+\subsubsection{Consideraciones de Habitabilidad y Confort}
+
+\paragraph{Ventilación mecánica y calidad del aire interior.} El control de la
+humedad relativa (HR) es crítico en ambientes de baño por su impacto directo en
+la durabilidad de los acabados y la salud respiratoria de los ocupantes. Cada
+baño se ventila mediante extractor centrífugo axial de 50\,CFM
+($\sim$85\,m$^{3}$/h), dimensionado según el criterio de ASHRAE~62.2:
+\begin{equation}
+Q_{\text{req}} = V \cdot n \cdot \eta^{-1} \label{eq:ventilacion}
+\end{equation}
+donde $V$ es el volumen del recinto, $n$ la tasa de renovación (8--12\,h$^{-1}$
+para baños) y $\eta$ la eficiencia del sistema ($\sim$0.85 con ducto liso de
+4'' y longitud $<$ 3\,m). Para B1 ($V\approx4\,$m$^{3}$) se requieren
+$\sim$38--56\,m$^{3}$/h; para B2 y B3 ($V\approx6\,$m$^{3}$ cada uno),
+$\sim$56--85\,m$^{3}$/h. Los extractores seleccionados cubren holgadamente
+estos caudales. La descarga se conduce por ducto independiente hasta el exterior
+de la fachada, con trampa de viento (weather hood) y malla anti-insectos en la
+terminación. El interruptor del extractor se integra con el apagador de
+iluminación general con retardo temporizado (3--5\,min) para asegurar la
+extracción completa del vapor después de la ducha.
+
+\paragraph{Confort lumínico y acústico.} La iluminación LED (4000\,K, CRI~$>$~80)
+proporciona una temperatura de color neutro que favorece la percepción de
+limpieza y amplitud, evitando la distorsión cromática en la reproducción de
+tonos de piel y materiales (CRI~$>$~90 en el aplique del espejo). La
+distribución de luminarias evita sombras en el plano facial del usuario frente
+al espejo mediante la ubicación del aplique a 45\textdegree{} respecto al
+eje frontal, a una altura de 1.60\,m desde el piso terminado. En confort
+acústico, el drywall de 12.7\,mm más la cámara de aire del cieloraso
+suspendido (10\,cm) proporciona un aislamiento al ruido aéreo estimado de
+STC~35--40, reduciendo la transmisión de ruido de descarga de agua y
+conversaciones entre pisos. Los insertos de neopreno en las abrazaderas de
+tuberías (Shore~A~60$\pm$5) mitigan la transmisión de ruido de impacto y
+vibraciones por golpe de ariete.
+
+\paragraph{Confort térmico y eficiencia.} La combinación de drywall (placa de
+yeso 12.7\,mm) con cámara de aire (10\,cm) y la placa de concreto superior
+configura un conjunto con resistencia térmica agregada estimada de
+$R_{\text{eq}} \approx 0.5\,\text{m}^{2}\text{K/W}$, superior al cieloraso
+de pañete original ($R \approx 0.15\,\text{m}^{2}\text{K/W}$), reduciendo las
+pérdidas de calor por conducción hacia la losa superior en aproximadamente
+un 70\%. Las griferías monocomando con cartucho cerámico y limitador de
+temperatura (máximo 38\,\textdegree{}C en duchas) previenen quemaduras
+accidentales y optimizan el consumo energético de agua caliente.
+
 % ── 5. JUSTIFICACIÓN ECONÓMICA ──
 \section{Justificación Económica}
 
 \subsection{Inversión Estimada}
 
-El presupuesto del proyecto se ha estructurado bajo la metodología de Análisis de Precios
-Unitarios (APU), considerando costos de materiales, mano de obra, equipos y transporte a precios de
+El presupuesto del proyecto se estructuró bajo la metodología de Análisis de Precios
+Unitarios (APU), con costos de materiales, mano de obra, equipos y transporte a precios de
 Homecenter Colombia para junio de 2026.
 
 \begin{table}[H]
 \centering\footnotesize
 \caption{Resumen del Presupuesto}
 \label{tab:resumen}
-\begin{tabular}{lrrr}
+\begin{tabular}{@{}l r r r@{}}
 \toprule
 \textbf{Concepto} & \textbf{Costo Directo} & \textbf{AIU} & \textbf{Valor Total} \\
 \midrule
-C01. Demolición y Desmonte & \$ 1.759.351 & \$ 473.266 & \$ 2.232.617 \\
-C02. Instalaciones Hidráulicas & \$ 1.323.009 & \$ 355.890 & \$ 1.678.899 \\
-C03. Instalaciones Eléctricas & \$ 1.308.000 & \$ 351.852 & \$ 1.659.852 \\
-C04. Muros y Pañetes & \$ 1.171.192 & \$ 315.051 & \$ 1.486.243 \\
-C05. Cieloraso Drywall + Pintura & \$ 523.851 & \$ 140.916 & \$ 664.767 \\
-C06. Impermeabilización & \$ 442.140 & \$ 118.936 & \$ 561.076 \\
-C07. Enchapes y Pisos Porcelanato & \$ 5.104.995 & \$ 1.373.244 & \$ 6.478.239 \\
-C08. Aparatos Sanitarios y Griferías & \$ 4.566.000 & \$ 1.228.254 & \$ 5.794.254 \\
-C09. Carpintería & \$ 286.501 & \$ 77.069 & \$ 363.570 \\
-C10. Accesorios y Varios & \$ 2.132.006 & \$ 573.509 & \$ 2.705.515 \\
-C11. Aseo y Finales & \$ 972.000 & \$ 261.468 & \$ 1.233.468 \\
-C12. Transporte y Logística & \$ 1.308.000 & \$ 351.852 & \$ 1.659.852 \\
-C13. Ventanas & \$ 684.000 & \$ 183.996 & \$ 867.996 \\
+C01.\ Demolición y Desmonte        & \$\,1.759.351 & \$\,473.266 & \$\,2.232.617 \\
+C02.\ Instalaciones Hidráulicas    & \$\,1.323.009 & \$\,355.890 & \$\,1.678.899 \\
+C03.\ Instalaciones Eléctricas     & \$\,1.308.000 & \$\,351.852 & \$\,1.659.852 \\
+C04.\ Muros y Pañetes              & \$\,1.171.192 & \$\,315.051 & \$\,1.486.243 \\
+C05.\ Cieloraso Drywall + Pintura  & \$\,523.851   & \$\,140.916 & \$\,664.767   \\
+C06.\ Impermeabilización           & \$\,442.140   & \$\,118.936 & \$\,561.076   \\
+C07.\ Enchapes y Pisos Porcelanato & \$\,5.104.995 & \$\,1.373.244 & \$\,6.478.239 \\
+C08.\ Aparatos Sanitarios y Griferías & \$\,4.566.000 & \$\,1.228.254 & \$\,5.794.254 \\
+C09.\ Carpintería                  & \$\,286.501   & \$\,77.069  & \$\,363.570   \\
+C10.\ Accesorios y Varios          & \$\,2.132.006 & \$\,573.509 & \$\,2.705.515 \\
+C11.\ Aseo y Finales               & \$\,972.000   & \$\,261.468 & \$\,1.233.468 \\
+C12.\ Transporte y Logística       & \$\,1.308.000 & \$\,351.852 & \$\,1.659.852 \\
+C13.\ Ventanas                     & \$\,684.000   & \$\,183.996 & \$\,867.996   \\
 \midrule
-\textbf{TOTAL} & \textbf{\$ 21.581.045} & \textbf{\$ 5.805.303} & \textbf{\$ 27.386.348} \\
+\textbf{TOTAL} & \textbf{\$\,21.581.045} & \textbf{\$\,5.805.303} & \textbf{\$\,27.386.348} \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \noindent
 *Valores calculados a partir de los APU del presupuesto detallado, con precios Homecenter Colombia
-(junio 2026). El AIU incluye Administración (15\%), Utilidad (10\%) e IVA (19\% sobre la utilidad).
+(junio 2026). El AIU comprende Administración (15\%), Utilidad (10\%) e IVA (19\% sobre la utilidad).
 Costo Directo total: \$21.580.967. Valor Total (con AIU): \$27.386.349.
 
 \subsection{Estructura del AIU}
@@ -882,19 +1081,19 @@ Costo Directo total: \$21.580.967. Valor Total (con AIU): \$27.386.349.
 \subsection{Análisis Costo-Beneficio}
 
 \begin{enumerate}[noitemsep]
-  \item {\bfseries Ahorro en consumo de agua:} La sustitución de sanitarios de 13 L por unidades
-  de descarga dual (3/6 L) genera un ahorro estimado del 50--60\% en el consumo de agua para
+  \item {\bfseries Ahorro en consumo de agua:} La sustitución de sanitarios de 13\,L por unidades
+  de descarga dual (3/6\,L) genera un ahorro estimado del 50--60\% en el consumo de agua para
   descarga sanitaria. Para una familia de 4 personas, esto representa un ahorro aproximado de
-  \$200,000--\$300,000 COP anuales en la factura del agua.
+  \$200,000--\$300,000\,COP anuales en la factura del agua.
   \item {\bfseries Ahorro en consumo eléctrico:} La migración de luminarias incandescentes a
   LED reduce el consumo en aproximadamente un 80\%. Con 6 puntos de luz LED (3 plafones + 3 apliques)
-  operando 4 horas diarias, el ahorro estimado es de \$80,000--\$120,000 COP anuales.
-  \item {\bfseries Valorización del inmueble:} Una remodelación integral de baños puede
-  incrementar el valor comercial del inmueble entre un 5\% y un 10\%, según estudios del sector
+  operando 4 horas diarias, el ahorro estimado es de \$80,000--\$120,000\,COP anuales.
+  \item {\bfseries Valorización del inmueble:} Una remodelación integral de baños
+  incrementa el valor comercial del inmueble entre un 5\% y un 10\%, según estudios del sector
   inmobiliario colombiano.
   \item {\bfseries Prevención de daños estructurales:} La impermeabilización adecuada y la
-  renovación de redes hidrosanitarias previenen filtraciones que podrían generar costos de
-  reparación estructural mucho mayores (hasta 3--5 veces la inversión de la remodelación).
+  renovación de redes hidrosanitarias previenen filtraciones que generarían costos de
+  reparación estructural mayores (hasta 3--5 veces la inversión de la remodelación).
   \item {\bfseries Mejora en calidad de vida:} La renovación de acabados, la eliminación de
   hongos y moho, y la instalación de sistemas eficientes contribuyen al bienestar, la salud y el
   confort de los ocupantes.
@@ -952,19 +1151,19 @@ pruebas de estanquidad, etc.).
 
 \begin{enumerate}[noitemsep]
   \item La remodelación integral de los tres baños es técnicamente necesaria para
-  corregir las patologías identificadas (humedad, fisuras, desprendimientos, instalaciones
+  corregir las patologías diagnosticadas (humedad capilar, fisuración, desprendimientos, instalaciones
   obsoletas) y prevenir daños mayores a la estructura del inmueble.
-  \item El proyecto se ajusta a la normatividad colombiana vigente (NSR-10, RETIE, RAS 2000, NTC)
-  garantizando la seguridad, calidad y durabilidad de las intervenciones.
+  \item El proyecto cumple con la normatividad colombiana vigente (NSR-10, RETIE, RAS 2000, NTC)
+  y garantiza la seguridad, calidad y durabilidad de las intervenciones.
   \item La inversi\'on estimada de aproximadamente \$27.4 millones COP (Costo Directo \$21.6 millones
   + AIU \$5.8 millones) se justifica por los ahorros
   operativos proyectados (agua, energía), la valorización del inmueble y la prevención
   de costos de reparación mayores.
-  \item La selección de materiales de alta calidad (porcelanato, grifería cromada,
-  sanitarios de doble descarga, luminarias LED) garantiza una vida útil mínima de 15--20 años
-  con un mantenimiento mínimo.
-  \item El presupuesto ha sido elaborado con precios de mercado actualizados (Homecenter Colombia,
-  junio 2026) y estructurado mediante APU detallados que permiten una ejecución transparente y
+  \item Los materiales seleccionados (porcelanato, grifería cromada,
+  sanitarios de doble descarga, luminarias LED) garantizan una vida útil mínima de 15--20 años
+  con mantenimiento mínimo.
+  \item El presupuesto se elaboró con precios de mercado actualizados (Homecenter Colombia,
+  junio 2026) y se estructuró mediante APU detallados que permiten una ejecución transparente y
   controlada.
 \end{enumerate}
 
@@ -999,26 +1198,75 @@ CC 4.252.533\\[0.1cm]
 Director de Proyecto
 \end{center}
 
+%\newpage
+%\part*{Anexo 1: Presupuesto General de Obra}
+%\addcontentsline{toc}{part}{Anexo 1: Presupuesto General de Obra}
+%\includepdf[pages=-,pagecommand={\thispagestyle{empty}},scale=0.92,offset=0 0.5cm]{01-Presupuesto_General.pdf}
+%
 \newpage
-\part*{Anexo 1: Presupuesto General de Obra}
+\thispagestyle{plain}
 \addcontentsline{toc}{part}{Anexo 1: Presupuesto General de Obra}
-\includepdf[pages=-,pagecommand={\thispagestyle{empty}},scale=0.92,offset=0 0.5cm]{01-Presupuesto_General.pdf}
-
-\part*{Anexo 2: APU Detallados por Actividad}
+\vspace*{\fill}
+\begin{center}
+{\Huge\bfseries\color{primary}\lsstyle ANEXO 1}\\[1.2cm]
+{\LARGE\bfseries\color{secondary} Presupuesto General de Obra}\\[0.6cm]
+{\large\color{primary!70!black} Rehabilitación Integral de Tres Áreas Húmedas}
+\end{center}
+\vspace*{\fill}
+\newpage
+\includepdf[pages=-,pagecommand={\thispagestyle{plain}},scale=0.92,offset=0 0.5cm]{01-Presupuesto_General.pdf}
+%
+\newpage
+\thispagestyle{plain}
 \addcontentsline{toc}{part}{Anexo 2: APU Detallados por Actividad}
-\includepdf[pages=-,pagecommand={\thispagestyle{empty}},scale=0.92,offset=0 0.5cm]{02-APUs_Detallados.pdf}
-
-\part*{Anexo 3: Catálogo de Insumos}
+\vspace*{\fill}
+\begin{center}
+{\Huge\bfseries\color{primary}\lsstyle ANEXO 2}\\[1.2cm]
+{\LARGE\bfseries\color{secondary} APU Detallados por Actividad}\\[0.6cm]
+{\large\color{primary!70!black} Rehabilitación Integral de Tres Áreas Húmedas}
+\end{center}
+\vspace*{\fill}
+\newpage
+\includepdf[pages=-,pagecommand={\thispagestyle{plain}},scale=0.90,offset=0 0.5cm]{02-APUs_Detallados.pdf}
+%
+\newpage
+\thispagestyle{plain}
 \addcontentsline{toc}{part}{Anexo 3: Catálogo de Insumos}
-\includepdf[pages=-,pagecommand={\thispagestyle{empty}},scale=0.92,offset=0 0.5cm]{03-Insumos.pdf}
-
-\part*{Anexo 4: Memoria de Cantidades de Obra}
+\vspace*{\fill}
+\begin{center}
+{\Huge\bfseries\color{primary}\lsstyle ANEXO 3}\\[1.2cm]
+{\LARGE\bfseries\color{secondary} Catálogo de Insumos}\\[0.6cm]
+{\large\color{primary!70!black} Rehabilitación Integral de Tres Áreas Húmedas}
+\end{center}
+\vspace*{\fill}
+\newpage
+\includepdf[pages=-,pagecommand={\thispagestyle{plain}},scale=0.90,offset=0 0.5cm]{03-Insumos.pdf}
+%
+\newpage
+\thispagestyle{plain}
 \addcontentsline{toc}{part}{Anexo 4: Memoria de Cantidades de Obra}
-\includepdf[pages=-,pagecommand={\thispagestyle{empty}},scale=0.92,offset=0 0.5cm]{04-Memoria_Cantidades.pdf}
-
-\part*{Anexo 5: Especificaciones Técnicas por Capítulo}
+\vspace*{\fill}
+\begin{center}
+{\Huge\bfseries\color{primary}\lsstyle ANEXO 4}\\[1.2cm]
+{\LARGE\bfseries\color{secondary} Memoria de Cantidades de Obra}\\[0.6cm]
+{\large\color{primary!70!black} Rehabilitación Integral de Tres Áreas Húmedas}
+\end{center}
+\vspace*{\fill}
+\newpage
+\includepdf[pages=-,pagecommand={\thispagestyle{plain}},scale=0.90,offset=0 0.5cm]{04-Memoria_Cantidades.pdf}
+%
+\newpage
+\thispagestyle{plain}
 \addcontentsline{toc}{part}{Anexo 5: Especificaciones Técnicas por Capítulo}
-\includepdf[pages=-,pagecommand={\thispagestyle{empty}},scale=0.94,offset=0 0.5cm]{05-Especificaciones_Tecnicas.pdf}
+\vspace*{\fill}
+\begin{center}
+{\Huge\bfseries\color{primary}\lsstyle ANEXO 5}\\[1.2cm]
+{\LARGE\bfseries\color{secondary} Especificaciones Técnicas por Capítulo}\\[0.6cm]
+{\large\color{primary!70!black} Rehabilitación Integral de Tres Áreas Húmedas}
+\end{center}
+\vspace*{\fill}
+\newpage
+\includepdf[pages=-,pagecommand={\thispagestyle{plain}},scale=0.92,offset=0 0.5cm]{05-Especificaciones_Tecnicas.pdf}
 
 \newpage
 \part*{Bibliograf\'{\i}a}

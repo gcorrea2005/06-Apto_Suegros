@@ -5,3 +5,16 @@ dist/
 .env
 .DS_Store
 Thumbs.db
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.synctex.gz
+Informes/*.aux
+Informes/*.log
+Informes/*.out
+Informes/*.toc
