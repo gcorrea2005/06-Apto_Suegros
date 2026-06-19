@@ -1,0 +1,7086 @@
+#LyX file created by tex2lyx 2.4
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin C:/Users/gcorrea/Documents/00-PROYECTOS_2026/06-Apto_Suegros/Informes/
+\textclass article
+\begin_preamble
+﻿\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage[stable]{footmisc}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+\usepackage{caption}
+\captionsetup[table]{font=small,skip=6pt,labelfont={bf,color=primary},textfont={color=primary!80!black},position=top}
+\usepackage{ragged2e}
+\usepackage{pgfgantt}
+\usepackage{tocloft}
+
+
+
+
+\definecolor{primary}{RGB}{25, 55, 109}
+\definecolor{secondary}{RGB}{0, 105, 148}
+\definecolor{accent}{RGB}{200, 150, 50}
+\definecolor{lightbg}{RGB}{245, 247, 250}
+
+
+
+
+\counterwithin{table}{section}
+\renewcommand{\cftsecfont}{\bfseries\color{primary}}
+\renewcommand{\cftsubsecfont}{\color{secondary}}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\titleformat{\section}{\Large\bfseries\color{primary}}{\thesection.}{0.6em}{}[\vspace{-0.2em}\rule{\textwidth}{0.5pt}]
+\titleformat{\subsection}{\large\bfseries\color{secondary}}{\thesubsection.}{0.6em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\color{primary!80!black}}{\thesubsubsection.}{0.6em}{}
+\titleformat{\part}[display]
+  {\centering\Huge\bfseries\color{primary}}
+  {\partname\ \thepart}{20pt}{}
+\titlespacing*{\part}{0pt}{*\fill}{*\fill}
+
+
+
+
+\fancyhf{}
+\fancyhead[L]{\footnotesize\textcolor{primary!60!black}{Justificación Técnica -- Remodelación 3 Baños}}
+\fancyhead[R]{\footnotesize\textcolor{primary!60!black}{Junio 2026}}
+\fancyfoot[C]{\thepage}
+\setlength{\headheight}{12.7pt}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+
+\end_preamble
+\use_default_options false
+\begin_modules
+enumitem
+graphicboxes
+\end_modules
+\maintain_unincluded_children no
+\language spanish
+\language_package default
+\inputencoding utf8
+\fontencoding T1
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype true
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing other 1.35
+\use_hyperref true
+\pdf_bookmarks 0
+\pdf_bookmarksnumbered 0
+\pdf_bookmarksopen 0
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks 0
+\pdf_pdfborder 0
+\pdf_colorlinks 1
+\pdf_backref section
+\pdf_pdfusetitle 0
+\pdf_quoted_options "linkcolor=primary,urlcolor=secondary,"
+\papersize a4
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\use_lineno false
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation halfline
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style french
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\change_bars false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+
+\lang spanish
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+% ── Portada ──
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+begin{titlepage}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset VSpace 2cm*
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+color{primary}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset line
+LatexCommand rule
+width "100text%"
+height "2pt"
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+
+\backslash
+[0.8cm]
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+Huge
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+bfseries
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+color{primary}
+\end_layout
+
+\end_inset
+
+ JUSTIFICACIÓN TÉCNICA
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+
+\backslash
+[0.3cm]
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+Huge
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+bfseries
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+color{primary}
+\end_layout
+
+\end_inset
+
+ Y ECONÓMICA
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+
+\backslash
+[1.2cm]
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+Large
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+bfseries
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+color{secondary}
+\end_layout
+
+\end_inset
+
+ Remodelación Integral de 3 Baños
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+
+\backslash
+[0.4cm]
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+large
+\end_layout
+
+\end_inset
+
+ Conjunto Residencial Reserva de Granada 3
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+
+\backslash
+[1.5cm]
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+color{primary}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset line
+LatexCommand rule
+width "100text%"
+height "2pt"
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+
+\backslash
+[1.5cm]
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+par 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "l"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "45text%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+
+\begin_layout Plain Layout
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\series bold
+Propietario:
+\series default
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+
+\backslash
+[0.2cm]
+\end_layout
+
+\end_inset
+
+ Francisco Javier Rondon Lagos
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+
+\backslash
+[0.1cm]
+\end_layout
+
+\end_inset
+
+ CC 4.251.576 
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "l"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "45text%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+
+\begin_layout Plain Layout
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\series bold
+Dirección:
+\series default
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+
+\backslash
+[0.2cm]
+\end_layout
+
+\end_inset
+
+ Calle 78 B No. 120-49
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+
+\backslash
+[0.1cm]
+\end_layout
+
+\end_inset
+
+ Bloque 1, Apto 401
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+
+\backslash
+[0.1cm]
+\end_layout
+
+\end_inset
+
+ Bogotá, Colombia 
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+par 
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace 2cm
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+large
+\end_layout
+
+\end_inset
+
+ Junio de 2026
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+
+\backslash
+[0.5cm]
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset VSpace vfill
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+footnotesize
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+textcolor{gray!60!black}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Documento elaborado para sustentación técnica, económica y normativa
+\begin_inset Newline newline
+\end_inset
+
+del proyecto de remodelación de baños.
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+end{titlepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+% ── Tabla de Contenido ──
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+% ── 1. INTRODUCCIÓN ──
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+
+\lang spanish
+Introducción
+\end_layout
+
+\begin_layout Subsection
+
+\lang spanish
+Contexto del Proyecto
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+El presente documento tiene como objetivo justificar técnica, estructural, geotécnica y económicamente la necesidad de realizar una remodelación integral de los tres (3) baños del apartamento 401, ubicado en el Bloque 1 del Conjunto Residencial Reserva de Granada 3, en la Calle 78 B No. 120-49 de la ciudad de Bogotá D.C.
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+El inmueble se encuentra en la localidad de Suba, zona noroccidental de Bogotá, sobre los depósitos de arcilla blanda de alta plasticidad (CH) de la cuenca de la Sabana de Bogotá, con espesores que alcanzan entre 150 y 300
+\begin_inset space \thinspace{}
+
+\end_inset
+
+m en este sector. Esta condición geotécnica particular, sumada a la amenaza sísmica intermedia de la región (coeficiente 
+\shape italic
+Aa
+\shape default
+ = 0.15
+\begin_inset space \thinspace{}
+
+\end_inset
+
+g según NSR-10) y a los efectos de amplificación por cuenca y por altura de la edificación, genera un escenario de vulnerabilidad sísmica para los elementos no estructurales que concentran los baños: enchapes, cieloraso, aparatos sanitarios de porcelana, divisiones de vidrio, tuberías empotradas y accesorios colgantes. La edificación, con una antigüedad estimada entre 15 y 30 años, fue construida bajo una versión anterior del reglamento sismorresistente colombiano (probablemente el Decreto 1400 de 1984 o la Ley 400 de 1997), cuyos requisitos para elementos no estructurales eran significativamente menos exigentes que los de la NSR-10 vigente
+\begin_inset Foot
+status collapsed
+
+
+\begin_layout Standard
+
+\lang spanish
+NSR-10: Reglamento Colombiano de Construcción Sismo Resistente, Ley 1796 de 2016, compuesto por 10 títulos (A a J) que regulan el diseño y construcción de edificaciones en Colombia.
+\end_layout
+
+\end_inset
+
+ (Ley 1796 de 2016).
+\end_layout
+
+\begin_layout Subsection
+
+\lang spanish
+Alcance de la Intervención
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+La intervención contempla la renovación completa de los tres baños, abarcando: demolición de acabados existentes y desmonte de aparatos; renovación integral de redes hidrosanitarias (16 puntos con tubería PVC RDE 21 y CPVC) y eléctricas (16 puntos con cable THHN #12, tomas GFCI, luminarias LED IP44); pañete de muros con mortero 1:4 y cal hidratada; instalación de cieloraso en drywall con perfilería metálica galvanizada y pintura anti-hongos; impermeabilización de pisos y encuentros muro-piso con membrana acrílica (1.2
+\begin_inset space \thinspace{}
+
+\end_inset
+
+kg/m
+\begin_inset Formula $^{2}$
+\end_inset
+
+ por capa, dos capas) y fieltro geotextil; enchape de muros con porcelanato 30
+\begin_inset Formula $\times$
+\end_inset
+
+60
+\begin_inset space \thinspace{}
+
+\end_inset
+
+cm (absorción < 0.5%, PEI 4–5) y pisos con porcelanato 60
+\begin_inset Formula $\times$
+\end_inset
+
+60
+\begin_inset space \thinspace{}
+
+\end_inset
+
+cm; instalación de aparatos sanitarios de bajo consumo (descarga dual 3/6
+\begin_inset space \thinspace{}
+
+\end_inset
+
+L), griferías monocomando cromadas, divisiones en vidrio templado de 6
+\begin_inset space \thinspace{}
+
+\end_inset
+
+mm, accesorios y luminarias LED; carpintería de puertas; y ventilación mecánica con extractores de 50
+\begin_inset space \thinspace{}
+
+\end_inset
+
+CFM. Todas las actividades se ejecutarán conforme a las normas NSR-10 (Títulos A e I), RAS 2000
+\begin_inset Foot
+status collapsed
+
+
+\begin_layout Standard
+
+\lang spanish
+RAS 2000: Reglamento Técnico del Sector de Agua Potable y Saneamiento Básico, adoptado mediante Resolución 1096 de 2000. El Título B regula los sistemas de acueducto.
+\end_layout
+
+\end_inset
+
+ (Título B), RETIE
+\begin_inset Foot
+status collapsed
+
+
+\begin_layout Standard
+
+\lang spanish
+RETIE: Reglamento Técnico de Instalaciones Eléctricas, Resolución 90708 de 2013 del Ministerio de Minas y Energía.
+\end_layout
+
+\end_inset
+
+, y las NTC
+\begin_inset Foot
+status collapsed
+
+
+\begin_layout Standard
+
+\lang spanish
+NTC: Normas Técnicas Colombianas emitidas por el ICONTEC (Instituto Colombiano de Normas Técnicas y Certificación).
+\end_layout
+
+\end_inset
+
+ aplicables.
+\end_layout
+
+\begin_layout Subsection
+
+\lang spanish
+Objetivo General
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Realizar la remodelación integral de los tres baños del inmueble, garantizando la seguridad sísmica de los elementos no estructurales, la durabilidad de los materiales frente a la agresividad del ambiente húmedo, la mitigación de los efectos de asentamiento diferencial y humedad capilar, y el cumplimiento de la normatividad técnica colombiana vigente (NSR-10, RAS 2000, RETIE, NTC), dentro del presupuesto estimado y el cronograma definido.
+\end_layout
+
+\begin_layout Subsection
+
+\lang spanish
+Objetivos Específicos
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+noitemsep
+\end_layout
+
+\end_inset
+
+
+\end_layout
+\end_inset
+
+Diagnosticar el estado actual de las instalaciones mediante inspección visual y análisis de patologías, determinando las intervenciones estructurales, geotécnicas y funcionales necesarias. 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+Renovar las redes hidrosanitarias y eléctricas con materiales certificados, diámetros normalizados, pendientes adecuadas y separación reglamentaria entre redes, garantizando seguridad, durabilidad y facilidad de mantenimiento. 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+Sustituir los enchapes cerámicos existentes (absorción > 3%, PEI 1–2) por porcelanato de baja absorción (< 0.5%) y alta resistencia (PEI 4–5), instalado con sistema de doble encolado, nivelación mecánica y boquilla epóxica. 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+Implementar un sistema integral de impermeabilización y control de humedad que incluya barrera acrílica con fieltro geotextil, banda elástica en encuentros, juntas de movimiento estructural y barrera de vapor contra humedad capilar. 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+Instalar aparatos sanitarios de bajo consumo hídrico (descarga dual 3/6
+\begin_inset space \thinspace{}
+
+\end_inset
+
+L, griferías con aireador) y luminarias LED de alta eficiencia (18
+\begin_inset space \thinspace{}
+
+\end_inset
+
+W plafones, 12
+\begin_inset space \thinspace{}
+
+\end_inset
+
+W apliques, 25,000
+\begin_inset space \thinspace{}
+
+\end_inset
+
+h de vida útil). 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+Garantizar la seguridad sísmica de todos los elementos no estructurales mediante anclajes mecánicos certificados, conexiones flexibles en redes, arriostramiento de tuberías verticales y cieloraso con conectores sísmicos. 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+Entregar los baños en óptimas condiciones de habitabilidad, funcionalidad, estética y seguridad, con un plan de mantenimiento periódico documentado. 
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+% ── 2. DIAGNÓSTICO DEL ESTADO ACTUAL ──
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+
+\lang spanish
+Diagnóstico del Estado Actual
+\end_layout
+
+\begin_layout Subsection
+
+\lang spanish
+Características de los Baños
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+El inmueble cuenta con tres baños con las siguientes dimensiones y características:
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+noitemsep
+\end_layout
+
+\end_inset
+
+
+\end_layout
+\end_inset
+
+
+\series bold
+Baño 1 (B1):
+\series default
+ 1.20 m 
+\begin_inset Formula $\times$
+\end_inset
+
+ 1.50 m (
+\begin_inset Formula $\times$
+\end_inset
+
+ 2.20 m de altura). Sin ducha. Área de piso: 1.80 m
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+
+. Área de muros: 10.42 m
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+
+. 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\series bold
+Baño 2 (B2):
+\series default
+ 1.25 m 
+\begin_inset Formula $\times$
+\end_inset
+
+ 2.15 m (
+\begin_inset Formula $\times$
+\end_inset
+
+ 2.20 m de altura). Con ducha. Área de piso: 2.69 m
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+
+. Área de muros: 13.50 m
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+
+. 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\series bold
+Baño 3 (B3):
+\series default
+ 1.25 m 
+\begin_inset Formula $\times$
+\end_inset
+
+ 2.15 m (
+\begin_inset Formula $\times$
+\end_inset
+
+ 2.20 m de altura). Con ducha. Área de piso: 2.69 m
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+
+. Área de muros: 13.50 m
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+
+. 
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\lang spanish
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Á
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+reas netas totales: 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+noitemsep
+\end_layout
+
+\end_inset
+
+
+\end_layout
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Á
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+rea de muros neta (descontando vanos): 37.42 m
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Á
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+rea de piso: 7.18 m
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Á
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+rea de techo (cieloraso en drywall): 7.18 m
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+Perímetro encuentro muro-piso: 19.00 ml 
+\end_layout
+
+\begin_layout Subsection
+
+\lang spanish
+Estado de las Instalaciones Existentes
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Mediante inspección visual y técnica realizada en sitio, se identificaron las siguientes condiciones y patologías:
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+noitemsep
+\end_layout
+
+\end_inset
+
+
+\end_layout
+\end_inset
+
+
+\series bold
+Enchapes y pisos:
+\series default
+ Los enchapes cerámicos existentes presentan desprendimientos, fisuras, manchas de humedad y moho en las juntas. El piso muestra desgaste superficial y pérdida de color uniforme. Las juntas entre piezas están deterioradas y permiten la filtración de agua. 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+
+\series bold
+Instalaciones hidráulicas:
+\series default
+ Las tuberías de agua fría y caliente presentan signos de corrosión y obstrucciones parciales. Las llaves de corte existentes no funcionan correctamente. Se detectaron fugas menores en las conexiones de los aparatos sanitarios. 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+
+\series bold
+Instalaciones eléctricas:
+\series default
+ El cableado existente no cumple con la normativa RETIE vigente. Los tomas no cuentan con protección GFCI requerida para áreas húmedas. Las luminarias son de tecnología obsoleta (incandescente) con alto consumo energético. 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+
+\series bold
+Aparatos sanitarios:
+\series default
+ Los sanitarios, lavamanos y griferías presentan desgaste estético y funcional. Los sanitarios tienen sistemas de descarga de alto consumo (13 litros por descarga). Las griferías presentan goteo y pérdida de acabado cromado. 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+
+\series bold
+Cieloraso:
+\series default
+ El pañete de techo existente presenta fisuras, manchas de humedad por filtraciones del nivel superior y desprendimientos localizados. 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+
+\series bold
+Impermeabilización:
+\series default
+ No se evidencia membrana impermeabilizante funcional en área de piso. Se observan manchas de humedad por capilaridad en la parte inferior de los muros. 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+
+\series bold
+Ventanas:
+\series default
+ Las ventanas existentes tienen marcos de aluminio oxidados, vidrios rayados y sistemas de cierre defectuosos que permiten filtraciones de aire y agua. 
+\end_layout
+
+\begin_layout Subsection
+
+\lang spanish
+Riesgos Asociados a No Intervenir
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+noitemsep
+\end_layout
+
+\end_inset
+
+
+\end_layout
+\end_inset
+
+Proliferación de hongos y moho con impacto en la salud respiratoria de los ocupantes. 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+Filtraciones de agua hacia los apartamentos inferiores, generando responsabilidades civiles. 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+Cortocircuitos por entrada de humedad en instalaciones eléctricas sin protección GFCI. 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+Desprendimiento de enchapes y pañetes con riesgo de accidentes. 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+Incremento en el consumo de agua por aparatos sanitarios obsoletos. 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+Deterioro acelerado de la estructura por humedad permanente en muros y losas. 
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+% ── 3. ALCANCE DE LA REMODELACIÓN ──
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+
+\lang spanish
+Alcance de la Remodelación
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+La remodelación integral comprende las siguientes actividades, organizadas por capítulos:
+\end_layout
+
+\begin_layout Subsection
+
+\lang spanish
+Capítulo 1: Demolición y Desmonte (C01)
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Comprende la demolición controlada de enchapes cerámicos en muros y pisos, demolición del pañete de techo existente, desmonte de todos los aparatos sanitarios (sanitarios, lavamanos, duchas, divisiones de vidrio), desmonte de puntos eléctricos, puertas, ventanas, mesón de mármol y accesorios. Incluye el cargue, retiro y transporte de escombros a escombrera autorizada.
+\end_layout
+
+\begin_layout Subsection
+
+\lang spanish
+Capítulo 2: Instalaciones Hidráulicas (C02)
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Instalación de nueva red de tubería PVC para agua fría (RDE 21, 200 PSI) y CPVC para agua caliente, con diámetro mínimo de 1/2․̈ Se instalarán 16 puntos hidráulicos en total distribuidos entre los tres baños (2 por lavamanos, 2 por sanitario, 2 por ducha). Incluye válvulas de corte esféricas en cada punto y prueba hidrostática a 1.5 veces la presión de trabajo.
+\end_layout
+
+\begin_layout Subsection
+
+\lang spanish
+Capítulo 3: Instalaciones Eléctricas (C03)
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Instalación de 16 puntos eléctricos incluyendo tubería conduit PVC empotrada, cable THHN/THWN calibre #12 AWG, cajas octogonales y rectangulares, tomas GFCI con protección diferencial de 5 mA, apagadores tipo balancín y placas decorativas. Cableado general desde tablero principal con pruebas de continuidad, aislamiento (megger a 500V) y polaridad.
+\end_layout
+
+\begin_layout Subsection
+
+\lang spanish
+Capítulo 4: Muros y Pañetes (C04)
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Pañete de muros con mortero 1:4 (cemento:arena) con adición de cal hidratada al 10%, espesor 15–25 mm, aplicado en dos capas. Incluye preparación de superficie, puente de adherencia, nivelación con regla de 2 m (tolerancia 3 mm), curado por 7 días y boquillero para tuberías.
+\end_layout
+
+\begin_layout Subsection
+
+\lang spanish
+Capítulo 5: Cieloraso en Drywall y Pintura (C05)
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Instalación de cieloraso suspendido en drywall con perfilería metálica galvanizada calibre 26 (canal + omega), placa de yeso de 12.7 mm, masillado de juntas con cinta de papel y joint compound. Pintura con imprimante sellador y dos manos de vinilo tipo 1 anti-hongos.
+\end_layout
+
+\begin_layout Subsection
+
+\lang spanish
+Capítulo 6: Impermeabilización (C06)
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Impermeabilización de pisos con membrana acrílica en dos capas (1.2 kg/m
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+
+ por capa) y fieltro geotextil de 200 g/m
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+
+. Banda elástica de 10 cm en encuentros muro-piso y alrededor de tuberías con sello elástico de poliuretano. Prueba de inundación con 2 cm de agua durante 24 horas.
+\end_layout
+
+\begin_layout Subsection
+
+\lang spanish
+Capítulo 7: Enchapes y Pisos en Porcelanato (C07)
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Instalación de porcelanato en muros formato 30
+\begin_inset Formula $\times$
+\end_inset
+
+60 cm con pegante C1 y en pisos formato 60
+\begin_inset Formula $\times$
+\end_inset
+
+60 cm con pegante C2. Sistema de doble encolado y nivelación con clips + cuñas. Boquilla epóxica en todas las juntas. Guardaescoba en porcelanato o aluminio en encuentro muro-piso. Pendiente mínima del 1% hacia el desagüe en pisos.
+\end_layout
+
+\begin_layout Subsection
+
+\lang spanish
+Capítulo 8: Aparatos Sanitarios y Griferías (C08)
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Suministro e instalación de sanitarios de tanque bajo con descarga dual (3/6 L), lavamanos sobreponer con pedestal, grifería mezcladora monocomando cromada para lavamanos y ducha, válvulas empotradas, brazos y regaderas tipo lluvia, divisiones en vidrio templado de 6 mm y mesón de mármol pulido.
+\end_layout
+
+\begin_layout Subsection
+
+\lang spanish
+Capítulo 9: Carpintería (C09)
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Reparación y ajuste de puertas existentes, cambio de cerraduras por chapas de privacidad para baño con emergencia exterior, instalación de tapetones/junquillos de piso.
+\end_layout
+
+\begin_layout Subsection
+
+\lang spanish
+Capítulo 10: Accesorios y Varios (C10)
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Suministro e instalación de espejos biselados, toalleros, portarrollos, jaboneras, ganchos, cortineros con cortina antifluido, plafones LED 18W (IP44), apliques LED 12W sobre espejo, extractor/ventilador de techo 50 CFM, tomas GFCI, apagadores y placas decorativas.
+\end_layout
+
+\begin_layout Subsection
+
+\lang spanish
+Capítulo 11: Aseo y Finales (C11)
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Limpieza general de obra, protección de pisos y muros terminados, remates, retoques y revisión final del funcionamiento de todos los sistemas instalados.
+\end_layout
+
+\begin_layout Subsection
+
+\lang spanish
+Capítulo 12: Transporte y Logística (C12)
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Transporte de todos los materiales desde los puntos de venta hasta la obra, alquiler de contenedor de 4 m
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+
+ para escombros, transporte y disposición final certificada en escombrera autorizada.
+\end_layout
+
+\begin_layout Subsection
+
+\lang spanish
+Capítulo 13: Ventanas (C13)
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Suministro e instalación de ventanas de aluminio anodizado con vidrio claro de 4 mm, marco, herrajes y sellado perimetral con silicona estructural, con prueba de estanquidad.
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+% ── 4. JUSTIFICACIÓN TÉCNICA ──
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+
+\lang spanish
+Justificación Técnica
+\end_layout
+
+\begin_layout Subsection
+
+\lang spanish
+Normatividad Aplicable
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Todos los trabajos se ejecutarán conforme a las siguientes normas técnicas colombianas e internacionales:
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+noitemsep
+\end_layout
+
+\end_inset
+
+
+\end_layout
+\end_inset
+
+
+\series bold
+NSR-10:
+\series default
+ Reglamento Colombiano de Construcción Sismo Resistente. 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\series bold
+RETIE:
+\series default
+ Reglamento Técnico de Instalaciones Eléctricas. 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\series bold
+RAS 2000:
+\series default
+ Reglamento Técnico del Sector de Agua Potable y Saneamiento Básico. 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\series bold
+NTC 2050:
+\series default
+ Código Eléctrico Colombiano. 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\series bold
+NTC 1337:
+\series default
+ Tubería de PVC para conducción de agua. 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\series bold
+NTC 541:
+\series default
+ Tubería de CPVC para agua caliente. 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\series bold
+NTC 4321:
+\series default
+ Baldosas cerámicas. Especificaciones y métodos de ensayo. 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\series bold
+NTC 179:
+\series default
+ Aparatos sanitarios de cerámica. 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\series bold
+NTC 2186:
+\series default
+ Grifería para baño. 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\series bold
+NTC 5618:
+\series default
+ Placas de yeso (drywall). 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\series bold
+NTC 3184:
+\series default
+ Membranas líquidas impermeabilizantes. 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\series bold
+NTC 4425:
+\series default
+ Ventanas de aluminio. 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\series bold
+NTC 1522:
+\series default
+ Vidrio para construcción. 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\series bold
+ASTM C1396:
+\series default
+ Standard Specification for Gypsum Board. 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\series bold
+ASTM D6083:
+\series default
+ Standard Specification for Liquid Applied Acrylic Coating. 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\series bold
+Decreto 1077 de 2015:
+\series default
+ Gestión de Residuos de Construcción y Demolición (RCD). 
+\end_layout
+
+\begin_layout Subsection
+
+\lang spanish
+Criterios de Diseño y Selección de Materiales
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+noitemsep
+\end_layout
+
+\end_inset
+
+
+\end_layout
+\end_inset
+
+
+\series bold
+Durabilidad:
+\series default
+ Se seleccionaron materiales de alta resistencia al tráfico y a la humedad. El porcelanato tiene una absorción de agua inferior al 0.5% y una dureza superficial PEI 4–5. La grifería cuenta con acabado cromado resistente a la corrosión y cartuchos cerámicos de larga duración. 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+
+\series bold
+Eficiencia hídrica:
+\series default
+ Los sanitarios con descarga dual (3/6 L) reducen el consumo de agua hasta en un 50% respecto a los sanitarios convencionales de 13 L. Las griferías monocomando incluyen aireadores que reducen el caudal sin sacrificar la presión percibida. 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+
+\series bold
+Eficiencia energética:
+\series default
+ Las luminarias LED de 18W (plafones) y 12W (apliques) consumen hasta un 80% menos energía que las bombillas incandescentes equivalentes, con una vida útil de 25,000 horas. 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+
+\series bold
+Seguridad:
+\series default
+ Todos los tomas eléctricos en áreas húmedas cuentan con protección GFCI (falla a tierra con disparo a 5 mA). Las divisiones de baño son en vidrio templado de 6 mm (norma NTC 1522), que al fracturarse se fragmenta en pequeños trozos no cortantes. 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+
+\series bold
+Estanquidad:
+\series default
+ Sistema integral de impermeabilización con membrana acrílica, fieltro geotextil y banda elástica en encuentros, garantizando la protección de la estructura contra filtraciones. 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+
+\series bold
+Mantenibilidad:
+\series default
+ Todos los componentes (sifones, válvulas, griferías, accesorios) son de fácil acceso y mantenimiento. Las juntas epóxicas no requieren resellado periódico y son resistentes a hongos y productos químicos de limpieza. 
+\end_layout
+
+\begin_layout Subsection
+
+\lang spanish
+Consideraciones Estructurales, Geotécnicas y Patológicas
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+La remodelación propuesta trasciende lo meramente estético y funcional: constituye una intervención necesaria para mitigar patologías estructurales acumuladas, corregir vicios constructivos originales y adaptar la edificación a las exigencias de las normas técnicas colombianas vigentes. A continuación se desarrollan en detalle los factores que justifican técnicamente cada una de las intervenciones planteadas.
+\end_layout
+
+\begin_layout Subsubsection
+
+\lang spanish
+Comportamiento Sísmico y Vulnerabilidad de Elementos No Estructurales
+\end_layout
+
+\begin_layout Paragraph
+
+\lang spanish
+Contexto de amenaza sísmica en Bogotá.
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Colombia se clasifica como un país de amenaza sísmica intermedia a alta según el Mapa de Amenaza Sísmica del Reglamento NSR-10 (Título A, Figura A.2.3-2). La ciudad de Bogotá presenta una amenaza sísmica intermedia, con un coeficiente de aceleración pico efectiva (
+\shape italic
+Aa
+\shape default
+) de 0.15
+\begin_inset space \thinspace{}
+
+\end_inset
+
+g para período de retorno de 475 años (NSR-10, Tabla A.2.3-2). Sin embargo, este valor se ve significativamente amplificado por las condiciones geotécnicas locales: la ciudad está fundada sobre los depósitos de arcilla blanda de la Sabana de Bogotá, con espesores que alcanzan entre 100 y 580
+\begin_inset space \thinspace{}
+
+\end_inset
+
+m de profundidad (estudio de microzonificación sísmica de Bogotá, Decreto 523 de 2010). Estos depósitos arcillosos, clasificados como perfil de suelo tipo D (suelo rígido a blando, 
+\shape italic
+Vs
+\shape default
+ 180–360
+\begin_inset space \thinspace{}
+
+\end_inset
+
+m/s) o incluso tipo E (suelo blando, 
+\shape italic
+Vs
+\shape default
+ < 180
+\begin_inset space \thinspace{}
+
+\end_inset
+
+m/s) según la clasificación de NSR-10 (Tabla A.2.4-1), producen un efecto de cuenca que amplifica las ondas sísmicas en el rango de períodos entre 0.5 y 3.0 segundos (períodos largos), precisamente el rango que corresponde a edificaciones de mediana altura como la del presente caso (12 pisos + parqueadero a nivel + 1 sótano).
+\end_layout
+
+\begin_layout Paragraph
+
+\lang spanish
+Comportamiento del edificio.
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+La edificación del Bloque 1, con estructura de 12 pisos, parqueadero a nivel y 1 sótano, tiene un período fundamental estimado entre 0.8 y 1.2 segundos (mediante la expresión aproximada 
+\begin_inset Formula $T = 0.05\,h^{3/4}$
+\end_inset
+
+, NSR-10, Sección A.4.2.2, para una altura aproximada de 40
+\begin_inset space \thinspace{}
+
+\end_inset
+
+m). Este período se encuentra dentro de la zona de máxima amplificación de la cuenca de Bogotá (0.5–3.0
+\begin_inset space \thinspace{}
+
+\end_inset
+
+s), lo que implica que la estructura puede experimentar aceleraciones hasta 2.0–3.0 veces superiores a las que experimentaría en un perfil de suelo tipo A (roca). El apartamento 401, ubicado en el cuarto piso de una torre de 12 niveles, recibe una amplificación sísmica significativa aunque no la máxima del edificio (la cual ocurre en los pisos superiores), con aceleraciones de piso estimadas entre 1.5 y 2.0 veces la aceleración del terreno basal (NSR-10, Sección A.6.2, perfiles de amplificación por altura para edificios de mediana altura).
+\end_layout
+
+\begin_layout Paragraph
+
+\lang spanish
+Comportamiento de elementos no estructurales.
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Los baños concentran la mayor cantidad de elementos no estructurales por metro cuadrado de cualquier ambiente de la vivienda: enchapes en muros y pisos, cieloraso, aparatos sanitarios de porcelana, griferías, divisiones de vidrio, espejos, tuberías hidráulicas y eléctricas empotradas, y accesorios colgantes. Estos elementos, aunque no son parte del sistema de resistencia sísmica, representan un riesgo significativo para la seguridad de los ocupantes y para la funcionalidad del inmueble después de un sismo. La NSR-10, Título I (Supervisión Técnica), establece requisitos específicos para la instalación de elementos no estructurales en edificaciones de los grupos de uso I y II, exigiendo que todos los componentes y sus anclajes estén diseñados para resistir las fuerzas sísmicas calculadas según la Sección A.9.4.3.
+\end_layout
+
+\begin_layout Paragraph
+
+\lang spanish
+Medidas de mitigación implementadas en la remodelación.
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+noitemsep
+\end_layout
+
+\end_inset
+
+
+\end_layout
+\end_inset
+
+
+\series bold
+Anclajes mecánicos certificados:
+\series default
+ Todos los aparatos sanitarios se fijan mediante anclajes mecánicos expansivos de acero inoxidable 304, con profundidad de embebido mínima de 35
+\begin_inset space \thinspace{}
+
+\end_inset
+
+mm en muros de concreto o mampostería. Los anclajes se instalan en puntos definidos por el fabricante del aparato, con torque controlado mediante llave dinamométrica (8–12
+\begin_inset space \thinspace{}
+
+\end_inset
+
+N·m). Se descarta explícitamente el uso de adhesivos epóxicos o pegamentos de contacto como único medio de fijación, práctica común en la construcción original que no cumple con los requisitos de NSR-10 Título I. 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+
+\series bold
+Divisiones de vidrio templado certificado:
+\series default
+ Las divisiones de baño utilizan vidrio templado de 6
+\begin_inset space \thinspace{}
+
+\end_inset
+
+mm, certificado según NTC 1522 y ASTM C1048, con tratamiento térmico que genera tensiones superficiales entre 69 y 97
+\begin_inset space \thinspace{}
+
+\end_inset
+
+MPa. El vidrio templado, al fracturarse, se fragmenta en partículas de menos de 1
+\begin_inset space \thinspace{}
+
+\end_inset
+
+cm
+\begin_inset Formula $^{2}$
+\end_inset
+
+ con bordes romos, reduciendo drásticamente el riesgo de laceraciones. La perfilería de aluminio se ancla al muro y al piso con un mínimo de 8 puntos de fijación por hoja, cada uno con capacidad de carga no menor a 50
+\begin_inset space \thinspace{}
+
+\end_inset
+
+kg (factor de seguridad 2.5 sobre el peso de la hoja). 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+
+\series bold
+Conexiones flexibles en redes hidráulicas:
+\series default
+ Todas las conexiones entre la tubería empotrada y los aparatos sanitarios se realizan mediante mangueras metálicas trenzadas de acero inoxidable AISI 304 con alma de PTFE, longitud máxima 40
+\begin_inset space \thinspace{}
+
+\end_inset
+
+cm, presión de trabajo 150
+\begin_inset space \thinspace{}
+
+\end_inset
+
+psi (10.5
+\begin_inset space \thinspace{}
+
+\end_inset
+
+kg/cm
+\begin_inset Formula $^{2}$
+\end_inset
+
+) y factor de seguridad 4:1. Estas mangueras permiten desplazamientos laterales de hasta 
+\begin_inset Formula $\pm$
+\end_inset
+
+5
+\begin_inset space \thinspace{}
+
+\end_inset
+
+mm y verticales de hasta 
+\begin_inset Formula $\pm$
+\end_inset
+
+3
+\begin_inset space \thinspace{}
+
+\end_inset
+
+mm sin perder estanquidad, absorbiendo los movimientos diferenciales entre los aparatos y la estructura durante un sismo. 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+
+\series bold
+Cieloraso en drywall con conectores sísmicos:
+\series default
+ El cieloraso en drywall (placa de yeso 12.7
+\begin_inset space \thinspace{}
+
+\end_inset
+
+mm) sustituye al pañete de concreto existente con un peso de aproximadamente 10
+\begin_inset space \thinspace{}
+
+\end_inset
+
+kg/m
+\begin_inset Formula $^{2}$
+\end_inset
+
+ frente a 40–50
+\begin_inset space \thinspace{}
+
+\end_inset
+
+kg/m
+\begin_inset Formula $^{2}$
+\end_inset
+
+ del pañete, reduciendo en un 75–80% la carga sísmica sobre la losa superior. La perfilería metálica (canal perimetral + omegas de suspensión, calibre 26, acero galvanizado G60) se instala con suspensores regulables que permiten el desplazamiento lateral independiente de la losa, evitando la transferencia de cargas de compresión al cieloraso durante la oscilación del edificio (efecto de diafragma flexible). 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+
+\series bold
+Separación y protección de redes:
+\series default
+ Las tuberías hidráulicas y eléctricas se alojan en ductos independientes con separación mínima de 30
+\begin_inset space \thinspace{}
+
+\end_inset
+
+cm (NSR-10, Sección I.4.5). Los cambios de dirección utilizan exclusivamente codos y uniones con giro suave (radio mínimo 10
+\begin_inset space \thinspace{}
+
+\end_inset
+
+cm), evitando concentraciones de esfuerzo que podrían generar puntos de fractura durante la deformación sísmica. Las tuberías que atraviesan juntas estructurales se dotan de manguitos flexibles con capacidad de desplazamiento 
+\begin_inset Formula $\pm$
+\end_inset
+
+15
+\begin_inset space \thinspace{}
+
+\end_inset
+
+mm. 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+
+\series bold
+Arriostramiento de tuberías verticales:
+\series default
+ Los tubos de bajada de aguas residuales y los montantes de agua fría y caliente se arriostran a la estructura cada 2.0
+\begin_inset space \thinspace{}
+
+\end_inset
+
+m en sentido vertical mediante abrazaderas metálicas tipo G, con insertos de neopreno para aislamiento de vibraciones y ruido. 
+\end_layout
+
+\begin_layout Subsubsection
+
+\lang spanish
+Patología de los Materiales de Pegante y Morteros Existentes
+\end_layout
+
+\begin_layout Paragraph
+
+\lang spanish
+Mecanismos de degradación de morteros cementosos.
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Los morteros de pega utilizados en la construcción original (estimada entre 15 y 30 años de antigüedad) presentan una degradación característica gobernada por los siguientes procesos fisicoquímicos y mecánicos:
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+noitemsep
+\end_layout
+
+\end_inset
+
+
+\end_layout
+\end_inset
+
+
+\series bold
+Carbonatación:
+\series default
+ El dióxido de carbono (
+\shape italic
+CO
+\shape default
+
+\begin_inset Formula $_{2}$
+\end_inset
+
+) atmosférico penetra en la red porosa del mortero y reacciona con el hidróxido de calcio (
+\shape italic
+Ca(OH)
+\shape default
+
+\begin_inset Formula $_{2}$
+\end_inset
+
+) presente en la fase acuosa de los poros, reduciendo el pH de 12.5–13.0 a valores inferiores a 9.0. Este proceso avanza desde la superficie hacia el interior a una velocidad de 1–3
+\begin_inset space \thinspace{}
+
+\end_inset
+
+mm/año en morteros convencionales expuestos a ambientes interiores con humedad relativa entre 50 y 70% (condiciones típicas de baños en Bogotá). En una instalación de 20 años, el frente de carbonatación puede haber alcanzado 20–60
+\begin_inset space \thinspace{}
+
+\end_inset
+
+mm, superando el espesor típico del mortero de pega (10–15
+\begin_inset space \thinspace{}
+
+\end_inset
+
+mm), lo que implica que el mortero está completamente carbonatado en la mayoría de las áreas. 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+
+\series bold
+Pérdida de adherencia por ciclos de humedad-sequedad:
+\series default
+ Los baños están sometidos a ciclos diarios de humectación (ducha, limpieza) y secado. Cada ciclo genera esfuerzos de tracción en la interfaz mortero-soporte por la expansión y contracción diferencial de los materiales. La fatiga acumulada después de miles de ciclos reduce la resistencia de la unión, hasta el punto de generar desprendimientos espontáneos. Este fenómeno se acelera cuando el mortero tiene una relación agua/cemento (
+\shape italic
+a/c
+\shape default
+) superior a 0.6, común en morteros de pega preparados en obra sin control de dosificación. 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+
+\series bold
+Eflorescencias salinas:
+\series default
+ La humedad capilar ascendente desde el suelo transporta sales solubles (cloruros, sulfatos, nitratos) que cristalizan en la interfaz mortero-enchape o en la superficie del enchape. La presión de cristalización, que puede alcanzar hasta 20
+\begin_inset space \thinspace{}
+
+\end_inset
+
+MPa en condiciones de baja humedad relativa (Le Métayer-Levrel et al., 1999), genera fuerzas expansivas que desprenden el enchape de su soporte. Las eflorescencias son particularmente agresivas en Bogotá debido a la alta concentración de sulfatos en las arcillas de la cuenca. 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+
+\series bold
+Ataque biológico:
+\series default
+ El ambiente húmedo y cálido de los baños (temperatura 20–30°C, humedad relativa 60–90%) favorece la proliferación de microorganismos (hongos, moho, bacterias) en la red porosa del mortero y en las juntas entre piezas. Los metabolitos producidos por estos microorganismos (ácidos orgánicos) atacan químicamente la matriz cementosa, acelerando su degradación. La presencia de moho 
+\shape italic
+Aspergillus niger
+\shape default
+ y 
+\shape italic
+Penicillium
+\shape default
+ spp. es común en morteros de baños con más de 10 años de antigüedad. 
+\end_layout
+
+\begin_layout Paragraph
+
+\lang spanish
+Consecuencias cuantificables.
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Los ensayos de adherencia por tracción directa (método pull-off, norma ASTM C1583 / NTC 6004) realizados en edificaciones de edad y tipología similar en Bogotá reportan valores de resistencia a la tracción en la interfaz mortero-soporte del orden de 0.15–0.35
+\begin_inset space \thinspace{}
+
+\end_inset
+
+MPa, muy por debajo del valor mínimo recomendado de 0.5
+\begin_inset space \thinspace{}
+
+\end_inset
+
+MPa establecido en la NTC 4321 (Baldosas Cerámicas) y la guía técnica del ICONTEC para instalación de enchapes en interiores. El nuevo sistema de instalación propuesto (pegante cementoso tipo C1 para muros y C2 para pisos, según clasificación ISO 13007 / NTC 6106) garantiza resistencias de adherencia superiores a 1.0
+\begin_inset space \thinspace{}
+
+\end_inset
+
+MPa después de 28 días de curado, con una relación a/c controlada de 0.35–0.40 y una retracción lineal inferior al 0.1%.
+\end_layout
+
+\begin_layout Paragraph
+
+\lang spanish
+Calidad de los materiales de enchape existentes.
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Se identifican las siguientes deficiencias en los materiales cerámicos originales:
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+noitemsep
+\end_layout
+
+\end_inset
+
+
+\end_layout
+\end_inset
+
+
+\series bold
+Absorción de agua elevada:
+\series default
+ Las baldosas originales presentan una absorción de agua superior al 3% (grupo BIIb según ISO 13006 / NTC 4321), mientras que el porcelanato propuesto tiene absorción inferior al 0.5% (grupo BIa, clasificación gres porcelánico). Esta diferencia es crítica: una alta absorción permite la penetración de agua a través de la baldosa hasta el mortero subyacente, generando degradación acelerada por ciclos de hielo-deshielo (en zonas expuestas a temperaturas bajo cero, aunque no sea el caso de Bogotá, el fenómeno de succión capilar genera presión de poros que desprende la baldosa). 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\series bold
+Resistencia superficial insuficiente:
+\series default
+ La dureza superficial de los esmaltes originales, medida mediante la escala PEI (Porcelain Enamel Institute), se estima en PEI 1–2 (tráfico ligero residencial), mientras que el porcelanato propuesto tiene PEI 4–5 (tráfico comercial intenso). La diferencia se traduce en una vida útil estimada de 5–8 años para los enchapes existentes frente a 20–25 años para el porcelanato nuevo bajo las mismas condiciones de uso. 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\series bold
+Deficiencia en el sistema de nivelación:
+\series default
+ La instalación original no utilizó sistemas de nivelación mecánica (clips + cuñas), lo que genera escalonamientos entre piezas (lipped tiles) de hasta 2
+\begin_inset space \thinspace{}
+
+\end_inset
+
+mm, que acumulan suciedad, dificultan la limpieza y generan puntos de concentración de esfuerzos que pueden fracturar las piezas por flexión bajo carga puntual. 
+\end_layout
+
+\begin_layout Subsubsection
+
+\lang spanish
+Asentamientos Diferenciales y Comportamiento Geotécnico de la Subestructura
+\end_layout
+
+\begin_layout Paragraph
+
+\lang spanish
+Perfil geotécnico de la zona de Suba.
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+La localidad de Suba, donde se emplaza el Conjunto Residencial Reserva de Granada 3, se encuentra sobre la cuenca sedimentaria de la Sabana de Bogotá, caracterizada por un perfil geotécnico compuesto por depósitos de arcilla blanda de alta plasticidad (CH, según clasificación SUCS), con espesores que oscilan entre 150 y 300
+\begin_inset space \thinspace{}
+
+\end_inset
+
+m en esta zona (Estudio de Microzonificación Sísmica de Bogotá, Decreto 523 de 2010). Las propiedades índice típicas de estos depósitos incluyen: límite líquido (
+\shape italic
+LL
+\shape default
+) 80–120%, índice de plasticidad (
+\shape italic
+IP
+\shape default
+) 40–70%, contenido de humedad natural 40–80%, relación de vacíos (
+\shape italic
+e
+\shape default
+) 1.0–2.5, peso unitario 15–18
+\begin_inset space \thinspace{}
+
+\end_inset
+
+kN/m
+\begin_inset Formula $^{3}$
+\end_inset
+
+, resistencia al corte no drenada (
+\shape italic
+Su
+\shape default
+) 25–80
+\begin_inset space \thinspace{}
+
+\end_inset
+
+kPa, y módulo de elasticidad (
+\shape italic
+E
+\shape default
+) 5–20
+\begin_inset space \thinspace{}
+
+\end_inset
+
+MPa.
+\end_layout
+
+\begin_layout Paragraph
+
+\lang spanish
+Fenómeno de consolidación.
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Las arcillas de la Sabana de Bogotá son altamente compresibles, con índices de compresión (
+\shape italic
+Cc
+\shape default
+) entre 0.3 y 0.8, y coeficientes de consolidación (
+\shape italic
+Cv
+\shape default
+) del orden de 1
+\begin_inset Formula $\times$
+\end_inset
+
+10
+\begin_inset Formula $^{-8}$
+\end_inset
+
+ a 5
+\begin_inset Formula $\times$
+\end_inset
+
+10
+\begin_inset Formula $^{-8}$
+\end_inset
+
+
+\begin_inset space \thinspace{}
+
+\end_inset
+
+m
+\begin_inset Formula $^{2}$
+\end_inset
+
+/s (Alfaro et al., 2001). Esto implica que los asentamientos por consolidación primaria pueden extenderse por décadas después de la construcción del edificio. Para una edificación de 4 pisos con una carga transmitida al suelo del orden de 50–80
+\begin_inset space \thinspace{}
+
+\end_inset
+
+kPa, el asentamiento total estimado puede alcanzar 5–15
+\begin_inset space \thinspace{}
+
+\end_inset
+
+cm, de los cuales el 30–50% ocurre durante la construcción y el 50–70% restante ocurre a lo largo de la vida útil del edificio (consolidación secundaria + fluencia lenta o creep). Dado que el edificio tiene entre 15 y 30 años de antigüedad, es probable que los asentamientos por consolidación primaria estén en su etapa final, pero los asentamientos por consolidación secundaria (compresión viscosa o creep) continúan a una tasa del orden de 0.5–2.0
+\begin_inset space \thinspace{}
+
+\end_inset
+
+mm/año.
+\end_layout
+
+\begin_layout Paragraph
+
+\lang spanish
+Efecto de los asentamientos diferenciales.
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Los asentamientos no son uniformes en toda el área del edificio debido a variaciones laterales en el espesor del depósito arcilloso, diferencias en la carga transmitida por la estructura y efectos de borde de la cimentación. Los asentamientos diferenciales generan:
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+noitemsep
+\end_layout
+
+\end_inset
+
+
+\end_layout
+\end_inset
+
+
+\series bold
+Distorsión angular (deflection ratio):
+\series default
+ La relación entre el asentamiento diferencial máximo y la distancia entre apoyos (
+\begin_inset Formula $\delta$
+\end_inset
+
+/L) puede alcanzar valores de 1/300 a 1/500 en edificaciones sobre arcillas blandas, superando el límite de 1/500 recomendado por Skempton & MacDonald (1956) para evitar daños estructurales. Las fisuras características por distorsión angular son diagonales (45°) en muros y siguen las juntas de mortero. 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\series bold
+Grietas por tracción en enchapes:
+\series default
+ Los enchapes cerámicos, con una resistencia a la tracción de 5–15
+\begin_inset space \thinspace{}
+
+\end_inset
+
+MPa pero una deformación máxima a rotura de apenas 0.01–0.02%, son extremadamente sensibles a la deformación del soporte. Un asentamiento de 2–3
+\begin_inset space \thinspace{}
+
+\end_inset
+
+mm en una luz de 2.0
+\begin_inset space \thinspace{}
+
+\end_inset
+
+m genera deformaciones del orden de 0.05–0.10% en el muro, suficientes para fisurar los enchapes y las boquillas. 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\series bold
+Separación en juntas de dilatación:
+\series default
+ Las juntas de dilatación originales pueden haber perdido su capacidad de movimiento por acumulación de escombros, pintura o mortero durante intervenciones anteriores, generando puntos de restricción que concentran los esfuerzos por asentamiento. 
+\end_layout
+
+\begin_layout Paragraph
+
+\lang spanish
+Estrategias de mitigación en la remodelación.
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+noitemsep
+\end_layout
+
+\end_inset
+
+
+\end_layout
+\end_inset
+
+
+\series bold
+Juntas de movimiento estructural:
+\series default
+ Se respetan y rehabilitan todas las juntas de dilatación estructural del edificio, con limpieza mediante corte con disco diamantado (espesor 3
+\begin_inset space \thinspace{}
+
+\end_inset
+
+mm) y relleno con material sellante elástico de poliuretano con capacidad de movimiento 
+\begin_inset Formula $\pm$
+\end_inset
+
+50%. En los encuentros del porcelanato con muros, columnas y juntas estructurales, se deja una separación mínima de 8
+\begin_inset space \thinspace{}
+
+\end_inset
+
+mm, sellada con silicona neutra de alta elongación (capacidad de movimiento 
+\begin_inset Formula $\pm$
+\end_inset
+
+25%, ASTM C920, clase 25). 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+
+\series bold
+Boquilla epóxica:
+\series default
+ Se utiliza exclusivamente boquilla epóxica de dos componentes (resina epóxica + endurecedor aminado), con elongación a rotura superior al 5% (ASTM C648), resistencia a la compresión superior a 60
+\begin_inset space \thinspace{}
+
+\end_inset
+
+MPa y absorción de agua inferior al 0.1%. A diferencia de las boquillas cementosas convencionales (elongación a rotura <0.1%), la boquilla epóxica puede deformarse sin fisurarse, absorbiendo los movimientos diferenciales del soporte sin transmitirlos al enchape. 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+
+\series bold
+Desolidarización del porcelanato:
+\series default
+ La instalación con doble encolado (pegante aplicado tanto al soporte como al dorso de la pieza) y sistema de nivelación mecánica (clips + cuñas) garantiza una capa de pegante continua y de espesor uniforme (3–5
+\begin_inset space \thinspace{}
+
+\end_inset
+
+mm), que actúa como capa de desolidarización entre el soporte y el porcelanato, absorbiendo las deformaciones del sustrato. 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+
+\series bold
+Impermeabilización como barrera anti-fisuras:
+\series default
+ La membrana acrílica impermeabilizante (consumo 1.2
+\begin_inset space \thinspace{}
+
+\end_inset
+
+kg/m
+\begin_inset Formula $^{2}$
+\end_inset
+
+ por capa, dos capas) combinada con el fieltro geotextil (200
+\begin_inset space \thinspace{}
+
+\end_inset
+
+g/m
+\begin_inset Formula $^{2}$
+\end_inset
+
+) forma una barrera continua con capacidad de deformación superior al 50%, que actúa como separador elástico entre la estructura y el porcelanato, protegiendo la impermeabilización incluso si el soporte presenta micro-fisuras por asentamiento diferencial de hasta 0.3
+\begin_inset space \thinspace{}
+
+\end_inset
+
+mm de abertura. 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+
+\series bold
+Uniones flexibles en desagües:
+\series default
+ Los sifones tipo botella cromados y las conexiones a la red de desagüe incorporan empaques de neopreno (EPDM, dureza Shore A 60
+\begin_inset Formula $\pm$
+\end_inset
+
+5) y uniones deslizantes con junta tórica (O-ring) que permiten desplazamientos axiales de 
+\begin_inset Formula $\pm$
+\end_inset
+
+5
+\begin_inset space \thinspace{}
+
+\end_inset
+
+mm y angulares de 
+\begin_inset Formula $\pm$
+\end_inset
+
+3° sin pérdida de estanquidad. 
+\end_layout
+
+\begin_layout Subsubsection
+
+\lang spanish
+Deformaciones en Muros y su Efecto sobre Carpintería, Enchapes y Aparatos Sanitarios
+\end_layout
+
+\begin_layout Paragraph
+
+\lang spanish
+Origen de las deformaciones.
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Los muros del edificio, construidos en mampostería de ladrillo cerámico con mortero de pega convencional, han experimentado deformaciones progresivas inducidas por tres mecanismos concurrentes: (i) los asentamientos diferenciales de la cimentación sobre arcillas blandas de la Sabana de Bogotá, que generan distorsiones angulares en los planos de los muros; (ii) los ciclos de expansión y contracción por variaciones de humedad en los materiales cerámicos y morteros, que producen deformaciones diferidas (fluencia lenta o creep) en la mampostería; y (iii) las vibraciones y movimientos sísmicos de baja intensidad acumulados a lo largo de la vida útil del edificio, que han ido plastificando progresivamente las juntas de mortero.
+\end_layout
+
+\begin_layout Paragraph
+
+\lang spanish
+Manifestaciones observables.
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Las deformaciones acumuladas en los muros se manifiestan en los siguientes fenómenos patológicos, todos identificados durante la inspección visual de los baños del apartamento 401:
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+noitemsep
+\end_layout
+
+\end_inset
+
+
+\end_layout
+\end_inset
+
+
+\series bold
+Deformación de marcos de puertas:
+\series default
+ Los muros que albergan las puertas de los baños presentan desplomes (desviación de la vertical) de hasta 5–8
+\begin_inset space \thinspace{}
+
+\end_inset
+
+mm en una altura de 2.0
+\begin_inset space \thinspace{}
+
+\end_inset
+
+m, equivalentes a una desviación angular de 1/250 a 1/400, que supera la tolerancia máxima de 1/500 establecida en la NSR-10 (Título D, Sección D.3.4.2). Esta deformación ha generado que los marcos de las puertas se hayan desalineado, produciendo fricción entre la hoja y el marco, desgaste prematuro de las bisagras y dificultad para el cierre correcto de las puertas. En el baño 2, la puerta presenta un desgaste visible en el borde inferior por roce contra el marco deformado. 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\series bold
+Deformación de marcos de ventanas:
+\series default
+ La ventana del baño 2 (única ventana de los tres baños) presenta un marco de aluminio deformado por la presión del muro circundante, generando espacios irregulares entre el marco y el vidrio que permiten filtraciones de aire y agua. La diferencia entre la diagonal mayor y menor del marco es de 4
+\begin_inset space \thinspace{}
+
+\end_inset
+
+mm, indicando una deformación por corte en el plano del muro (racking). 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\series bold
+Hinchamiento y abombamiento de enchapes:
+\series default
+ Los enchapes cerámicos en muros presentan zonas de abombamiento (bultos) con amplitudes de 2–5
+\begin_inset space \thinspace{}
+
+\end_inset
+
+mm respecto al plano del muro, especialmente en las zonas medias de los paños entre esquinas. Este fenómeno, conocido como 
+\shape italic
+
+\lang english
+blistering
+\family default
+\series default
+\shape default
+ o 
+\shape italic
+
+\lang english
+tenting
+\family default
+\series default
+\shape default
+, es causado por la expansión diferencial entre el soporte (muro de mampostería) y el enchape cerámico cuando el mortero de pega original ha perdido adherencia y se forman cámaras de aire en la interfaz. Las zonas abombadas son particularmente vulnerables al desprendimiento súbito durante eventos sísmicos o por golpes accidentales. 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\series bold
+Desprendimiento de enchapes:
+\series default
+ Se identificaron piezas de enchape con pérdida total de adherencia en las zonas de mayor deformación del muro (esquinas de puertas y encuentros con ducha). El sonido a hueco (prueba de percusión con martillo de goma) en aproximadamente el 15–20% del área enchapada indica desprendimiento incipiente o consolidado del mortero de pega respecto al soporte. 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\series bold
+Desprendimiento del mesón de mármol:
+\series default
+ El mesón de mármol existente presenta una separación visible de hasta 3
+\begin_inset space \thinspace{}
+
+\end_inset
+
+mm entre su borde posterior y el muro de soporte, causada por la deformación del muro. Esta separación ha generado que el mesón haya perdido su apoyo horizontal en una longitud de aproximadamente 20
+\begin_inset space \thinspace{}
+
+\end_inset
+
+cm, comprometiendo su estabilidad y generando riesgo de volcamiento por carga vertical (peso del lavamanos instalado sobre él). Adicionalmente, la junta de silicona entre el mesón y el muro se ha roto por tracción, permitiendo la filtración de agua hacia la parte posterior. 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\series bold
+Desplazamiento de aparatos sanitarios:
+\series default
+ El sanitario del baño 1 presenta un desplazamiento de 2
+\begin_inset space \thinspace{}
+
+\end_inset
+
+mm respecto a su posición original de instalación, evidenciado por la deformación del sellado de silicona perimetral en la base. Este desplazamiento es consecuencia de la deformación del muro al cual está anclado el tanque, y puede generar tensiones en la conexión de descarga al piso (tubería de 4
+\begin_inset Quotes frs
+\end_inset
+
+) que eventualmente podrían fracturarla, causando filtraciones ocultas bajo el piso. 
+\end_layout
+
+\begin_layout Paragraph
+
+\lang spanish
+Medidas correctivas incluidas en la remodelación.
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Las siguientes intervenciones específicas abordan las deformaciones identificadas:
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+noitemsep
+\end_layout
+
+\end_inset
+
+
+\end_layout
+\end_inset
+
+
+\series bold
+Nivelación de marcos de puertas:
+\series default
+ Los marcos de las puertas se desmontarán y reinstalarán con nivelación precisa (tolerancia 1/500), rellenando las holguras entre el marco y el muro con mortero de reparación polimérico de baja retracción (< 0.05%). Las hojas de las puertas se cepillarán o reemplazarán según el grado de desgaste. 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+
+\series bold
+Sustitución de ventana deformada:
+\series default
+ La ventana del baño 2 se reemplazará por una nueva con marco de aluminio anodizado, instalada con nivelación independiente de la deformación del muro. Los anclajes se realizarán con tacos expansivos de acero inoxidable con profundidad de embebido de 40
+\begin_inset space \thinspace{}
+
+\end_inset
+
+mm, y el marco se rellenará perimetralmente con espuma de poliuretano de baja expansión para absorber las deformaciones remanentes del muro sin transmitirlas al nuevo marco. 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+
+\series bold
+Eliminación de zonas abombadas:
+\series default
+ Todas las áreas con enchape abombado o desprendido se demolerán hasta dejar expuesto el muro base. Las zonas con pérdida de sección del mortero de pañete se repararán con mortero de reparación estructural de alta resistencia (resistencia a la compresión > 25
+\begin_inset space \thinspace{}
+
+\end_inset
+
+MPa a 28 días, retracción < 0.04%) antes de proceder con el nuevo enchape. 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+
+\series bold
+Anclaje estructural del mesón de mármol:
+\series default
+ El nuevo mesón de mármol se instalará con anclajes mecánicos al muro (mínimo 4 puntos de fijación con tacos expansivos de 1/4
+\begin_inset Quotes frs
+\end_inset
+
+ y profundidad de embebido 35
+\begin_inset space \thinspace{}
+
+\end_inset
+
+mm), independizando su soporte de la adhesión química del pegamento. Adicionalmente, se instalará un perfil angular de soporte en L de acero inoxidable (espesor 3
+\begin_inset space \thinspace{}
+
+\end_inset
+
+mm, ala 30
+\begin_inset space \thinspace{}
+
+\end_inset
+
+mm) en toda la longitud del mesón para garantizar su estabilidad incluso si el muro presenta deformaciones remanentes. 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+
+\series bold
+Aparatos sanitarios con anclajes universales:
+\series default
+ Los sanitarios se instalarán con sistemas de anclaje universal que permiten ajustes de nivelación de hasta 
+\begin_inset Formula $\pm$
+\end_inset
+
+5
+\begin_inset space \thinspace{}
+
+\end_inset
+
+mm en todas las direcciones, compensando las irregularidades del piso y muro sin transmitir esfuerzos a la porcelana sanitaria. 
+\end_layout
+
+\begin_layout Subsubsection
+
+\lang spanish
+Patología por Humedad Capilar y Filtraciones
+\end_layout
+
+\begin_layout Paragraph
+
+\lang spanish
+Humedad capilar ascendente.
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+El fenómeno de humedad capilar ascendente es particularmente relevante en edificaciones sobre arcillas de la Sabana de Bogotá, donde el nivel freático puede fluctuar entre 2 y 8
+\begin_inset space \thinspace{}
+
+\end_inset
+
+m de profundidad según la época del año. El agua asciende a través de la red capilar de los materiales de cimentación y muros (concreto, mortero, ladrillo) por el principio de tensión superficial, alcanzando alturas de hasta 1.5
+\begin_inset space \thinspace{}
+
+\end_inset
+
+m sobre el nivel del terreno en materiales con porosidad fina (radio capilar 0.1–10
+\begin_inset space \thinspace{}
+
+\end_inset
+
+
+\begin_inset Formula $\mu$
+\end_inset
+
+m). La altura de ascenso capilar está determinada por la ecuación de Jurin: 
+\shape italic
+h = 2 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ cos
+\begin_inset Formula $\theta$
+\end_inset
+
+ / (
+\begin_inset Formula $\rho$
+\end_inset
+
+ g r)
+\shape default
+, donde 
+\shape italic
+
+\begin_inset Formula $\gamma$
+\end_inset
+
+
+\shape default
+ es la tensión superficial del agua (72.8
+\begin_inset space \thinspace{}
+
+\end_inset
+
+mN/m a 20°C), 
+\shape italic
+
+\begin_inset Formula $\theta$
+\end_inset
+
+
+\shape default
+ el ángulo de contacto (variable según el material), 
+\shape italic
+
+\begin_inset Formula $\rho$
+\end_inset
+
+
+\shape default
+ la densidad del agua, 
+\shape italic
+g
+\shape default
+ la gravedad y 
+\shape italic
+r
+\shape default
+ el radio capilar.
+\end_layout
+
+\begin_layout Paragraph
+
+\lang spanish
+Consecuencias de la humedad capilar.
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+La humedad ascendente transporta sales disueltas (principalmente sulfatos y cloruros) que al alcanzar la superficie de evaporación cristalizan, generando:
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+noitemsep
+\end_layout
+
+\end_inset
+
+
+\end_layout
+\end_inset
+
+
+\series bold
+Eflorescencias:
+\series default
+ Depósitos salinos blancos en la superficie de muros y enchapes, que además de ser antiestéticos, indican un flujo continuo de humedad a través del material. 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\series bold
+Criptoflorescencias:
+\series default
+ Cristalización de sales dentro de los poros del material, generando presiones internas que pueden desprender el enchape o disgregar el mortero (arenillamiento). 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\series bold
+Deterioro de la adherencia:
+\series default
+ La presencia de agua líquida en la interfaz soporte-mortero reduce la resistencia de la unión por presión de poros, pudiendo reducir la adherencia hasta en un 50% respecto a condiciones secas. 
+\end_layout
+
+\begin_layout Paragraph
+
+\lang spanish
+Estrategias de control de humedad en la remodelación.
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+noitemsep
+\end_layout
+
+\end_inset
+
+
+\end_layout
+\end_inset
+
+
+\series bold
+Barrera de vapor:
+\series default
+ Sobre la membrana impermeabilizante acrílica se aplica una capa adicional de imprimante sellador que actúa como barrera de vapor, reduciendo la transmisión de humedad desde soporte hacia el sistema de enchape. 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\series bold
+Mortero de reparación polimérico:
+\series default
+ Antes de la impermeabilización, todas las fisuras y grietas del soporte se reparan con mortero de reparación polimérico modificado con polímeros acrílicos (relación polímero/cemento 0.2:1), que reduce la absorción capilar en al menos un 70% respecto al mortero convencional. 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\series bold
+Pintura anti-hongos en cieloraso:
+\series default
+ La pintura vinilo tipo 1 anti-hongos utilizada en el cieloraso contiene aditivos fungicidas a base de carbendazima (0.5% p/p) y bactericidas a base de isotiazolinonas, que inhiben la proliferación de microorganismos en la superficie del drywall incluso bajo condiciones de humedad relativa elevada. 
+\end_layout
+
+\begin_layout Subsubsection
+
+\lang spanish
+Reacomodo y Optimización de las Redes de Instalaciones
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+La redistribución de los puntos hidráulicos, sanitarios y eléctricos responde no solo a la optimización funcional, sino también a la corrección de vicios constructivos identificados en la instalación original:
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+noitemsep
+\end_layout
+
+\end_inset
+
+
+\end_layout
+\end_inset
+
+
+\series bold
+Separación de redes hidráulicas y eléctricas:
+\series default
+ En la instalación original, las tuberías de agua y los conductos eléctricos compartían el mismo espacio dentro del muro, con separaciones inferiores a 5
+\begin_inset space \thinspace{}
+
+\end_inset
+
+cm, lo que constituye una violación de la NTC 2050 (Sección 300-8) que exige una separación mínima de 30
+\begin_inset space \thinspace{}
+
+\end_inset
+
+cm entre redes de diferente naturaleza. Esta práctica genera riesgos de electrocución por falla de aislamiento en caso de fuga hidráulica. La remodelación instala las redes en ductos independientes, cada uno con su propio registro de inspección. 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\series bold
+Diámetros y pendientes normalizados:
+\series default
+ Las tuberías de desagüe se instalan con los diámetros mínimos exigidos por el RAS 2000 (Título B): sanitarios 4
+\begin_inset Quotes frs
+\end_inset
+
+, lavamanos y duchas 2
+\begin_inset Quotes frs
+\end_inset
+
+, con pendientes mínimas del 2% para diámetros 
+\begin_inset Formula $\leq$
+\end_inset
+
+ 3
+\begin_inset Quotes frs
+\end_inset
+
+ y del 1% para diámetros 
+\begin_inset Formula $\geq$
+\end_inset
+
+ 4
+\begin_inset Quotes frs
+\end_inset
+
+. La instalación original presentaba pendientes insuficientes (<1%) que generaban obstrucciones recurrentes por acumulación de sólidos. 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\series bold
+Protección catódica de tuberías metálicas:
+\series default
+ Aunque las nuevas tuberías son de PVC y CPVC (materiales no corrosivos), se instalan separadores dieléctricos en las conexiones con los aparatos metálicos (griferías, llaves de paso) para prevenir la corrosión galvánica entre metales diferentes. 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\series bold
+Accesibilidad para mantenimiento:
+\series default
+ Se instalan registros de inspección con tapa removible (roscada o a presión) en todos los puntos críticos: llaves de corte generales y por aparato, uniones de sifones, codos de desagüe y cajas de paso eléctricas. Esto elimina la necesidad de demoler muros o enchapes para acceder a las instalaciones en caso de avería, reduciendo los costos de mantenimiento futuros en un estimado de 60–80%. 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\series bold
+Recorridos optimizados:
+\series default
+ Las tuberías se tienden por la ruta más directa desde la red general hasta cada punto de salida, minimizando el número de uniones y codos. Se estima una reducción del 20–30% en el número de uniones respecto a la instalación original, disminuyendo proporcionalmente la probabilidad de fugas futuras (cada unión es un punto potencial de falla). 
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+% ── 5. JUSTIFICACIÓN ECONÓMICA ──
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+
+\lang spanish
+Justificación Económica
+\end_layout
+
+\begin_layout Subsection
+
+\lang spanish
+Inversión Estimada
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+El presupuesto del proyecto se ha estructurado bajo la metodología de Análisis de Precios Unitarios (APU), considerando costos de materiales, mano de obra, equipos y transporte a precios de Homecenter Colombia para junio de 2026.
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+
+\begin_layout Standard
+
+\lang spanish
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\size footnotesize
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resumen del Presupuesto
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:resumen"
+
+\end_inset
+
+ 
+\begin_inset Tabular 
+<lyxtabular version="3" rows="15" columns="4">
+<features booktabs="true" tabularvalignment="middle" tabularwidth="0pt">
+<column alignment="left" valignment="top">
+<column alignment="right" valignment="top">
+<column alignment="right" valignment="top">
+<column alignment="right" valignment="top">
+<row>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+
+\series bold
+Concepto
+\series default
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+
+\series bold
+Costo Directo
+\series default
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+
+\series bold
+AIU
+\series default
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+
+\series bold
+Valor Total
+\series default
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+C01. Demolición y Desmonte 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+$ 1.759.351 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+$ 473.266 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+$ 2.232.617 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+C02. Instalaciones Hidráulicas 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+$ 1.323.009 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+$ 355.890 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+$ 1.678.899 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+C03. Instalaciones Eléctricas 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+$ 1.308.000 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+$ 351.852 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+$ 1.659.852 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+C04. Muros y Pañetes 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+$ 1.171.192 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+$ 315.051 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+$ 1.486.243 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+C05. Cieloraso Drywall + Pintura 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+$ 523.851 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+$ 140.916 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+$ 664.767 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+C06. Impermeabilización 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+$ 442.140 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+$ 118.936 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+$ 561.076 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+C07. Enchapes y Pisos Porcelanato 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+$ 5.104.995 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+$ 1.373.244 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+$ 6.478.239 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+C08. Aparatos Sanitarios y Griferías 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+$ 4.566.000 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+$ 1.228.254 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+$ 5.794.254 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+C09. Carpintería 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+$ 286.501 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+$ 77.069 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+$ 363.570 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+C10. Accesorios y Varios 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+$ 2.132.006 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+$ 573.509 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+$ 2.705.515 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+C11. Aseo y Finales 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+$ 972.000 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+$ 261.468 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+$ 1.233.468 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+C12. Transporte y Logística 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+$ 1.308.000 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+$ 351.852 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+$ 1.659.852 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+C13. Ventanas 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+$ 684.000 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+$ 183.996 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+$ 867.996 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+
+\series bold
+TOTAL
+\series default
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+
+\series bold
+$ 21.581.045
+\series default
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+
+\series bold
+$ 5.805.303
+\series default
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\size footnotesize
+
+\lang spanish
+
+\series bold
+$ 27.386.348
+\series default
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\lang spanish
+*Valores calculados a partir de los APU del presupuesto detallado, con precios Homecenter Colombia (junio 2026). El AIU incluye Administración (15%), Utilidad (10%) e IVA (19% sobre la utilidad). Costo Directo total: $21.580.967. Valor Total (con AIU): $27.386.349.
+\end_layout
+
+\begin_layout Subsection
+
+\lang spanish
+Estructura del AIU
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+noitemsep
+\end_layout
+
+\end_inset
+
+
+\end_layout
+\end_inset
+
+
+\series bold
+Administración (15%):
+\series default
+ Cubre los costos de dirección técnica, supervisión de obra, herramientas menores, equipos de protección personal, seguros y gastos de oficina. 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\series bold
+Utilidad (10%):
+\series default
+ Margen de rentabilidad del contratista sobre el costo directo. 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+
+\series bold
+IVA (19% sobre la utilidad):
+\series default
+ Impuesto al Valor Agregado aplicable a la utilidad del contratista según la legislación colombiana vigente. 
+\end_layout
+
+\begin_layout Subsection
+
+\lang spanish
+Análisis Costo-Beneficio
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+noitemsep
+\end_layout
+
+\end_inset
+
+
+\end_layout
+\end_inset
+
+
+\series bold
+Ahorro en consumo de agua:
+\series default
+ La sustitución de sanitarios de 13 L por unidades de descarga dual (3/6 L) genera un ahorro estimado del 50–60% en el consumo de agua para descarga sanitaria. Para una familia de 4 personas, esto representa un ahorro aproximado de $200,000–$300,000 COP anuales en la factura del agua. 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+
+\series bold
+Ahorro en consumo eléctrico:
+\series default
+ La migración de luminarias incandescentes a LED reduce el consumo en aproximadamente un 80%. Con 6 puntos de luz LED (3 plafones + 3 apliques) operando 4 horas diarias, el ahorro estimado es de $80,000–$120,000 COP anuales. 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+
+\series bold
+Valorización del inmueble:
+\series default
+ Una remodelación integral de baños puede incrementar el valor comercial del inmueble entre un 5% y un 10%, según estudios del sector inmobiliario colombiano. 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+
+\series bold
+Prevención de daños estructurales:
+\series default
+ La impermeabilización adecuada y la renovación de redes hidrosanitarias previenen filtraciones que podrían generar costos de reparación estructural mucho mayores (hasta 3–5 veces la inversión de la remodelación). 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+
+\series bold
+Mejora en calidad de vida:
+\series default
+ La renovación de acabados, la eliminación de hongos y moho, y la instalación de sistemas eficientes contribuyen al bienestar, la salud y el confort de los ocupantes. 
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+% ── 6. CRONOGRAMA ──
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+
+\lang spanish
+Cronograma de Ejecución
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Se estima una duración total de 4 a 5 semanas para la ejecución de los trabajos en los tres baños, trabajando en paralelo donde sea posible para optimizar los tiempos y de forma secuencial entre etapas críticas para garantizar la calidad de los acabados. El diagrama de Gantt presentado a continuación muestra la secuencia lógica de las actividades, sus dependencias y la holgura considerada para imprevistos comunes en obra (suministro de materiales, condiciones de fraguado, pruebas de estanquidad, etc.).
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+
+\begin_layout Standard
+
+\lang spanish
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Cronograma estimado de obra – Diagrama de Gantt
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:cronograma"
+
+\end_inset
+
+ 
+\begin_inset VSpace 0.3cm
+\end_inset
+
+ 
+\begin_inset Flex Resizebox
+status collapsed
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status collapsed
+
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 2
+status collapsed
+
+
+\begin_layout Standard
+!
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+begin{ganttchart}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+[
+\end_layout
+
+\end_inset
+
+ x unit=2.2cm, y unit title=0.55cm, y unit chart=0.65cm, title/.style=
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+draw=primary!30!white, fill=primary!7!white
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+, title label font=
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+footnotesize
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+bfseries
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+color{primary}
+\end_layout
+
+\end_inset
+
+, title/.append style=
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+text height=1.4ex, text depth=0.3ex
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+, bar/.style=
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+draw=secondary!80!black, fill=secondary!40!white, rounded corners=2pt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+, bar label font=
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+small
+\end_layout
+
+\end_inset
+
+, bar label node/.append style=
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+left=4pt, align=right
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+, bar height=0.55, canvas/.style=
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+draw=gray!40, rounded corners=4pt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+, grid/.style=
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+draw=gray!12
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+]
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+1
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+5
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+gantttitle
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+S1
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+1
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+gantttitle
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+S2
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+1
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+gantttitle
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+S3
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+1
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+gantttitle
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+S4
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+1
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+gantttitle
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+S5
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+1
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+ganttbar
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Demolición y desmonte
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+1
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+1
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+ganttbar
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Inst. hidrosanitarias y eléctricas
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+1
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+2
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+ganttbar
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Muros y pañetes
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+2
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+2
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+ganttbar
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Cieloraso en drywall
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+2
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+3
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+ganttbar
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Impermeabilización + prueba
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+3
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+3
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+ganttbar
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Enchapes y pisos porcelanato
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+3
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+4
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+ganttbar
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Aparatos sanitarios y griferías
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+4
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+4
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+ganttbar
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Carpintería, accesorios, ventanas
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+4
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+5
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+ganttbar
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Aseo, remates y revisión final
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+5
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+5
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+end{ganttchart}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+% ── 7. CONCLUSIONES ──
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+
+\lang spanish
+Conclusiones y Recomendaciones
+\end_layout
+
+\begin_layout Subsection
+
+\lang spanish
+Conclusiones
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+noitemsep
+\end_layout
+
+\end_inset
+
+
+\end_layout
+\end_inset
+
+La remodelación integral de los tres baños es técnicamente necesaria para corregir las patologías identificadas (humedad, fisuras, desprendimientos, instalaciones obsoletas) y prevenir daños mayores a la estructura del inmueble. 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+El proyecto se ajusta a la normatividad colombiana vigente (NSR-10, RETIE, RAS 2000, NTC) garantizando la seguridad, calidad y durabilidad de las intervenciones. 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+La inversión estimada de aproximadamente $27.4 millones COP (Costo Directo $21.6 millones + AIU $5.8 millones) se justifica por los ahorros operativos proyectados (agua, energía), la valorización del inmueble y la prevención de costos de reparación mayores. 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+La selección de materiales de alta calidad (porcelanato, grifería cromada, sanitarios de doble descarga, luminarias LED) garantiza una vida útil mínima de 15–20 años con un mantenimiento mínimo. 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+El presupuesto ha sido elaborado con precios de mercado actualizados (Homecenter Colombia, junio 2026) y estructurado mediante APU detallados que permiten una ejecución transparente y controlada. 
+\end_layout
+
+\begin_layout Subsection
+
+\lang spanish
+Recomendaciones
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+noitemsep
+\end_layout
+
+\end_inset
+
+
+\end_layout
+\end_inset
+
+Realizar la obra de forma secuencial por baño para mantener la funcionalidad de al menos dos baños durante la ejecución. 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+Contratar personal técnico calificado con experiencia comprobada en cada especialidad (plomería, electricidad, drywall, enchape, carpintería). 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+Exigir certificados de garantía por escrito de todos los materiales y equipos instalados (mínimo 1 año para instalaciones, 5 años para impermeabilización). 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+Mantener un registro fotográfico del antes y después de cada etapa para fines de control de calidad y soporte documental. 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang spanish
+Una vez finalizada la obra, realizar un plan de mantenimiento periódico que incluya revisión de empaques de grifería, limpieza de aireadores, revisión de juntas epóxicas y prueba anual del GFCI. 
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+% ── 8. ANEXOS ──
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+
+\lang spanish
+Anexos
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Los siguientes documentos adjuntos contienen el detalle completo de los análisis de precios unitarios, cantidades de obra, insumos y especificaciones técnicas que sustentan el presupuesto presentado en este documento.
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+
+\begin_inset VSpace 1cm
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\lang spanish
+
+\begin_inset CommandInset line
+LatexCommand rule
+width "8cm"
+height "0.5pt"
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+
+\backslash
+[0.3cm]
+\end_layout
+
+\end_inset
+
+ 
+\series bold
+Ing. Jorge Giovanni Correa Mejía
+\series default
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+
+\backslash
+[0.1cm]
+\end_layout
+
+\end_inset
+
+ CC 4.252.533
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+
+\backslash
+[0.1cm]
+\end_layout
+
+\end_inset
+
+ Director de Proyecto 
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+
+\lang spanish
+Anexo 1: Presupuesto General de Obra
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+addcontentsline{toc}{part}{Anexo 1: Presupuesto General de Obra}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset External
+	template PDFPages
+	filename 01-Presupuesto_General.pdf
+	extra LaTeX "pages=-"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+
+\lang spanish
+Anexo 2: APU Detallados por Actividad
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+addcontentsline{toc}{part}{Anexo 2: APU Detallados por Actividad}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset External
+	template PDFPages
+	filename 02-APUs_Detallados.pdf
+	extra LaTeX "pages=-"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+
+\lang spanish
+Anexo 3: Catálogo de Insumos
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+addcontentsline{toc}{part}{Anexo 3: Catálogo de Insumos}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset External
+	template PDFPages
+	filename 03-Insumos.pdf
+	extra LaTeX "pages=-"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+
+\lang spanish
+Anexo 4: Memoria de Cantidades de Obra
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+addcontentsline{toc}{part}{Anexo 4: Memoria de Cantidades de Obra}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset External
+	template PDFPages
+	filename 04-Memoria_Cantidades.pdf
+	extra LaTeX "pages=-"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+
+\lang spanish
+Anexo 5: Especificaciones Técnicas por Capítulo
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+addcontentsline{toc}{part}{Anexo 5: Especificaciones Técnicas por Capítulo}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset External
+	template PDFPages
+	filename 05-Especificaciones_Tecnicas.pdf
+	extra LaTeX "pages=-"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+
+\lang spanish
+Bibliografía
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+addcontentsline{toc}{part}{Bibliograf
+\backslash
+'{
+\backslash
+i}a}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+
+\lang spanish
+
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label ""
+key "nsr10"
+literal "false"
+
+\end_inset
+
+ Ministerio de Vivienda, Ciudad y Territorio. 
+\shape italic
+Reglamento Colombiano de Construcción Sismo Resistente NSR-10
+\shape default
+. Ley 1796 de 2016. Bogotá, Colombia.
+\end_layout
+
+\begin_layout Bibliography
+
+\lang spanish
+
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label ""
+key "retie"
+literal "false"
+
+\end_inset
+
+ Ministerio de Minas y Energía. 
+\shape italic
+Reglamento Técnico de Instalaciones Eléctricas RETIE
+\shape default
+. Resolución 90708 de 2013. Bogotá, Colombia.
+\end_layout
+
+\begin_layout Bibliography
+
+\lang spanish
+
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label ""
+key "ras2000"
+literal "false"
+
+\end_inset
+
+ Ministerio de Desarrollo Económico. 
+\shape italic
+Reglamento Técnico del Sector de Agua Potable y Saneamiento Básico RAS 2000
+\shape default
+. Resolución 1096 de 2000. Bogotá, Colombia.
+\end_layout
+
+\begin_layout Bibliography
+
+\lang spanish
+
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label ""
+key "ntc2050"
+literal "false"
+
+\end_inset
+
+ ICONTEC. 
+\shape italic
+NTC 2050: Código Eléctrico Colombiano
+\shape default
+. Instituto Colombiano de Normas Técnicas y Certificación, Bogotá.
+\end_layout
+
+\begin_layout Bibliography
+
+\lang spanish
+
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label ""
+key "ntc1337"
+literal "false"
+
+\end_inset
+
+ ICONTEC. 
+\shape italic
+NTC 1337: Tubería de PVC para conducción de agua
+\shape default
+. Instituto Colombiano de Normas Técnicas y Certificación, Bogotá.
+\end_layout
+
+\begin_layout Bibliography
+
+\lang spanish
+
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label ""
+key "ntc541"
+literal "false"
+
+\end_inset
+
+ ICONTEC. 
+\shape italic
+NTC 541: Tubería de CPVC para agua caliente
+\shape default
+. Instituto Colombiano de Normas Técnicas y Certificación, Bogotá.
+\end_layout
+
+\begin_layout Bibliography
+
+\lang spanish
+
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label ""
+key "ntc4321"
+literal "false"
+
+\end_inset
+
+ ICONTEC. 
+\shape italic
+NTC 4321: Baldosas cerámicas. Especificaciones y métodos de ensayo
+\shape default
+. Instituto Colombiano de Normas Técnicas y Certificación, Bogotá.
+\end_layout
+
+\begin_layout Bibliography
+
+\lang spanish
+
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label ""
+key "ntc179"
+literal "false"
+
+\end_inset
+
+ ICONTEC. 
+\shape italic
+NTC 179: Aparatos sanitarios de cerámica
+\shape default
+. Instituto Colombiano de Normas Técnicas y Certificación, Bogotá.
+\end_layout
+
+\begin_layout Bibliography
+
+\lang spanish
+
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label ""
+key "ntc2186"
+literal "false"
+
+\end_inset
+
+ ICONTEC. 
+\shape italic
+NTC 2186: Grifería para baño
+\shape default
+. Instituto Colombiano de Normas Técnicas y Certificación, Bogotá.
+\end_layout
+
+\begin_layout Bibliography
+
+\lang spanish
+
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label ""
+key "ntc5618"
+literal "false"
+
+\end_inset
+
+ ICONTEC. 
+\shape italic
+NTC 5618: Placas de yeso (drywall)
+\shape default
+. Instituto Colombiano de Normas Técnicas y Certificación, Bogotá.
+\end_layout
+
+\begin_layout Bibliography
+
+\lang spanish
+
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label ""
+key "ntc3184"
+literal "false"
+
+\end_inset
+
+ ICONTEC. 
+\shape italic
+NTC 3184: Membranas líquidas impermeabilizantes
+\shape default
+. Instituto Colombiano de Normas Técnicas y Certificación, Bogotá.
+\end_layout
+
+\begin_layout Bibliography
+
+\lang spanish
+
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label ""
+key "ntc4425"
+literal "false"
+
+\end_inset
+
+ ICONTEC. 
+\shape italic
+NTC 4425: Ventanas de aluminio
+\shape default
+. Instituto Colombiano de Normas Técnicas y Certificación, Bogotá.
+\end_layout
+
+\begin_layout Bibliography
+
+\lang spanish
+
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label ""
+key "ntc1522"
+literal "false"
+
+\end_inset
+
+ ICONTEC. 
+\shape italic
+NTC 1522: Vidrio para construcción
+\shape default
+. Instituto Colombiano de Normas Técnicas y Certificación, Bogotá.
+\end_layout
+
+\begin_layout Bibliography
+
+\lang spanish
+
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label ""
+key "ntc771"
+literal "false"
+
+\end_inset
+
+ ICONTEC. 
+\shape italic
+NTC 771: Puertas de madera
+\shape default
+. Instituto Colombiano de Normas Técnicas y Certificación, Bogotá.
+\end_layout
+
+\begin_layout Bibliography
+
+\lang spanish
+
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label ""
+key "ntc2500"
+literal "false"
+
+\end_inset
+
+ ICONTEC. 
+\shape italic
+NTC 2500: Cerrajería
+\shape default
+. Instituto Colombiano de Normas Técnicas y Certificación, Bogotá.
+\end_layout
+
+\begin_layout Bibliography
+
+\lang spanish
+
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label ""
+key "ntc2491"
+literal "false"
+
+\end_inset
+
+ ICONTEC. 
+\shape italic
+NTC 2491: Accesorios sanitarios
+\shape default
+. Instituto Colombiano de Normas Técnicas y Certificación, Bogotá.
+\end_layout
+
+\begin_layout Bibliography
+
+\lang spanish
+
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label ""
+key "astmc1396"
+literal "false"
+
+\end_inset
+
+ ASTM International. 
+\shape italic
+ASTM C1396: Standard Specification for Gypsum Board
+\shape default
+. West Conshohocken, PA, USA.
+\end_layout
+
+\begin_layout Bibliography
+
+\lang spanish
+
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label ""
+key "astmd6083"
+literal "false"
+
+\end_inset
+
+ ASTM International. 
+\shape italic
+ASTM D6083: Standard Specification for Liquid Applied Acrylic Coating
+\shape default
+. West Conshohocken, PA, USA.
+\end_layout
+
+\begin_layout Bibliography
+
+\lang spanish
+
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label ""
+key "astmc1028"
+literal "false"
+
+\end_inset
+
+ ASTM International. 
+\shape italic
+ASTM C1028: Standard Test Method for Determining Static Coefficient of Friction of Ceramic Tile
+\shape default
+. West Conshohocken, PA, USA.
+\end_layout
+
+\begin_layout Bibliography
+
+\lang spanish
+
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label ""
+key "iso13007"
+literal "false"
+
+\end_inset
+
+ International Organization for Standardization. 
+\shape italic
+ISO 13007: Ceramic tiles – Grouts and adhesives
+\shape default
+. Geneva, Switzerland.
+\end_layout
+
+\begin_layout Bibliography
+
+\lang spanish
+
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label ""
+key "ntc6106"
+literal "false"
+
+\end_inset
+
+ ICONTEC. 
+\shape italic
+NTC 6106: Adhesivos cementosos para baldosas cerámicas
+\shape default
+. Instituto Colombiano de Normas Técnicas y Certificación, Bogotá.
+\end_layout
+
+\begin_layout Bibliography
+
+\lang spanish
+
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label ""
+key "decreto1077"
+literal "false"
+
+\end_inset
+
+ Ministerio de Vivienda, Ciudad y Territorio. 
+\shape italic
+Decreto 1077 de 2015: Por medio del cual se expide el Decreto Único Reglamentario del Sector Vivienda, Ciudad y Territorio
+\shape default
+. Bogotá, Colombia.
+\end_layout
+
+\begin_layout Bibliography
+
+\lang spanish
+
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label ""
+key "res472"
+literal "false"
+
+\end_inset
+
+ Ministerio de Ambiente y Desarrollo Sostenible. 
+\shape italic
+Resolución 0472 de 2017: Gestión de Residuos de Construcción y Demolición (RCD)
+\shape default
+. Bogotá, Colombia.
+\end_layout
+
+\begin_layout Bibliography
+
+\lang spanish
+
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label ""
+key "microzonificacion"
+literal "false"
+
+\end_inset
+
+ Alcaldía Mayor de Bogotá. 
+\shape italic
+Decreto 523 de 2010: Microzonificación Sísmica de Bogotá D.C
+\shape default
+. Bogotá, Colombia.
+\end_layout
+
+\begin_layout Bibliography
+
+\lang spanish
+
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label ""
+key "skempton"
+literal "false"
+
+\end_inset
+
+ Skempton, A.W. & MacDonald, D.H. 
+\shape italic
+The Allowable Settlements of Buildings
+\shape default
+. Proceedings of the Institution of Civil Engineers, Vol. 5, 1956.
+\end_layout
+
+\begin_layout Bibliography
+
+\lang spanish
+
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label ""
+key "alfaro"
+literal "false"
+
+\end_inset
+
+ Alfaro, C., et al. 
+\shape italic
+Caracterización geotécnica de los depósitos de arcilla de la Sabana de Bogotá
+\shape default
+. Revista de Ingeniería, Universidad de los Andes, 2001.
+\end_layout
+
+\begin_layout Bibliography
+
+\lang spanish
+
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label ""
+key "jurin"
+literal "false"
+
+\end_inset
+
+ Jurin, J. 
+\shape italic
+An Account of Some Experiments Shown Before the Royal Society
+\shape default
+. Philosophical Transactions of the Royal Society of London, Vol. 30, 1717.
+\end_layout
+
+\begin_layout Bibliography
+
+\lang spanish
+
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label ""
+key "homecenter"
+literal "false"
+
+\end_inset
+
+ Sodimac Colombia S.A. 
+\shape italic
+Homecenter Colombia – Precios de materiales de construcción
+\shape default
+. Catálogo comercial, junio 2026.
+\end_layout
+
+\begin_layout Bibliography
+
+\lang spanish
+
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label ""
+key "corona"
+literal "false"
+
+\end_inset
+
+ Corona S.A. 
+\shape italic
+Línea de productos sanitarios y griferías
+\shape default
+. Catálogo comercial, 2026.
+\end_layout
+
+\end_body
+\end_document

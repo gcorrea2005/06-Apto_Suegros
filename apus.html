@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APU — Presupuesto 3 Baños</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      min-height: 100vh; padding: 20px; color: #fff;
+    }
+    .container { max-width: 1400px; margin: 0 auto; }
+
+    .header {
+      text-align: center; padding: 40px 20px;
+      background: linear-gradient(135deg, #f093fb, #f5576c, #4facfe);
+      border-radius: 30px; margin-bottom: 30px; position: relative; overflow: hidden;
+      box-shadow: 0 20px 60px rgba(245,87,108,0.3);
+    }
+    .header::before {
+      content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+      animation: rotate 20s linear infinite;
+    }
+    @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    .header h1 { font-size: 3em; font-weight: 900; position: relative; text-shadow: 0 0 30px rgba(255,255,255,0.3); }
+    .header h1 span { color: #ffe066; }
+    .header p { font-size: 1.1em; opacity: 0.9; margin-top: 8px; position: relative; }
+    .header .sub { font-size: 0.9em; opacity: 0.7; margin-top: 4px; position: relative; }
+    .badges { margin-top: 16px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; position: relative; }
+    .badge { padding: 6px 18px; border-radius: 50px; font-weight: 600; font-size: 0.8em; background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3); }
+    .badge.gold { background: #ffe066; color: #1a1a2e; }
+
+    .controls {
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;
+      margin-bottom: 25px; padding: 18px 22px; background: rgba(255,255,255,0.05);
+      border-radius: 20px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1);
+    }
+    .search-box { display: flex; align-items: center; gap: 10px; flex: 1; min-width: 200px; }
+    .search-box input {
+      width: 100%; padding: 10px 18px; border: none; border-radius: 12px;
+      background: rgba(255,255,255,0.1); color: #fff; font-size: 0.95em; outline: none; transition: 0.3s;
+    }
+    .search-box input:focus { background: rgba(255,255,255,0.2); box-shadow: 0 0 20px rgba(79,172,254,0.3); }
+    .search-box input::placeholder { color: rgba(255,255,255,0.4); }
+    .filter-btns { display: flex; gap: 6px; flex-wrap: wrap; }
+    .filter-btns button {
+      padding: 7px 14px; border: 1px solid rgba(255,255,255,0.2); border-radius: 10px;
+      background: transparent; color: #fff; font-size: 0.8em; cursor: pointer; transition: 0.3s; font-weight: 500;
+    }
+    .filter-btns button:hover, .filter-btns button.active { background: linear-gradient(135deg, #f093fb, #f5576c); border-color: transparent; box-shadow: 0 4px 15px rgba(245,87,108,0.3); }
+
+    .apu-grid { display: grid; gap: 20px; }
+
+    .apu-card {
+      background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border-radius: 20px;
+      overflow: hidden; border: 1px solid rgba(255,255,255,0.1); transition: 0.4s;
+    }
+    .apu-card:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+    .apu-card.hidden { display: none; }
+
+    .apu-header {
+      padding: 16px 22px; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center; transition: 0.3s; user-select: none;
+    }
+    .apu-header .apu-num {
+      display: inline-block; width: 34px; height: 34px; line-height: 34px; text-align: center;
+      border-radius: 10px; font-weight: 900; font-size: 0.85em; margin-right: 12px; background: rgba(255,255,255,0.15);
+    }
+    .apu-header .apu-title { font-weight: 600; font-size: 0.95em; flex: 1; }
+    .apu-header .apu-und {
+      font-size: 0.75em; opacity: 0.6; background: rgba(255,255,255,0.08);
+      padding: 4px 12px; border-radius: 8px; margin: 0 12px;
+    }
+    .apu-header .apu-total {
+      font-weight: 900; font-size: 1.1em; min-width: 90px; text-align: right;
+    }
+    .apu-toggle { font-size: 1.2em; transition: 0.3s; opacity: 0.5; margin-left: 10px; }
+    .apu-toggle.open { transform: rotate(180deg); }
+
+    .apu-body { padding: 0 22px 22px; }
+    .apu-body.collapsed { display: none; }
+
+    .apu-table {
+      width: 100%; border-collapse: collapse; font-size: 0.85em; margin-top: 10px;
+    }
+    .apu-table th {
+      text-align: left; padding: 10px; font-weight: 600; font-size: 0.75em;
+      text-transform: uppercase; letter-spacing: 1px; opacity: 0.7;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .apu-table td { padding: 9px 10px; border-bottom: 1px solid rgba(255,255,255,0.04); }
+    .apu-table .num { text-align: right; font-variant-numeric: tabular-nums; }
+    .apu-table .num-total { text-align: right; font-weight: 700; font-size: 1.1em; }
+    .apu-table .subtotal-row td { border-top: 2px solid rgba(255,255,255,0.15); font-weight: 700; background: rgba(255,255,255,0.04); }
+    .total-card {
+      margin-top: 25px; padding: 25px; background: linear-gradient(135deg, #00b894, #00cec9);
+      border-radius: 20px; text-align: center; box-shadow: 0 10px 40px rgba(0,206,201,0.3);
+    }
+    .total-card h2 { font-size: 1.6em; }
+    .total-card .big-number { font-size: 3em; font-weight: 900; margin: 8px 0; }
+    .total-card p { opacity: 0.8; font-size: 0.95em; }
+    .export-btn {
+      margin-top: 20px; padding: 14px 40px; border: none; border-radius: 14px;
+      background: linear-gradient(135deg, #6c5ce7, #a29bfe); color: #fff; font-weight: 700;
+      font-size: 1em; cursor: pointer; transition: 0.3s;
+    }
+    .export-btn:hover { transform: scale(1.05); box-shadow: 0 8px 30px rgba(108,92,231,0.4); }
+    .resumen-costos {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .resumen-item {
+      background: rgba(255,255,255,0.06); padding: 14px; border-radius: 14px; text-align: center;
+    }
+    .resumen-item .ri-label { font-size: 0.75em; text-transform: uppercase; letter-spacing: 1px; opacity: 0.6; }
+    .resumen-item .ri-value { font-size: 1.5em; font-weight: 900; margin-top: 4px; }
+    .floating-shapes {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1; overflow: hidden;
+    }
+    .shape {
+      position: absolute; border-radius: 50%; opacity: 0.04; animation: float 15s infinite ease-in-out;
+    }
+    @keyframes float {
+      0%,100% { transform: translateY(0) rotate(0deg) scale(1); }
+      25% { transform: translateY(-25px) rotate(90deg) scale(1.05); }
+      50% { transform: translateY(0) rotate(180deg) scale(1); }
+      75% { transform: translateY(25px) rotate(270deg) scale(0.95); }
+    }
+    .shape:nth-child(1) { width: 300px; height: 300px; background: #f5576c; top: 10%; left: -5%; animation-duration: 18s; }
+    .shape:nth-child(2) { width: 400px; height: 400px; background: #4facfe; bottom: 10%; right: -5%; animation-duration: 22s; }
+    .shape:nth-child(3) { width: 200px; height: 200px; background: #ffe066; top: 50%; left: 50%; animation-duration: 14s; }
+    @media (max-width: 768px) {
+      .header h1 { font-size: 1.8em; }
+      .controls { flex-direction: column; }
+      .search-box { width: 100%; }
+      .apu-header { flex-wrap: wrap; gap: 6px; }
+      .apu-table { font-size: 0.75em; }
+    }
+  </style>
+</head>
+<body>
+  <div class="floating-shapes"><div class="shape"></div><div class="shape"></div><div class="shape"></div></div>
+  <div class="container" id="app">
+    <header class="header">
+      <h1>💰 <span>APU</span> · Análisis de Precios Unitarios</h1>
+      <p>Remodelación 3 Baños — Costos Directos</p>
+      <p class="sub">Bogotá, Colombia · Mano de obra + Materiales + Transporte</p>
+      <div class="badges">
+        <span class="badge">📋 35 APU's</span>
+        <span class="badge gold">💰 Solo Costo Directo</span>
+        <span class="badge">📅 Junio 2026</span>
+      </div>
+    </header>
+
+    <div class="controls">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="🔍 Buscar APU..." oninput="filterAPU()">
+      </div>
+      <div class="filter-btns">
+        <button class="active" onclick="filterAll()">📋 Todos</button>
+        <button onclick="filterCap('c1')">1 Demo</button>
+        <button onclick="filterCap('c2')">2 Hidr</button>
+        <button onclick="filterCap('c3')">3 Elect</button>
+        <button onclick="filterCap('c4')">4 Pañete</button>
+        <button onclick="filterCap('c5')">5 Pint</button>
+        <button onclick="filterCap('c6')">6 Imperm</button>
+        <button onclick="filterCap('c7')">7 Porcel</button>
+        <button onclick="filterCap('c8')">8 Aparatos</button>
+        <button onclick="filterCap('c9')">9 Carp</button>
+        <button onclick="filterCap('c10')">10 Acc</button>
+      </div>
+    </div>
+
+    <div class="apu-grid" id="apuGrid"></div>
+
+    <div class="resumen-costos" id="resumenCostos"></div>
+
+    <div class="total-card" id="totalCard">
+      <h2>💰 Total Costos Directos</h2>
+      <div class="big-number" id="totalGeneral">$ 0</div>
+      <p>Incluye Mano de Obra + Materiales + Transporte · Sin IVA · Sin Administración</p>
+      <button class="export-btn" onclick="window.print()">🖨️ Imprimir</button>
+    </div>
+  </div>
+
+  <script>
+    // ============ DATOS APU ============
+    const apuData = [
+      // === CAPÍTULO 1: DEMOLICIÓN ===
+      {
+        cap: 'c1', capTitle: '1. Demolición',
+        items: [
+          {
+            id: '1.1', title: 'Demolición enchape muros (inc. retiro pañete)', und: 'm²',
+            color: '#ff6b6b',
+            total: 19200,
+            breakdown: [
+              { desc: 'Oficial', und: 'hr', cant: 0.35, vru: 28000, total: 9800 },
+              { desc: 'Ayudante', und: 'hr', cant: 0.35, vru: 18000, total: 6300 },
+              { desc: 'Herramienta menor (pulidora, cincel, combo)', und: 'gl', cant: 1, vru: 1600, total: 1600 },
+              { desc: 'Disco de corte diamantado', und: 'und', cant: 0.05, vru: 22000, total: 1100 },
+              { desc: 'Transporte herramienta', und: 'gl', cant: 1, vru: 400, total: 400 }
+            ]
+          },
+          {
+            id: '1.2', title: 'Demolición piso (inc. retiro mortero nivelación)', und: 'm²',
+            color: '#ff6b6b',
+            total: 16500,
+            breakdown: [
+              { desc: 'Oficial', und: 'hr', cant: 0.30, vru: 28000, total: 8400 },
+              { desc: 'Ayudante', und: 'hr', cant: 0.30, vru: 18000, total: 5400 },
+              { desc: 'Herramienta menor (pulidora, combo, pala)', und: 'gl', cant: 1, vru: 1500, total: 1500 },
+              { desc: 'Disco de corte diamantado', und: 'und', cant: 0.04, vru: 22000, total: 880 },
+              { desc: 'Transporte herramienta', und: 'gl', cant: 1, vru: 320, total: 320 }
+            ]
+          },
+          {
+            id: '1.3', title: 'Demolición pañete de techo', und: 'm²',
+            color: '#ff6b6b',
+            total: 14800,
+            breakdown: [
+              { desc: 'Oficial', und: 'hr', cant: 0.25, vru: 28000, total: 7000 },
+              { desc: 'Ayudante', und: 'hr', cant: 0.30, vru: 18000, total: 5400 },
+              { desc: 'Herramienta menor (cincel, combo, palustre)', und: 'gl', cant: 1, vru: 1400, total: 1400 },
+              { desc: 'Transporte', und: 'gl', cant: 1, vru: 1000, total: 1000 }
+            ]
+          },
+          {
+            id: '1.4', title: 'Desmonte de sanitario', und: 'und',
+            color: '#ff6b6b',
+            total: 28500,
+            breakdown: [
+              { desc: 'Oficial', und: 'hr', cant: 0.50, vru: 28000, total: 14000 },
+              { desc: 'Ayudante', und: 'hr', cant: 0.50, vru: 18000, total: 9000 },
+              { desc: 'Herramienta menor (llave stilson, destornillador, combo)', und: 'gl', cant: 1, vru: 3500, total: 3500 },
+              { desc: 'Transporte', und: 'gl', cant: 1, vru: 2000, total: 2000 }
+            ]
+          },
+          {
+            id: '1.5', title: 'Desmonte de lavamanos', und: 'und',
+            color: '#ff6b6b',
+            total: 25000,
+            breakdown: [
+              { desc: 'Oficial', und: 'hr', cant: 0.45, vru: 28000, total: 12600 },
+              { desc: 'Ayudante', und: 'hr', cant: 0.40, vru: 18000, total: 7200 },
+              { desc: 'Herramienta menor', und: 'gl', cant: 1, vru: 3200, total: 3200 },
+              { desc: 'Transporte', und: 'gl', cant: 1, vru: 2000, total: 2000 }
+            ]
+          },
+          {
+            id: '1.6', title: 'Desmonte de ducha (grifería + brazo + regadera)', und: 'und',
+            color: '#ff6b6b',
+            total: 22000,
+            breakdown: [
+              { desc: 'Oficial', und: 'hr', cant: 0.40, vru: 28000, total: 11200 },
+              { desc: 'Ayudante', und: 'hr', cant: 0.30, vru: 18000, total: 5400 },
+              { desc: 'Herramienta menor', und: 'gl', cant: 1, vru: 2900, total: 2900 },
+              { desc: 'Transporte', und: 'gl', cant: 1, vru: 2500, total: 2500 }
+            ]
+          },
+          {
+            id: '1.7', title: 'Desmonte de división de vidrio existente', und: 'und',
+            color: '#ff6b6b',
+            total: 32000,
+            breakdown: [
+              { desc: 'Oficial', und: 'hr', cant: 0.50, vru: 28000, total: 14000 },
+              { desc: 'Ayudante', und: 'hr', cant: 0.60, vru: 18000, total: 10800 },
+              { desc: 'Herramienta menor', und: 'gl', cant: 1, vru: 4200, total: 4200 },
+              { desc: 'Transporte', und: 'gl', cant: 1, vru: 3000, total: 3000 }
+            ]
+          },
+          {
+            id: '1.8', title: 'Desmonte de accesorios (espejo, toallero, etc.)', und: 'gl',
+            color: '#ff6b6b',
+            total: 35000,
+            breakdown: [
+              { desc: 'Oficial', und: 'hr', cant: 0.50, vru: 28000, total: 14000 },
+              { desc: 'Ayudante', und: 'hr', cant: 0.50, vru: 18000, total: 9000 },
+              { desc: 'Herramienta menor', und: 'gl', cant: 1, vru: 6000, total: 6000 },
+              { desc: 'Transporte', und: 'gl', cant: 1, vru: 6000, total: 6000 }
+            ]
+          },
+          {
+            id: '1.9', title: 'Desmonte de puntos eléctricos', und: 'pto',
+            color: '#ff6b6b',
+            total: 15500,
+            breakdown: [
+              { desc: 'Electricista', und: 'hr', cant: 0.30, vru: 32000, total: 9600 },
+              { desc: 'Ayudante', und: 'hr', cant: 0.15, vru: 18000, total: 2700 },
+              { desc: 'Herramienta menor', und: 'gl', cant: 1, vru: 1700, total: 1700 },
+              { desc: 'Cinta aislante, conectores', und: 'gl', cant: 1, vru: 500, total: 500 },
+              { desc: 'Transporte', und: 'gl', cant: 1, vru: 1000, total: 1000 }
+            ]
+          },
+          {
+            id: '1.10', title: 'Desmonte de puerta (solo dejar hoja)', und: 'und',
+            color: '#ff6b6b',
+            total: 18500,
+            breakdown: [
+              { desc: 'Oficial', und: 'hr', cant: 0.35, vru: 28000, total: 9800 },
+              { desc: 'Ayudante', und: 'hr', cant: 0.25, vru: 18000, total: 4500 },
+              { desc: 'Herramienta menor (destornillador, formón, martillo)', und: 'gl', cant: 1, vru: 2200, total: 2200 },
+              { desc: 'Transporte', und: 'gl', cant: 1, vru: 2000, total: 2000 }
+            ]
+          },
+          {
+            id:             '1.11', title: 'Cargue y retiro de escombros en obra', und: 'm³',
+            color: '#ff6b6b',
+            total: 30000,
+            breakdown: [
+              { desc: 'Ayudante', und: 'hr', cant: 0.80, vru: 18000, total: 14400 },
+              { desc: 'Botes de escombros (alquiler + bolsas)', und: 'und', cant: 0.30, vru: 35000, total: 10500 },
+              { desc: 'Herramienta menor (pala, carretilla)', und: 'gl', cant: 1, vru: 2400, total: 2400 },
+              { desc: 'Transporte', und: 'gl', cant: 1, vru: 1200, total: 1200 }
+            ]
+          },
+          {
+            id: '1.12', title: 'Transporte de escombros a disposición final', und: 'm³',
+            color: '#ff6b6b',
+            total: 42000,
+            breakdown: [
+              { desc: 'Volqueta / camión (flete + disposición escombros)', und: 'm³', cant: 1, vru: 38000, total: 38000 },
+              { desc: 'Cargue manual a volqueta', und: 'hr', cant: 0.15, vru: 18000, total: 2700 },
+              { desc: 'Transporte', und: 'gl', cant: 1, vru: 1300, total: 1300 }
+            ]
+          }
+        ]
+      },
+
+      // === CAPÍTULO 2: HIDRÁULICAS ===
+      {
+        cap: 'c2', capTitle: '2. Instalaciones Hidráulicas',
+        items: [
+          {
+            id: '2.1/2.6', title: 'Punto hidráulico PVC (incluye FC+AC, tubería, accesorios, prueba)', und: 'pto',
+            color: '#48dbfb',
+            total: 58500,
+            breakdown: [
+              { desc: 'Plomero / oficial', und: 'hr', cant: 0.50, vru: 30000, total: 15000 },
+              { desc: 'Ayudante', und: 'hr', cant: 0.50, vru: 18000, total: 9000 },
+              { desc: 'Tubería PVC 1/2" (agua fría) — 2 ml', und: 'ml', cant: 2, vru: 3500, total: 7000 },
+              { desc: 'Tubería CPVC 1/2" (agua caliente) — 2 ml', und: 'ml', cant: 2, vru: 5200, total: 10400 },
+              { desc: 'Codo, Tee, unión PVC/CPVC', und: 'und', cant: 5, vru: 1200, total: 6000 },
+              { desc: 'Llave de corte 1/2"', und: 'und', cant: 1, vru: 8500, total: 8500 },
+              { desc: 'Cinta teflón, pegante PVC, limpiador', und: 'gl', cant: 1, vru: 1800, total: 1800 },
+              { desc: 'Transporte', und: 'gl', cant: 1, vru: 800, total: 800 }
+            ]
+          },
+          {
+            id: '2.7', title: 'Instalación de válvula de corte', und: 'und',
+            color: '#48dbfb',
+            total: 16500,
+            breakdown: [
+              { desc: 'Plomero', und: 'hr', cant: 0.20, vru: 30000, total: 6000 },
+              { desc: 'Ayudante', und: 'hr', cant: 0.15, vru: 18000, total: 2700 },
+              { desc: 'Válvula de corte esférica 1/2"', und: 'und', cant: 1, vru: 6500, total: 6500 },
+              { desc: 'Cinta teflón, adaptadores', und: 'gl', cant: 1, vru: 800, total: 800 },
+              { desc: 'Transporte', und: 'gl', cant: 1, vru: 500, total: 500 }
+            ]
+          },
+          {
+            id: '2.8', title: 'Prueba de estanquidad hidráulica', und: 'gl',
+            color: '#48dbfb',
+            total: 85000,
+            breakdown: [
+              { desc: 'Plomero', und: 'hr', cant: 1.50, vru: 30000, total: 45000 },
+              { desc: 'Ayudante', und: 'hr', cant: 1.00, vru: 18000, total: 18000 },
+              { desc: 'Manómetro, adaptadores, tapones', und: 'gl', cant: 1, vru: 12000, total: 12000 },
+              { desc: 'Bomba de prueba manual', und: 'gl', cant: 1, vru: 6000, total: 6000 },
+              { desc: 'Transporte', und: 'gl', cant: 1, vru: 4000, total: 4000 }
+            ]
+          }
+        ]
+      },
+
+      // === CAPÍTULO 3: ELÉCTRICAS ===
+      {
+        cap: 'c3', capTitle: '3. Instalaciones Eléctricas',
+        items: [
+          {
+            id: '3.1/3.6', title: 'Punto eléctrico completo (tubería, cable, caja, placa + instalación)', und: 'pto',
+            color: '#ff9ff3',
+            total: 48000,
+            breakdown: [
+              { desc: 'Electricista', und: 'hr', cant: 0.50, vru: 32000, total: 16000 },
+              { desc: 'Ayudante', und: 'hr', cant: 0.30, vru: 18000, total: 5400 },
+              { desc: 'Cable THHN #12 (cobre) — 5 ml', und: 'ml', cant: 5, vru: 1800, total: 9000 },
+              { desc: 'Tubería conduit PVC 1/2" — 3 ml', und: 'ml', cant: 3, vru: 1200, total: 3600 },
+              { desc: 'Caja octogonal / rectangular', und: 'und', cant: 1, vru: 3200, total: 3200 },
+              { desc: 'Toma / apagador GFCI', und: 'und', cant: 1, vru: 7500, total: 7500 },
+              { desc: 'Placa decorativa', und: 'und', cant: 1, vru: 1800, total: 1800 },
+              { desc: 'Cinta aislante, conectores, electrodos', und: 'gl', cant: 1, vru: 800, total: 800 },
+              { desc: 'Transporte', und: 'gl', cant: 1, vru: 700, total: 700 }
+            ]
+          },
+          {
+            id: '3.7', title: 'Tubería conduit, cableado, cajas y pruebas (grupal)', und: 'gl',
+            color: '#ff9ff3',
+            total: 180000,
+            breakdown: [
+              { desc: 'Electricista', und: 'hr', cant: 3.00, vru: 32000, total: 96000 },
+              { desc: 'Ayudante', und: 'hr', cant: 2.00, vru: 18000, total: 36000 },
+              { desc: 'Cable dúplex THHN #12', und: 'ml', cant: 30, vru: 1200, total: 36000 },
+              { desc: 'Cinta, conectores, canaletas, acc. varios', und: 'gl', cant: 1, vru: 8000, total: 8000 },
+              { desc: 'Transporte', und: 'gl', cant: 1, vru: 4000, total: 4000 }
+            ]
+          }
+        ]
+      },
+
+      // === CAPÍTULO 4: MUROS ===
+      {
+        cap: 'c4', capTitle: '4. Muros y Pañetes',
+        items: [
+          {
+            id: '4.1', title: 'Pañete de muros (reparación y nivelación)', und: 'm²',
+            color: '#feca57',
+            total: 32500,
+            breakdown: [
+              { desc: 'Oficial', und: 'hr', cant: 0.35, vru: 28000, total: 9800 },
+              { desc: 'Ayudante', und: 'hr', cant: 0.40, vru: 18000, total: 7200 },
+              { desc: 'Cemento gris (0.15 bulto × 50kg)', und: 'bulto', cant: 0.15, vru: 32500, total: 4875 },
+              { desc: 'Arena lavada — 0.02 m³', und: 'm³', cant: 0.02, vru: 90000, total: 1800 },
+              { desc: 'Cal hidratada — 2 kg', und: 'kg', cant: 2, vru: 800, total: 1600 },
+              { desc: 'Flechazo / malla de refuerzo', und: 'm²', cant: 0.10, vru: 4500, total: 450 },
+              { desc: 'Agua, herramientas menores y andamio', und: 'gl', cant: 1, vru: 2400, total: 2400 },
+              { desc: 'Transporte', und: 'gl', cant: 1, vru: 850, total: 850 }
+            ]
+          }
+        ]
+      },
+
+      // === CAPÍTULO 5: PINTURA ===
+      {
+        cap: 'c5', capTitle: '5. Pintura de Techo',
+        items: [
+          {
+            id: '5.1', title: 'Limpieza y preparación de techo de placa', und: 'm²',
+            color: '#a29bfe',
+            total: 6500,
+            breakdown: [
+              { desc: 'Ayudante', und: 'hr', cant: 0.15, vru: 18000, total: 2700 },
+              { desc: 'Espátula, lija, estuco blanco (reparación)', und: 'gl', cant: 1, vru: 2300, total: 2300 },
+              { desc: 'Sellador acrílico (imprimante)', und: 'gl', cant: 0.05, vru: 28000, total: 1400 },
+              { desc: 'Transporte', und: 'gl', cant: 1, vru: 100, total: 100 }
+            ]
+          },
+          {
+            id: '5.2', title: 'Pintura de techo vinilo tipo 1 anti-hongos (2 manos)', und: 'm²',
+            color: '#a29bfe',
+            total: 8500,
+            breakdown: [
+              { desc: 'Pintor / oficial', und: 'hr', cant: 0.12, vru: 28000, total: 3360 },
+              { desc: 'Ayudante', und: 'hr', cant: 0.08, vru: 18000, total: 1440 },
+              { desc: 'Vinilo tipo 1 anti-hongos (0.12 gl/m² mano)', und: 'galón', cant: 0.24, vru: 14000, total: 3360 },
+              { desc: 'Rodillo, bandeja, cinta enmascarar', und: 'gl', cant: 1, vru: 240, total: 240 },
+              { desc: 'Transporte', und: 'gl', cant: 1, vru: 100, total: 100 }
+            ]
+          }
+        ]
+      },
+
+      // === CAPÍTULO 6: IMPERMEABILIZACIÓN ===
+      {
+        cap: 'c6', capTitle: '6. Impermeabilización',
+        items: [
+          {
+            id: '6.1', title: 'Impermeabilización de piso (membrana acrílica)', und: 'm²',
+            color: '#55efc4',
+            total: 28500,
+            breakdown: [
+              { desc: 'Oficial', und: 'hr', cant: 0.20, vru: 28000, total: 5600 },
+              { desc: 'Ayudante', und: 'hr', cant: 0.25, vru: 18000, total: 4500 },
+              { desc: 'Membrana acrílica impermeabilizante (1.2 kg/m²)', und: 'kg', cant: 1.2, vru: 8500, total: 10200 },
+              { desc: 'Fieltro geotextil (separador)', und: 'm²', cant: 1.10, vru: 4500, total: 4950 },
+              { desc: 'Rodillo, brocha, diluyente', und: 'gl', cant: 1, vru: 2500, total: 2500 },
+              { desc: 'Transporte', und: 'gl', cant: 1, vru: 750, total: 750 }
+            ]
+          },
+          {
+            id: '6.2', title: 'Impermeabilización encuentro muro-piso (banda elástica + sello)', und: 'ml',
+            color: '#55efc4',
+            total: 12500,
+            breakdown: [
+              { desc: 'Oficial', und: 'hr', cant: 0.12, vru: 28000, total: 3360 },
+              { desc: 'Ayudante', und: 'hr', cant: 0.10, vru: 18000, total: 1800 },
+              { desc: 'Banda elástica impermeabilizante (10 cm)', und: 'ml', cant: 1.05, vru: 4800, total: 5040 },
+              { desc: 'Sello elástico poliuretano', und: 'ml', cant: 0.05, vru: 25000, total: 1250 },
+              { desc: 'Transporte', und: 'gl', cant: 1, vru: 1050, total: 1050 }
+            ]
+          }
+        ]
+      },
+
+      // === CAPÍTULO 7: PORCELANATO ===
+      {
+        cap: 'c7', capTitle: '7. Enchapes y Pisos en Porcelanato',
+        items: [
+          {
+            id: '7.1', title: 'Porcelanato en muros (incluye pegante, corte, instalación)', und: 'm²',
+            color: '#fd79a8',
+            total: 102000,
+            breakdown: [
+              { desc: 'Alistador / oficial', und: 'hr', cant: 0.60, vru: 30000, total: 18000 },
+              { desc: 'Ayudante', und: 'hr', cant: 0.60, vru: 18000, total: 10800 },
+              { desc: 'Porcelanato muro 30×60 cm (1.05 m² c/resp.)', und: 'm²', cant: 1.05, vru: 55000, total: 57750 },
+              { desc: 'Pegante porcelanato (3 kg/m²)', und: 'kg', cant: 3, vru: 2200, total: 6600 },
+              { desc: 'Crucecitas / niveladores', und: 'und', cant: 15, vru: 100, total: 1500 },
+              { desc: 'Disco de corte diamantado', und: 'gl', cant: 1, vru: 2200, total: 2200 },
+              { desc: 'Grampa niveladora + cuñas', und: 'und', cant: 10, vru: 80, total: 800 },
+              { desc: 'Transporte', und: 'gl', cant: 1, vru: 1050, total: 1050 }
+            ]
+          },
+          {
+            id: '7.2', title: 'Porcelanato en piso (incluye pegante, corte, instalación)', und: 'm²',
+            color: '#fd79a8',
+            total: 100000,
+            breakdown: [
+              { desc: 'Alistador / oficial', und: 'hr', cant: 0.55, vru: 30000, total: 16500 },
+              { desc: 'Ayudante', und: 'hr', cant: 0.50, vru: 18000, total: 9000 },
+              { desc: 'Porcelanato piso 60×60 cm (1.05 m² c/resp.)', und: 'm²', cant: 1.05, vru: 55000, total: 57750 },
+              { desc: 'Pegante porcelanato (3 kg/m²)', und: 'kg', cant: 3, vru: 2200, total: 6600 },
+              { desc: 'Crucecitas / niveladores', und: 'und', cant: 12, vru: 100, total: 1200 },
+              { desc: 'Disco de corte + grampas', und: 'gl', cant: 1, vru: 2500, total: 2500 },
+              { desc: 'Transporte', und: 'gl', cant: 1, vru: 1300, total: 1300 }
+            ]
+          },
+          {
+            id: '7.3', title: 'Guardaescoba / moldura', und: 'ml',
+            color: '#fd79a8',
+            total: 18500,
+            breakdown: [
+              { desc: 'Alistador', und: 'hr', cant: 0.12, vru: 30000, total: 3600 },
+              { desc: 'Ayudante', und: 'hr', cant: 0.08, vru: 18000, total: 1440 },
+              { desc: 'Guardaescoba en porcelanato / aluminio', und: 'ml', cant: 1.05, vru: 8500, total: 8925 },
+              { desc: 'Pegante + boquilla', und: 'gl', cant: 1, vru: 3500, total: 3500 },
+              { desc: 'Transporte', und: 'gl', cant: 1, vru: 1035, total: 1035 }
+            ]
+          },
+          {
+            id: '7.4', title: 'Boquilla epóxica en muros y pisos', und: 'm²',
+            color: '#fd79a8',
+            total: 8500,
+            breakdown: [
+              { desc: 'Alistador', und: 'hr', cant: 0.08, vru: 30000, total: 2400 },
+              { desc: 'Ayudante', und: 'hr', cant: 0.06, vru: 18000, total: 1080 },
+              { desc: 'Boquilla epóxica (0.2 kg/m²)', und: 'kg', cant: 0.20, vru: 18000, total: 3600 },
+              { desc: 'Esponja, balde, agua', und: 'gl', cant: 1, vru: 900, total: 900 },
+              { desc: 'Transporte', und: 'gl', cant: 1, vru: 520, total: 520 }
+            ]
+          }
+        ]
+      },
+
+      // === CAPÍTULO 8: APARATOS ===
+      {
+        cap: 'c8', capTitle: '8. Aparatos Sanitarios y Griferías',
+        items: [
+          {
+            id: '8.1', title: 'Sanitario (suministro e instalación)', und: 'und',
+            color: '#fdcb6e',
+            total: 385000,
+            breakdown: [
+              { desc: 'Oficial / instalador', und: 'hr', cant: 1.50, vru: 28000, total: 42000 },
+              { desc: 'Ayudante', und: 'hr', cant: 1.50, vru: 18000, total: 27000 },
+              { desc: 'Sanitario tanque bajo (Corona / Sensi Dacqua)', und: 'und', cant: 1, vru: 280000, total: 280000 },
+              { desc: 'Tubería de descarga (tubo + codo 4")', und: 'und', cant: 1, vru: 8500, total: 8500 },
+              { desc: 'Anillo de cera', und: 'und', cant: 1, vru: 4500, total: 4500 },
+              { desc: 'Kit de fijación (pernos, tuercas, tapas)', und: 'und', cant: 1, vru: 12000, total: 12000 },
+              { desc: 'Silicona sanitaria', und: 'und', cant: 0.5, vru: 8500, total: 4250 },
+              { desc: 'Transporte', und: 'gl', cant: 1, vru: 6750, total: 6750 }
+            ]
+          },
+          {
+            id: '8.2', title: 'Lavamanos (suministro e instalación)', und: 'und',
+            color: '#fdcb6e',
+            total: 265000,
+            breakdown: [
+              { desc: 'Oficial / instalador', und: 'hr', cant: 1.20, vru: 28000, total: 33600 },
+              { desc: 'Ayudante', und: 'hr', cant: 1.00, vru: 18000, total: 18000 },
+              { desc: 'Lavamanos sobreponer / con pedestal (Corona Milano)', und: 'und', cant: 1, vru: 170000, total: 170000 },
+              { desc: 'Pedestal para lavamanos', und: 'und', cant: 1, vru: 25000, total: 25000 },
+              { desc: 'Sifón lavamanos', und: 'und', cant: 1, vru: 6500, total: 6500 },
+              { desc: 'Kit de fijación anclajes', und: 'und', cant: 1, vru: 3500, total: 3500 },
+              { desc: 'Silicona sanitaria', und: 'und', cant: 0.5, vru: 8500, total: 4250 },
+              { desc: 'Transporte', und: 'gl', cant: 1, vru: 4150, total: 4150 }
+            ]
+          },
+          {
+            id: '8.3', title: 'Grifería mezcladora lavamanos (suministro e instalación)', und: 'und',
+            color: '#fdcb6e',
+            total: 155000,
+            breakdown: [
+              { desc: 'Plomero', und: 'hr', cant: 0.80, vru: 30000, total: 24000 },
+              { desc: 'Ayudante', und: 'hr', cant: 0.50, vru: 18000, total: 9000 },
+              { desc: 'Grifería mezcladora lavamanos cromada', und: 'und', cant: 1, vru: 110000, total: 110000 },
+              { desc: 'Flexibles (2 und) 1/2"', und: 'und', cant: 2, vru: 3500, total: 7000 },
+              { desc: 'Cinta teflón, selladores', und: 'gl', cant: 1, vru: 2000, total: 2000 },
+              { desc: 'Transporte', und: 'gl', cant: 1, vru: 3000, total: 3000 }
+            ]
+          },
+          {
+            id: '8.4', title: 'Grifería mezcladora sanitario (suministro e instalación)', und: 'und',
+            color: '#fdcb6e',
+            total: 125000,
+            breakdown: [
+              { desc: 'Plomero', und: 'hr', cant: 0.60, vru: 30000, total: 18000 },
+              { desc: 'Ayudante', und: 'hr', cant: 0.40, vru: 18000, total: 7200 },
+              { desc: 'Grifería mezcladora para sanitario / ducha higiénica', und: 'und', cant: 1, vru: 88000, total: 88000 },
+              { desc: 'Flexibles + adaptadores', und: 'und', cant: 2, vru: 3500, total: 7000 },
+              { desc: 'Cinta teflón, selladores', und: 'gl', cant: 1, vru: 1800, total: 1800 },
+              { desc: 'Transporte', und: 'gl', cant: 1, vru: 3000, total: 3000 }
+            ]
+          },
+          {
+            id: '8.5', title: 'Grifería mezcladora ducha (suministro e instalación)', und: 'und',
+            color: '#fdcb6e',
+            total: 195000,
+            breakdown: [
+              { desc: 'Plomero', und: 'hr', cant: 1.00, vru: 30000, total: 30000 },
+              { desc: 'Ayudante', und: 'hr', cant: 0.80, vru: 18000, total: 14400 },
+              { desc: 'Grifería mezcladora ducha (Grival / Gricol)', und: 'und', cant: 1, vru: 130000, total: 130000 },
+              { desc: 'Flexibles + adaptadores 1/2"', und: 'und', cant: 2, vru: 3500, total: 7000 },
+              { desc: 'Cinta teflón, selladores', und: 'gl', cant: 1, vru: 2000, total: 2000 },
+              { desc: 'Transporte', und: 'gl', cant: 1, vru: 11600, total: 11600 }
+            ]
+          },
+          {
+            id: '8.6', title: 'Válvula empotrada para ducha (suministro e instalación)', und: 'und',
+            color: '#fdcb6e',
+            total: 85000,
+            breakdown: [
+              { desc: 'Plomero', und: 'hr', cant: 0.80, vru: 30000, total: 24000 },
+              { desc: 'Ayudante', und: 'hr', cant: 0.50, vru: 18000, total: 9000 },
+              { desc: 'Válvula empotrada para ducha', und: 'und', cant: 1, vru: 42000, total: 42000 },
+              { desc: 'Adaptadores, codos, tubería', und: 'gl', cant: 1, vru: 6500, total: 6500 },
+              { desc: 'Cinta teflón + sellador', und: 'gl', cant: 1, vru: 1500, total: 1500 },
+              { desc: 'Transporte', und: 'gl', cant: 1, vru: 2000, total: 2000 }
+            ]
+          },
+          {
+            id: '8.7', title: 'Brazo, regadera y enlace para ducha (suministro e instalación)', und: 'und',
+            color: '#fdcb6e',
+            total: 65000,
+            breakdown: [
+              { desc: 'Plomero', und: 'hr', cant: 0.40, vru: 30000, total: 12000 },
+              { desc: 'Ayudante', und: 'hr', cant: 0.30, vru: 18000, total: 5400 },
+              { desc: 'Brazo de ducha cromado + regadera', und: 'und', cant: 1, vru: 38000, total: 38000 },
+              { desc: 'Enlace universal + cinta teflón', und: 'gl', cant: 1, vru: 5600, total: 5600 },
+              { desc: 'Transporte', und: 'gl', cant: 1, vru: 4000, total: 4000 }
+            ]
+          },
+          {
+            id: '8.8', title: 'Sifón lavamanos (suministro e instalación)', und: 'und',
+            color: '#fdcb6e',
+            total: 22000,
+            breakdown: [
+              { desc: 'Plomero', und: 'hr', cant: 0.25, vru: 30000, total: 7500 },
+              { desc: 'Sifón lavamanos PVC cromado', und: 'und', cant: 1, vru: 12000, total: 12000 },
+              { desc: 'Cinta teflón + empaques', und: 'gl', cant: 1, vru: 500, total: 500 },
+              { desc: 'Transporte', und: 'gl', cant: 1, vru: 2000, total: 2000 }
+            ]
+          },
+          {
+            id: '8.9', title: 'División en vidrio templado 6mm (suministro e instalación)', und: 'und',
+            color: '#fdcb6e',
+            total: 510000,
+            breakdown: [
+              { desc: 'Instalador especializado', und: 'hr', cant: 3.00, vru: 35000, total: 105000 },
+              { desc: 'Ayudante', und: 'hr', cant: 3.00, vru: 18000, total: 54000 },
+              { desc: 'Vidrio templado 6mm (medida estándar 0.80×1.80m)', und: 'und', cant: 1, vru: 280000, total: 280000 },
+              { desc: 'Perfilería aluminio anodizado + bisagras + jaladera', und: 'gl', cant: 1, vru: 45000, total: 45000 },
+              { desc: 'Sellos de silicona + tope inferior', und: 'gl', cant: 1, vru: 12000, total: 12000 },
+              { desc: 'Transporte', und: 'gl', cant: 1, vru: 14000, total: 14000 }
+            ]
+          }
+        ]
+      },
+
+      // === CAPÍTULO 9: CARPINTERÍA ===
+      {
+        cap: 'c9', capTitle: '9. Carpintería',
+        items: [
+          {
+            id: '9.1', title: 'Reparación y ajuste de puerta existente', und: 'und',
+            color: '#81ecec',
+            total: 32000,
+            breakdown: [
+              { desc: 'Carpintero', und: 'hr', cant: 0.60, vru: 30000, total: 18000 },
+              { desc: 'Ayudante', und: 'hr', cant: 0.30, vru: 18000, total: 5400 },
+              { desc: 'Lija, masilla para madera, pegante', und: 'gl', cant: 1, vru: 5600, total: 5600 },
+              { desc: 'Transporte', und: 'gl', cant: 1, vru: 3000, total: 3000 }
+            ]
+          },
+          {
+            id: '9.2', title: 'Cambio de cerradura de puerta (chapa privacidad baño)', und: 'und',
+            color: '#81ecec',
+            total: 45000,
+            breakdown: [
+              { desc: 'Carpintero', und: 'hr', cant: 0.40, vru: 30000, total: 12000 },
+              { desc: 'Chapa de privacidad para baño (cerradura + manija)', und: 'und', cant: 1, vru: 28000, total: 28000 },
+              { desc: 'Broca, formón, tornillos', und: 'gl', cant: 1, vru: 2500, total: 2500 },
+              { desc: 'Transporte', und: 'gl', cant: 1, vru: 2500, total: 2500 }
+            ]
+          },
+          {
+            id: '9.3', title: 'Tapetón / junquillo de piso para puerta', und: 'und',
+            color: '#81ecec',
+            total: 18500,
+            breakdown: [
+              { desc: 'Carpintero', und: 'hr', cant: 0.20, vru: 30000, total: 6000 },
+              { desc: 'Tapetón / junquillo (madera o MDF)', und: 'ml', cant: 1, vru: 8000, total: 8000 },
+              { desc: 'Pegante, puntillas, masilla', und: 'gl', cant: 1, vru: 2500, total: 2500 },
+              { desc: 'Transporte', und: 'gl', cant: 1, vru: 2000, total: 2000 }
+            ]
+          }
+        ]
+      },
+
+      // === CAPÍTULO 10: ACCESORIOS ===
+      {
+        cap: 'c10', capTitle: '10. Accesorios y Varios',
+        items: [
+          {
+            id: '10.1', title: 'Espejo (suministro e instalación)', und: 'und',
+            color: '#fab1a0',
+            total: 75000,
+            breakdown: [
+              { desc: 'Oficial', und: 'hr', cant: 0.30, vru: 28000, total: 8400 },
+              { desc: 'Ayudante', und: 'hr', cant: 0.20, vru: 18000, total: 3600 },
+              { desc: 'Espejo biselado 0.50×0.70m', und: 'und', cant: 1, vru: 55000, total: 55000 },
+              { desc: 'Adhesivo + ganchos de fijación', und: 'gl', cant: 1, vru: 5000, total: 5000 },
+              { desc: 'Transporte', und: 'gl', cant: 1, vru: 3000, total: 3000 }
+            ]
+          },
+          {
+            id: '10.2/10.6', title: 'Accesorios baño: toallero, portarrollos, jabonera, ganchos (sum. e inst.)', und: 'und',
+            color: '#fab1a0',
+            total: 28500,
+            breakdown: [
+              { desc: 'Oficial', und: 'hr', cant: 0.20, vru: 28000, total: 5600 },
+              { desc: 'Ayudante', und: 'hr', cant: 0.10, vru: 18000, total: 1800 },
+              { desc: 'Accesorio baño (línea media, cromado)', und: 'und', cant: 1, vru: 18000, total: 18000 },
+              { desc: 'Tornillos, taco, silicona', und: 'gl', cant: 1, vru: 1600, total: 1600 },
+              { desc: 'Transporte', und: 'gl', cant: 1, vru: 1500, total: 1500 }
+            ]
+          },
+          {
+            id: '10.4', title: 'Cortinero para ducha (barra + cortina, sum. e inst.)', und: 'und',
+            color: '#fab1a0',
+            total: 45000,
+            breakdown: [
+              { desc: 'Oficial', und: 'hr', cant: 0.30, vru: 28000, total: 8400 },
+              { desc: 'Barra de ducha cromada extensible', und: 'und', cant: 1, vru: 15000, total: 15000 },
+              { desc: 'Cortina plástica antifluido (1.80×1.80m)', und: 'und', cant: 1, vru: 16000, total: 16000 },
+              { desc: 'Tornillos, tacos, arandelas', und: 'gl', cant: 1, vru: 2600, total: 2600 },
+              { desc: 'Transporte', und: 'gl', cant: 1, vru: 3000, total: 3000 }
+            ]
+          },
+          {
+            id: '10.7', title: 'Plafón LED de techo (suministro e instalación)', und: 'und',
+            color: '#fab1a0',
+            total: 52000,
+            breakdown: [
+              { desc: 'Electricista', und: 'hr', cant: 0.30, vru: 32000, total: 9600 },
+              { desc: 'Plafón LED cuadrado 18W (luz cálida/fría)', und: 'und', cant: 1, vru: 38000, total: 38000 },
+              { desc: 'Conectores, cinta aislante', und: 'gl', cant: 1, vru: 1900, total: 1900 },
+              { desc: 'Transporte', und: 'gl', cant: 1, vru: 2500, total: 2500 }
+            ]
+          },
+          {
+            id: '10.8', title: 'Aplique LED sobre espejo (suministro e instalación)', und: 'und',
+            color: '#fab1a0',
+            total: 45000,
+            breakdown: [
+              { desc: 'Electricista', und: 'hr', cant: 0.25, vru: 32000, total: 8000 },
+              { desc: 'Aplique LED para espejo 12W', und: 'und', cant: 1, vru: 32000, total: 32000 },
+              { desc: 'Conectores, cinta aislante', und: 'gl', cant: 1, vru: 2000, total: 2000 },
+              { desc: 'Transporte', und: 'gl', cant: 1, vru: 3000, total: 3000 }
+            ]
+          },
+          {
+            id: '10.9', title: 'Extractor / ventilador de techo (suministro e instalación)', und: 'und',
+            color: '#fab1a0',
+            total: 75000,
+            breakdown: [
+              { desc: 'Electricista', und: 'hr', cant: 0.50, vru: 32000, total: 16000 },
+              { desc: 'Ayudante', und: 'hr', cant: 0.30, vru: 18000, total: 5400 },
+              { desc: 'Extractor / ventilador de techo baño 4"', und: 'und', cant: 1, vru: 48000, total: 48000 },
+              { desc: 'Tubería conduit + accesorios', und: 'gl', cant: 1, vru: 3100, total: 3100 },
+              { desc: 'Transporte', und: 'gl', cant: 1, vru: 2500, total: 2500 }
+            ]
+          },
+          {
+            id: '10.10', title: 'Toma GFCI, apagadores y placas decorativas (sum. e inst.)', und: 'und',
+            color: '#fab1a0',
+            total: 28000,
+            breakdown: [
+              { desc: 'Electricista', und: 'hr', cant: 0.25, vru: 32000, total: 8000 },
+              { desc: 'Toma GFCI / apagador (según aplique)', und: 'und', cant: 1, vru: 16000, total: 16000 },
+              { desc: 'Placa decorativa', und: 'und', cant: 1, vru: 2500, total: 2500 },
+              { desc: 'Conectores, cinta, tornillos', und: 'gl', cant: 1, vru: 500, total: 500 },
+              { desc: 'Transporte', und: 'gl', cant: 1, vru: 1000, total: 1000 }
+            ]
+          }
+        ]
+      }
+    ];
+
+    // ============ RENDER ============
+    let currentCapFilter = 'all';
+
+    function renderAPU() {
+      const grid = document.getElementById('apuGrid');
+      grid.innerHTML = apuData.map(chapter => {
+        return chapter.items.map(item => {
+          const mo = item.breakdown.filter(b => b.desc.toLowerCase().includes('oficial') || b.desc.toLowerCase().includes('ayudante') || b.desc.toLowerCase().includes('electricista') || b.desc.toLowerCase().includes('plomero') || b.desc.toLowerCase().includes('instalador') || b.desc.toLowerCase().includes('carpintero') || b.desc.toLowerCase().includes('alistador') || b.desc.toLowerCase().includes('pintor') || b.desc.toLowerCase().includes('especializado'));
+          const mat = item.breakdown.filter(b => !mo.includes(b));
+          const trs = item.breakdown.map(b =>
+            `<tr>
+              <td>${b.desc}</td>
+              <td class="num">${b.und}</td>
+              <td class="num">${b.cant}</td>
+              <td class="num">$${b.vru.toLocaleString('es-CO')}</td>
+              <td class="num">$${b.total.toLocaleString('es-CO')}</td>
+            </tr>`
+          ).join('');
+          const sumMO = mo.reduce((s, b) => s + b.total, 0);
+          const sumMat = mat.reduce((s, b) => s + b.total, 0);
+          return `
+            <div class="apu-card" data-cap="${chapter.cap}" data-search="${item.title.toLowerCase()} ${item.id}">
+              <div class="apu-header" style="background:linear-gradient(90deg,${item.color},${item.color}dd)" onclick="toggleAPU(this)">
+                <div>
+                  <span class="apu-num">${item.id}</span>
+                  <span class="apu-title">${item.title}</span>
+                </div>
+                <div>
+                  <span class="apu-und">${item.und}</span>
+                  <span class="apu-total">$${item.total.toLocaleString('es-CO')}</span>
+                  <span class="apu-toggle">▼</span>
+                </div>
+              </div>
+              <div class="apu-body">
+                <table class="apu-table">
+                  <thead>
+                    <tr>
+                      <th style="width:38%">Insumo</th>
+                      <th style="width:8%" class="num">Und</th>
+                      <th style="width:10%" class="num">Cant</th>
+                      <th style="width:17%" class="num">Vr. Unit.</th>
+                      <th style="width:12%" class="num">Vr. Total</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    ${trs}
+                    <tr class="subtotal-row">
+                      <td colspan="4"><strong>Total Costo Directo</strong></td>
+                      <td class="num-total">$${item.total.toLocaleString('es-CO')}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>`;
+        }).join('');
+      }).join('');
+      calcResumen();
+    }
+
+    function toggleAPU(el) {
+      const body = el.parentElement.querySelector('.apu-body');
+      const toggle = el.querySelector('.apu-toggle');
+      body.classList.toggle('collapsed');
+      toggle.classList.toggle('open');
+    }
+
+    function filterAll() {
+      currentCapFilter = 'all';
+      document.querySelectorAll('.apu-card').forEach(c => c.classList.remove('hidden'));
+      document.querySelectorAll('.filter-btns button').forEach(b => b.classList.remove('active'));
+      document.querySelector('.filter-btns button:first-child').classList.add('active');
+      document.getElementById('searchInput').value = '';
+    }
+
+    function filterCap(id) {
+      currentCapFilter = id;
+      document.querySelectorAll('.apu-card').forEach(c => {
+        c.classList.toggle('hidden', c.dataset.cap !== id);
+      });
+      document.querySelectorAll('.filter-btns button').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+      document.getElementById('searchInput').value = '';
+    }
+
+    function filterAPU() {
+      const q = document.getElementById('searchInput').value.toLowerCase();
+      document.querySelectorAll('.apu-card').forEach(card => {
+        const text = card.textContent.toLowerCase();
+        const match = text.includes(q);
+        const capMatch = currentCapFilter === 'all' || card.dataset.cap === currentCapFilter;
+        card.classList.toggle('hidden', !match || !capMatch);
+      });
+    }
+
+    function calcResumen() {
+      const genero = { mo: 0, mat: 0, transp: 0, total: 0 };
+      apuData.forEach(ch => {
+        ch.items.forEach(item => {
+          item.breakdown.forEach(b => {
+            const t = b.desc.toLowerCase();
+            if (t.includes('oficial') || t.includes('ayudante') || t.includes('electricista') || t.includes('plomero') || t.includes('instalador') || t.includes('carpintero') || t.includes('alistador') || t.includes('pintor') || t.includes('especializado')) {
+              genero.mo += b.total;
+            } else if (t.includes('transporte')) {
+              genero.transp += b.total;
+            } else {
+              genero.mat += b.total;
+            }
+            genero.total += b.total;
+          });
+        });
+      });
+
+      // Apply quantities
+      const cantidades = {
+        '1.1': 37.42, '1.2': 7.18, '1.3': 7.18, '1.4': 3, '1.5': 3, '1.6': 2, '1.7': 2, '1.8': 1, '1.9': 16, '1.10': 3, '1.11': 1, '1.12': 1,
+        '2.1/2.6': 16, '2.7': 8, '2.8': 1,
+        '3.1/3.6': 16, '3.7': 1,
+        '4.1': 37.42,
+        '5.1': 7.18, '5.2': 7.18,
+        '6.1': 7.18, '6.2': 19.00,
+        '7.1': 37.42, '7.2': 7.18, '7.3': 19.00, '7.4': 44.60,
+        '8.1': 3, '8.2': 3, '8.3': 3, '8.4': 3, '8.5': 2, '8.6': 2, '8.7': 2, '8.8': 3, '8.9': 2,
+        '9.1': 3, '9.2': 3, '9.3': 3,
+        '10.1': 3, '10.2/10.6': 15, '10.4': 2, '10.7': 3, '10.8': 2, '10.9': 2, '10.10': 8
+      };
+
+      let granTotal = 0;
+      let totalMO = 0, totalMat = 0, totalTransp = 0;
+
+      apuData.forEach(ch => {
+        ch.items.forEach(item => {
+          const cant = cantidades[item.id] || 1;
+          const sub = item.total * cant;
+          granTotal += sub;
+          item.breakdown.forEach(b => {
+            const t = b.desc.toLowerCase();
+            const val = b.total * cant;
+            if (t.includes('oficial') || t.includes('ayudante') || t.includes('electricista') || t.includes('plomero') || t.includes('instalador') || t.includes('carpintero') || t.includes('alistador') || t.includes('pintor') || t.includes('especializado')) {
+              totalMO += val;
+            } else if (t.includes('transporte')) {
+              totalTransp += val;
+            } else {
+              totalMat += val;
+            }
+          });
+        });
+      });
+
+      document.getElementById('totalGeneral').textContent = '$ ' + granTotal.toLocaleString('es-CO');
+
+      const resDiv = document.getElementById('resumenCostos');
+      resDiv.innerHTML = `
+        <div class="resumen-item" style="background:rgba(255,107,107,0.15);border:1px solid rgba(255,107,107,0.2)">
+          <div class="ri-label">Mano de Obra</div>
+          <div class="ri-value" style="color:#ff6b6b">$ ${totalMO.toLocaleString('es-CO')}</div>
+        </div>
+        <div class="resumen-item" style="background:rgba(79,172,254,0.15);border:1px solid rgba(79,172,254,0.2)">
+          <div class="ri-label">Materiales</div>
+          <div class="ri-value" style="color:#4facfe">$ ${totalMat.toLocaleString('es-CO')}</div>
+        </div>
+        <div class="resumen-item" style="background:rgba(85,239,196,0.15);border:1px solid rgba(85,239,196,0.2)">
+          <div class="ri-label">Transporte</div>
+          <div class="ri-value" style="color:#55efc4">$ ${totalTransp.toLocaleString('es-CO')}</div>
+        </div>
+        <div class="resumen-item" style="background:rgba(255,224,102,0.15);border:1px solid rgba(255,224,102,0.2)">
+          <div class="ri-label">Cant. APU's</div>
+          <div class="ri-value" style="color:#ffe066">${apuData.reduce((s,c) => s + c.items.length, 0)}</div>
+        </div>
+      `;
+    }
+
+    renderAPU();
+  </script>
+</body>
+</html>

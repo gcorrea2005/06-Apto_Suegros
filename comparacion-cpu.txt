@@ -1,0 +1,42 @@
+COMPARACIÓN Xeon E5-2680 vs Ryzen 5
+====================================
+
+Xeon E5-2680 (v1, Sandy Bridge-EP, 2012)
+  - 8C/16T | 2.70-3.50 GHz | 130W TDP
+  - Socket LGA 2011 | DDR3-1600 4ch
+  - Placas X79 usadas ~$40-60
+
+Ryzen 5 1600 (Zen 1, 2017) — competidor directo usado
+  - 6C/12T | 3.20-3.60 GHz | 65W TDP
+  - Socket AM4 | DDR4-2666 2ch
+  - ~50% más IPC que Sandy Bridge
+  - Placa B350/A320 usada ~$30-40
+
+Ryzen 5 3600 (Zen 2, 2019) — recomendado si alcanza
+  - 6C/12T | 3.60-4.20 GHz | 65W TDP
+  - ~80% más IPC que E5-2680
+  - Rendimiento single-core: +120%
+  - Rendimiento multi-core: similar o superior
+  - Placa B450/A320 usada ~$35-50
+
+RECOMENDACIÓN SETUP
+====================
+
+OPCIÓN A — Ultra presupuesto (~$80):
+  Ryzen 5 1600 + B350 + 16GB DDR4
+  Mejor que el E5-2680 en todo, consume la mitad,
+  y tienes plataforma moderna con soporte.
+
+OPCIÓN B — Bueno / barato (~$120):
+  Ryzen 5 3600 + B450 + 16GB DDR4
+  Destroza al E5-2680 en single y multi.
+  Mejor opción calidad/precio.
+
+OPCIÓN C — No recomendado:
+  E5-2680 + X79 + 16GB DDR3 ECC
+  Más caro de mantener, más ruido, más calor,
+  rendimiento inferior incluso a un R5 1600.
+
+ CONCLUSIÓN: No compres Xeon viejos a menos que
+ necesites MUCHA RAM (256GB+) por $0. Un R5 1600/3600
+ le da mil vueltas al E5-2680 en uso diario.

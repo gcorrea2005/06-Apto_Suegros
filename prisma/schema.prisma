@@ -1,0 +1,107 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Unit {
+  id   Int    @id @default(autoincrement())
+  code String @unique
+  name String
+
+  items       Item[]
+  apus        APU[]
+  apuComponents APUComponent[]
+}
+
+model Room {
+  id     Int    @id @default(autoincrement())
+  name   String
+  width  Float
+  length Float
+  height Float @default(2.20)
+
+  itemQuantities ItemQuantity[]
+}
+
+model Chapter {
+  id        Int     @id @default(autoincrement())
+  code      String  @unique
+  title     String
+  icon      String  @default("📋")
+  sortOrder Int
+
+  items Item[]
+}
+
+model Item {
+  id          Int    @id @default(autoincrement())
+  code        String
+  description String
+  unitId      Int
+  chapterId   Int
+  apuId       Int?
+
+  unit    Unit    @relation(fields: [unitId], references: [id])
+  chapter Chapter @relation(fields: [chapterId], references: [id])
+  apu     APU?    @relation(fields: [apuId], references: [id])
+  itemQuantities ItemQuantity[]
+
+  @@unique([code])
+}
+
+model ItemQuantity {
+  id       Int   @id @default(autoincrement())
+  roomId   Int
+  itemId   Int
+  quantity Float
+
+  room Room @relation(fields: [roomId], references: [id])
+  item Item @relation(fields: [itemId], references: [id], onDelete: Cascade)
+
+  @@unique([roomId, itemId])
+}
+
+enum BreakdownCategory {
+  MO
+  MATERIAL
+  EQUIPO
+  TRANSPORT
+}
+
+model APU {
+  id        Int    @id @default(autoincrement())
+  code      String @unique
+  title     String
+  unitId    Int
+  totalCost Float
+
+  adminPct    Float @default(15)
+  utilityPct  Float @default(10)
+  ivaPct      Float @default(19)
+  adminCost   Float @default(0)
+  utilityCost Float @default(0)
+  ivaCost     Float @default(0)
+  totalPrice  Float @default(0)
+
+  unit       Unit            @relation(fields: [unitId], references: [id])
+  items      Item[]
+  components APUComponent[]
+}
+
+model APUComponent {
+  id          Int               @id @default(autoincrement())
+  code        String
+  apuId       Int
+  description String
+  unitId      Int
+  quantity    Float
+  unitPrice   Float
+  totalCost   Float
+  category    BreakdownCategory
+
+  apu  APU   @relation(fields: [apuId], references: [id], onDelete: Cascade)
+  unit Unit  @relation(fields: [unitId], references: [id])
+}

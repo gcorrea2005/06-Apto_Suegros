@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presupuesto 3 Baños</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      min-height: 100vh;
+      padding: 20px;
+      color: #fff;
+    }
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+    .header {
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, #f093fb, #f5576c, #4facfe);
+      border-radius: 30px;
+      margin-bottom: 30px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(245,87,108,0.3);
+    }
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+      animation: rotate 20s linear infinite;
+    }
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .header h1 {
+      font-size: 3.5em;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      position: relative;
+      text-shadow: 0 0 30px rgba(255,255,255,0.3);
+    }
+    .header h1 span { color: #ffe066; }
+    .header p {
+      font-size: 1.2em;
+      opacity: 0.9;
+      margin-top: 10px;
+      position: relative;
+    }
+    .header .badges {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      position: relative;
+    }
+    .badge {
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.85em;
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+    .badge.gold { background: #ffe066; color: #1a1a2e; }
+
+    /* PANEL DE CONTROLES */
+    .controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 25px;
+      padding: 20px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .search-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+      min-width: 200px;
+    }
+    .search-box input {
+      width: 100%;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      font-size: 1em;
+      outline: none;
+      transition: 0.3s;
+    }
+    .search-box input:focus { background: rgba(255,255,255,0.2); box-shadow: 0 0 20px rgba(79,172,254,0.3); }
+    .search-box input::placeholder { color: rgba(255,255,255,0.4); }
+    .search-box button {
+      padding: 12px 25px;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .search-box button:hover { transform: scale(1.05); box-shadow: 0 5px 25px rgba(79,172,254,0.4); }
+
+    .filter-btns {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .filter-btns button {
+      padding: 8px 16px;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 10px;
+      background: transparent;
+      color: #fff;
+      font-size: 0.85em;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: 500;
+    }
+    .filter-btns button:hover,
+    .filter-btns button.active {
+      background: linear-gradient(135deg, #f093fb, #f5576c);
+      border-color: transparent;
+      box-shadow: 0 4px 15px rgba(245,87,108,0.3);
+    }
+
+    /* TARJETAS DE CAPÍTULOS */
+    .chapters-grid {
+      display: grid;
+      gap: 25px;
+    }
+    .chapter-card {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 25px;
+      padding: 0;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: 0.4s;
+    }
+    .chapter-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+    }
+    .chapter-card.hidden { display: none; }
+
+    .chapter-header {
+      padding: 20px 25px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: 0.3s;
+      user-select: none;
+    }
+    .chapter-header h2 {
+      font-size: 1.4em;
+      font-weight: 700;
+    }
+    .chapter-header .ch-number {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      border-radius: 12px;
+      font-weight: 900;
+      margin-right: 15px;
+    }
+    .chapter-header .ch-toggle {
+      font-size: 1.5em;
+      transition: 0.3s;
+      opacity: 0.6;
+    }
+    .chapter-header .ch-toggle.open { transform: rotate(180deg); }
+
+    .chapter-body {
+      padding: 0 25px 25px;
+      overflow-x: auto;
+    }
+    .chapter-body.collapsed { display: none; }
+
+    .chapter-body table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9em;
+    }
+    .chapter-body th {
+      text-align: left;
+      padding: 12px 10px;
+      font-weight: 600;
+      font-size: 0.8em;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0.7;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .chapter-body td {
+      padding: 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      transition: 0.2s;
+    }
+    .chapter-body tr:hover td {
+      background: rgba(255,255,255,0.05);
+    }
+
+    /* COLORES POR CAPÍTULO */
+    .c1 .chapter-header { background: linear-gradient(90deg, #ff6b6b, #ee5a24); }
+    .c2 .chapter-header { background: linear-gradient(90deg, #48dbfb, #0abde3); }
+    .c3 .chapter-header { background: linear-gradient(90deg, #ff9ff3, #f368e0); }
+    .c4 .chapter-header { background: linear-gradient(90deg, #feca57, #ff9f43); }
+    .c5 .chapter-header { background: linear-gradient(90deg, #a29bfe, #6c5ce7); }
+    .c6 .chapter-header { background: linear-gradient(90deg, #55efc4, #00b894); }
+    .c7 .chapter-header { background: linear-gradient(90deg, #fd79a8, #e84393); }
+    .c8 .chapter-header { background: linear-gradient(90deg, #fdcb6e, #e17055); }
+    .c9 .chapter-header { background: linear-gradient(90deg, #81ecec, #00cec9); }
+    .c10 .chapter-header { background: linear-gradient(90deg, #fab1a0, #e17055); }
+    .c11 .chapter-header { background: linear-gradient(90deg, #dfe6e9, #b2bec3); }
+    .c12 .chapter-header { background: linear-gradient(90deg, #74b9ff, #0984e3); }
+
+    .num { text-align: center; }
+    .total-row td {
+      font-weight: 700;
+      background: rgba(255,255,255,0.08) !important;
+      border-top: 2px solid rgba(255,255,255,0.2);
+    }
+
+    /* RESUMEN */
+    .cost-bar {
+      display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 25px; padding: 20px 25px;
+      background: rgba(255,224,102,0.08); border-radius: 20px; border: 1px solid rgba(255,224,102,0.15);
+    }
+    .cost-bar .cb-item { flex:1; min-width:140px; text-align:center; }
+    .cost-bar .cb-label { font-size:0.75em; text-transform:uppercase; letter-spacing:1px; opacity:0.6; margin-bottom:4px; }
+    .cost-bar .cb-value { font-size:1.4em; font-weight:700; }
+    .cost-bar .cb-value.gold { color:#ffe066; }
+    .cost-bar .cb-value.red { color:#ff6b6b; }
+    .cost-bar .cb-value.blue { color:#4facfe; }
+    .cost-bar .cb-value.green { color:#55efc4; }
+
+    .summary-section {
+      margin-top: 30px;
+      padding: 30px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border-radius: 25px;
+      box-shadow: 0 15px 50px rgba(102,126,234,0.3);
+    }
+    .summary-section h2 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+    }
+    .summary-item {
+      background: rgba(255,255,255,0.1);
+      padding: 15px;
+      border-radius: 15px;
+      text-align: center;
+      transition: 0.3s;
+    }
+    .summary-item:hover {
+      background: rgba(255,255,255,0.2);
+      transform: scale(1.03);
+    }
+    .summary-item .sum-label {
+      font-size: 0.75em;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0.7;
+    }
+    .summary-item .sum-value {
+      font-size: 1.6em;
+      font-weight: 900;
+      margin-top: 5px;
+    }
+    .summary-item .sum-unit {
+      font-size: 0.8em;
+      opacity: 0.6;
+    }
+
+    /* MEMORIA DE CÁLCULO */
+    .memoria-section {
+      margin-top: 30px;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 25px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .memoria-header {
+      padding: 25px 30px;
+      background: linear-gradient(135deg, #00b894, #00cec9, #55efc4);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+      transition: 0.3s;
+    }
+    .memoria-header:hover { filter: brightness(1.1); }
+    .memoria-header h2 { font-size: 1.6em; font-weight: 700; }
+    .memoria-toggle { font-size: 1.5em; transition: 0.3s; opacity: 0.6; }
+    .memoria-toggle.open { transform: rotate(180deg); }
+    .memoria-body { padding: 25px 30px; }
+    .memoria-body.collapsed { display: none; }
+
+    .memoria-tabs {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .memoria-tabs button {
+      padding: 8px 14px;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 10px;
+      background: transparent;
+      color: #fff;
+      font-size: 0.8em;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: 500;
+    }
+    .memoria-tabs button:hover,
+    .memoria-tabs button.active-mem {
+      background: linear-gradient(135deg, #00b894, #00cec9);
+      border-color: transparent;
+      box-shadow: 0 4px 15px rgba(0,206,201,0.3);
+    }
+
+    .memoria-content {
+      display: grid;
+      gap: 15px;
+    }
+    .memoria-item {
+      background: rgba(255,255,255,0.04);
+      border-radius: 15px;
+      padding: 18px 20px;
+      border: 1px solid rgba(255,255,255,0.06);
+      transition: 0.3s;
+    }
+    .memoria-item:hover { background: rgba(255,255,255,0.08); }
+    .memoria-item.hidden-mem { display: none; }
+    .memoria-item .mi-title {
+      font-weight: 700;
+      font-size: 1em;
+      margin-bottom: 10px;
+      color: #55efc4;
+    }
+    .memoria-item .mi-formula {
+      font-size: 0.9em;
+      opacity: 0.8;
+      font-family: 'Courier New', monospace;
+      padding: 12px;
+      background: rgba(0,0,0,0.3);
+      border-radius: 10px;
+      margin-bottom: 8px;
+    }
+    .memoria-item .mi-result {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .memoria-item .mi-result .mi-label { font-size: 0.85em; opacity: 0.6; }
+    .memoria-item .mi-result .mi-value {
+      font-size: 1.3em;
+      font-weight: 900;
+      color: #55efc4;
+    }
+    .memoria-item .mi-result .mi-unit {
+      font-size: 0.85em;
+      opacity: 0.6;
+      margin-left: 4px;
+    }
+    .memoria-datos-proyecto {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 12px;
+      margin-bottom: 25px;
+      padding: 20px;
+      background: rgba(0,0,0,0.2);
+      border-radius: 15px;
+    }
+    .memoria-dp-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .memoria-dp-item .dp-label { opacity: 0.6; font-size: 0.85em; }
+    .memoria-dp-item .dp-value { font-weight: 600; }
+
+    /* FLOATING ANIMATIONS */
+    .floating-shapes {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+      overflow: hidden;
+    }
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.05;
+      animation: float 15s infinite ease-in-out;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+      25% { transform: translateY(-30px) rotate(90deg) scale(1.1); }
+      50% { transform: translateY(0) rotate(180deg) scale(1); }
+      75% { transform: translateY(30px) rotate(270deg) scale(0.9); }
+    }
+    .shape:nth-child(1) { width: 300px; height: 300px; background: #f5576c; top: 10%; left: -5%; animation-duration: 18s; }
+    .shape:nth-child(2) { width: 400px; height: 400px; background: #4facfe; bottom: 10%; right: -5%; animation-duration: 22s; }
+    .shape:nth-child(3) { width: 200px; height: 200px; background: #ffe066; top: 50%; left: 50%; animation-duration: 14s; }
+
+    /* EXPORT */
+    .export-bar {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 25px;
+      flex-wrap: wrap;
+    }
+    .export-bar button {
+      padding: 12px 30px;
+      border: none;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 1em;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .export-bar button:hover { transform: scale(1.05); }
+    .btn-excel { background: linear-gradient(135deg, #00b894, #00cec9); color: #fff; }
+    .btn-pdf { background: linear-gradient(135deg, #e17055, #d63031); color: #fff; }
+    .btn-print { background: linear-gradient(135deg, #6c5ce7, #a29bfe); color: #fff; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .header h1 { font-size: 2em; }
+      .controls { flex-direction: column; }
+      .search-box { width: 100%; }
+      .chapter-body { padding: 0 15px 15px; }
+      .chapter-body table { font-size: 0.75em; }
+      .chapter-body th, .chapter-body td { padding: 6px 4px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="floating-shapes">
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+  </div>
+
+  <div class="container" id="app">
+    <!-- HEADER -->
+    <header class="header">
+      <h1>🚿 <span>PRESUPUESTO</span> 3 BAÑOS</h1>
+      <p>Remodelación completa · Bogotá, Colombia</p>
+      <div class="badges">
+        <span class="badge">🏠 3 Baños</span>
+        <span class="badge">📐 Altura 2.20m</span>
+        <span class="badge">🧱 Porcelanato</span>
+        <span class="badge gold">✨ 12 Capítulos</span>
+      </div>
+    </header>
+
+    <!-- COST BAR -->
+    <div class="cost-bar" id="costBar">
+      <div class="cb-item"><div class="cb-label">Costo Directo Total</div><div class="cb-value gold" id="totalGeneral">$ 0</div></div>
+      <div class="cb-item"><div class="cb-label">Mano de Obra</div><div class="cb-value red" id="totalMO">$ 0</div></div>
+      <div class="cb-item"><div class="cb-label">Materiales</div><div class="cb-value blue" id="totalMat">$ 0</div></div>
+      <div class="cb-item"><div class="cb-label">Transporte</div><div class="cb-value green" id="totalTransp">$ 0</div></div>
+    </div>
+
+    <!-- CONTROLES -->
+    <div class="controls">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="🔍 Buscar actividad..." oninput="filterData()">
+      </div>
+      <div class="filter-btns">
+        <button class="active" onclick="filterAll()">📋 Todos</button>
+        <button onclick="filterChapter('c1')">1</button>
+        <button onclick="filterChapter('c2')">2</button>
+        <button onclick="filterChapter('c3')">3</button>
+        <button onclick="filterChapter('c4')">4</button>
+        <button onclick="filterChapter('c5')">5</button>
+        <button onclick="filterChapter('c6')">6</button>
+        <button onclick="filterChapter('c7')">7</button>
+        <button onclick="filterChapter('c8')">8</button>
+        <button onclick="filterChapter('c9')">9</button>
+        <button onclick="filterChapter('c10')">10</button>
+        <button onclick="filterChapter('c11')">11</button>
+        <button onclick="filterChapter('c12')">12</button>
+      </div>
+    </div>
+
+    <!-- CAPÍTULOS -->
+    <div class="chapters-grid" id="chaptersGrid"></div>
+
+    <!-- RESUMEN -->
+    <div class="summary-section" id="summarySection">
+      <h2>📊 Resumen de Cantidades</h2>
+      <div class="summary-grid" id="summaryGrid"></div>
+    </div>
+
+    <!-- MEMORIA DE CÁLCULO -->
+    <div class="memoria-section">
+      <div class="memoria-header" onclick="toggleMemoria()">
+        <h2>📐 Memoria de Cálculo</h2>
+        <span class="memoria-toggle" id="memoriaToggle">▼</span>
+      </div>
+      <div class="memoria-body" id="memoriaBody">
+        <div class="memoria-datos-proyecto" id="memoriaDatosProyecto"></div>
+        <div class="memoria-tabs" id="memoriaTabs"></div>
+        <div class="memoria-content" id="memoriaContent"></div>
+      </div>
+    </div>
+
+    <!-- EXPORT -->
+    <div class="export-bar">
+      <button class="btn-print" onclick="window.print()">🖨️ Imprimir / PDF</button>
+    </div>
+  </div>
+
+  <script>
+    // ============ DATA ============
+    const chapters = [
+      {
+        id: 'c1', title: 'DEMOLICIÓN Y DESMONTE', icon: '💥',
+        cols: ['Ítem', 'Actividad', 'Und', 'Baño 1', 'Baño 2', 'Baño 3', 'Total'],
+        rows: [
+          ['1.1', 'Demolición enchape muros (incluye retiro de pañete)', 'm²', 10.42, 13.50, 13.50, 37.42],
+          ['1.2', 'Demolición piso (incluye retiro de mortero de nivelación)', 'm²', 1.80, 2.69, 2.69, 7.18],
+          ['1.3', 'Demolición pañete de techo (si aplica)', 'm²', 1.80, 2.69, 2.69, 7.18],
+          ['1.4', 'Desmonte de sanitario', 'und', 1, 1, 1, 3],
+          ['1.5', 'Desmonte de lavamanos', 'und', 1, 1, 1, 3],
+          ['1.6', 'Desmonte de ducha (grifería, brazo, regadera)', 'und', 0, 1, 1, 2],
+          ['1.7', 'Desmonte de división de vidrio existente', 'und', 0, 1, 1, 2],
+          ['1.8', 'Desmonte de accesorios (espejo, toallero, portarrollos, cortinero)', 'gl', 1, 1, 1, 1],
+          ['1.9', 'Desmonte de puntos eléctricos', 'und', 4, 6, 6, 16],
+          ['1.10', 'Desmonte de puerta (solo dejar hoja para reutilizar)', 'und', 1, 1, 1, 3],
+          ['1.11', 'Cargue y retiro de escombros a sitio de acopio', 'gl', 1, 1, 1, 1],
+          ['1.12', 'Transporte de escombros a disposición final', 'gl', 1, 1, 1, 1]
+        ]
+      },
+      {
+        id: 'c2', title: 'INSTALACIONES HIDRÁULICAS', icon: '💧',
+        cols: ['Ítem', 'Actividad', 'Und', 'Baño 1', 'Baño 2', 'Baño 3', 'Total'],
+        rows: [
+          ['2.1', 'Punto hidráulico agua fría para lavamanos', 'pto', 1, 1, 1, 3],
+          ['2.2', 'Punto hidráulico agua caliente para lavamanos', 'pto', 1, 1, 1, 3],
+          ['2.3', 'Punto hidráulico agua fría para sanitario', 'pto', 1, 1, 1, 3],
+          ['2.4', 'Punto hidráulico agua caliente para sanitario', 'pto', 1, 1, 1, 3],
+          ['2.5', 'Punto hidráulico agua fría para ducha', 'pto', 0, 1, 1, 2],
+          ['2.6', 'Punto hidráulico agua caliente para ducha', 'pto', 0, 1, 1, 2],
+          ['2.7', 'Instalación de válvulas de corte', 'und', 2, 3, 3, 8],
+          ['2.8', 'Prueba de estanquidad hidráulica', 'gl', 1, 1, 1, 1]
+        ]
+      },
+      {
+        id: 'c3', title: 'INSTALACIONES ELÉCTRICAS', icon: '⚡',
+        cols: ['Ítem', 'Actividad', 'Und', 'Baño 1', 'Baño 2', 'Baño 3', 'Total'],
+        rows: [
+          ['3.1', 'Punto para luminaria LED de techo', 'pto', 1, 1, 1, 3],
+          ['3.2', 'Punto para aplique LED sobre espejo', 'pto', 0, 1, 1, 2],
+          ['3.3', 'Punto para extractor / ventilador de techo', 'pto', 0, 1, 1, 2],
+          ['3.4', 'Punto para toma corriente GFCI 110V', 'pto', 1, 1, 1, 3],
+          ['3.5', 'Punto para apagador sencillo (interior)', 'pto', 1, 1, 1, 3],
+          ['3.6', 'Punto para apagador sencillo (exterior)', 'pto', 1, 1, 1, 3],
+          ['3.7', 'Tubería conduit, cableado, cajas y pruebas', 'gl', 1, 1, 1, 1]
+        ]
+      },
+      {
+        id: 'c4', title: 'MUROS Y PAÑETES', icon: '🧱',
+        cols: ['Ítem', 'Actividad', 'Und', 'Baño 1', 'Baño 2', 'Baño 3', 'Total'],
+        rows: [
+          ['4.1', 'Pañete de muros (reparación y nivelación post-demolición)', 'm²', 10.42, 13.50, 13.50, 37.42],
+          ['4.2', 'Boquillero para paso de tuberías', 'und', 'Según diseño']
+        ]
+      },
+      {
+        id: 'c5', title: 'PINTURA DE TECHO', icon: '🎨',
+        cols: ['Ítem', 'Actividad', 'Und', 'Baño 1', 'Baño 2', 'Baño 3', 'Total'],
+        rows: [
+          ['5.1', 'Limpieza y preparación de techo de placa existente', 'm²', 1.80, 2.69, 2.69, 7.18],
+          ['5.2', 'Pintura de techo en vinilo tipo 1 anti-hongos (2 manos)', 'm²', 1.80, 2.69, 2.69, 7.18]
+        ]
+      },
+      {
+        id: 'c6', title: 'IMPERMEABILIZACIÓN', icon: '🛡️',
+        cols: ['Ítem', 'Actividad', 'Und', 'Baño 1', 'Baño 2', 'Baño 3', 'Total'],
+        rows: [
+          ['6.1', 'Impermeabilización de piso (membrana acrílica / mortero impermeabilizante)', 'm²', 1.80, 2.69, 2.69, 7.18],
+          ['6.2', 'Impermeabilización en encuentros muro-piso (banda elástica + sello)', 'ml', 5.40, 6.80, 6.80, 19.00]
+        ]
+      },
+      {
+        id: 'c7', title: 'ENCHAPES Y PISOS EN PORCELANATO', icon: '✨',
+        cols: ['Ítem', 'Actividad', 'Und', 'Baño 1', 'Baño 2', 'Baño 3', 'Total'],
+        rows: [
+          ['7.1', 'Suministro y colocación de porcelanato en muros', 'm²', 10.42, 13.50, 13.50, 37.42],
+          ['7.2', 'Suministro y colocación de porcelanato en piso', 'm²', 1.80, 2.69, 2.69, 7.18],
+          ['7.3', 'Guardaescoba / moldura (cambio de plano muro-piso)', 'ml', 5.40, 6.80, 6.80, 19.00],
+          ['7.4', 'Boquilla epóxica en muros y pisos', 'm²', 12.22, 16.19, 16.19, 44.60]
+        ]
+      },
+      {
+        id: 'c8', title: 'APARATOS SANITARIOS Y GRIFERÍAS', icon: '🚽',
+        cols: ['Ítem', 'Actividad', 'Und', 'Baño 1', 'Baño 2', 'Baño 3', 'Total'],
+        rows: [
+          ['8.1', 'Suministro e instalación de sanitario (tanque bajo / one piece)', 'und', 1, 1, 1, 3],
+          ['8.2', 'Suministro e instalación de lavamanos', 'und', 1, 1, 1, 3],
+          ['8.3', 'Grifería mezcladora para lavamanos (agua fría + caliente)', 'und', 1, 1, 1, 3],
+          ['8.4', 'Grifería mezcladora para sanitario (agua fría + caliente)', 'und', 1, 1, 1, 3],
+          ['8.5', 'Grifería mezcladora para ducha (agua fría + caliente)', 'und', 0, 1, 1, 2],
+          ['8.6', 'Válvula empotrada para ducha', 'und', 0, 1, 1, 2],
+          ['8.7', 'Brazo, regadera y enlace para ducha', 'und', 0, 1, 1, 2],
+          ['8.8', 'Sifón para lavamanos', 'und', 1, 1, 1, 3],
+          ['8.9', 'División en vidrio templado 6mm (incluye perfilería, bisagras, sellos)', 'und', 0, 1, 1, 2]
+        ]
+      },
+      {
+        id: 'c9', title: 'CARPINTERÍA', icon: '🔧',
+        cols: ['Ítem', 'Actividad', 'Und', 'Baño 1', 'Baño 2', 'Baño 3', 'Total'],
+        rows: [
+          ['9.1', 'Reparación y ajuste de puerta existente', 'und', 1, 1, 1, 3],
+          ['9.2', 'Cambio de cerradura de puerta (chapa de privacidad para baño)', 'und', 1, 1, 1, 3],
+          ['9.3', 'Suministro e instalación de tapetón / junquillo de piso para puerta', 'und', 1, 1, 1, 3]
+        ]
+      },
+      {
+        id: 'c10', title: 'ACCESORIOS Y VARIOS', icon: '🪞',
+        cols: ['Ítem', 'Actividad', 'Und', 'Baño 1', 'Baño 2', 'Baño 3', 'Total'],
+        rows: [
+          ['10.1', 'Suministro e instalación de espejo', 'und', 1, 1, 1, 3],
+          ['10.2', 'Suministro e instalación de toallero', 'und', 1, 1, 1, 3],
+          ['10.3', 'Suministro e instalación de portarrollos', 'und', 1, 1, 1, 3],
+          ['10.4', 'Cortinero para ducha (barra + cortina)', 'und', 0, 1, 1, 2],
+          ['10.5', 'Jabonera / esponjera de ducha', 'und', 0, 1, 1, 2],
+          ['10.6', 'Ganchos / percheros', 'und', 2, 2, 2, 6],
+          ['10.7', 'Plafón LED de techo', 'und', 1, 1, 1, 3],
+          ['10.8', 'Aplique LED sobre espejo', 'und', 0, 1, 1, 2],
+          ['10.9', 'Extractor / ventilador de techo', 'und', 0, 1, 1, 2],
+          ['10.10', 'Tomas GFCI, apagadores y placas decorativas', 'und', 2, 3, 3, 8]
+        ]
+      },
+      {
+        id: 'c11', title: 'ASEO Y FINALES', icon: '🧹',
+        cols: ['Ítem', 'Actividad', 'Und', 'Total'],
+        rows: [
+          ['11.1', 'Limpieza general de obra (polvo, residuos finos, lavado de pisos)', 'gl', 1],
+          ['11.2', 'Protección de pisos y muros terminados', 'gl', 1],
+          ['11.3', 'Remates, retoques y revisión final', 'gl', 1]
+        ]
+      },
+      {
+        id: 'c12', title: 'TRANSPORTE Y LOGÍSTICA', icon: '🚚',
+        cols: ['Ítem', 'Actividad', 'Und', 'Total'],
+        rows: [
+          ['12.1', 'Transporte de materiales a obra', 'gl', 1],
+          ['12.2', 'Alquiler de contenedor / botes para escombros', 'und', 'Según obra'],
+          ['12.3', 'Transporte de escombros a disposición final', 'und', 'Según volumen']
+        ]
+      }
+    ];
+
+    // ============ APU PRICES ============
+    const apuPrices = {
+      '1.1':12500,'1.2':11000,'1.3':8500,'1.4':20000,'1.5':18000,'1.6':22000,'1.7':32000,'1.8':35000,'1.9':15500,'1.10':18500,'1.11':30000,'1.12':42000,
+      '2.1':58500,'2.2':58500,'2.3':58500,'2.4':58500,'2.5':58500,'2.6':58500,'2.7':16500,'2.8':85000,
+      '3.1':48000,'3.2':48000,'3.3':48000,'3.4':48000,'3.5':48000,'3.6':48000,'3.7':180000,
+      '4.1':32500,'4.2':0,
+      '5.1':6500,'5.2':8500,
+      '6.1':28500,'6.2':12500,
+      '7.1':102000,'7.2':100000,'7.3':18500,'7.4':8500,
+      '8.1':385000,'8.2':265000,'8.3':155000,'8.4':125000,'8.5':195000,'8.6':85000,'8.7':65000,'8.8':22000,'8.9':510000,
+      '9.1':32000,'9.2':45000,'9.3':18500,
+      '10.1':75000,'10.2':28500,'10.3':28500,'10.4':45000,'10.5':28500,'10.6':28500,'10.7':52000,'10.8':45000,'10.9':75000,'10.10':28000
+    };
+
+    // ============ BREAKDOWN TOOLTIP ============
+    const chapter11Cost = 120000; // Aprox limpieza + proteccion + remates
+    const chapter12Cost = 350000; // Aprox transporte materiales
+
+    const summaryData = [
+      ['Demolición enchape muros', 'm²', 37.42],
+      ['Demolición piso', 'm²', 7.18],
+      ['Puntos hidráulicos nuevos', 'pto', 18],
+      ['Puntos eléctricos nuevos', 'pto', 16],
+      ['Pañete muros', 'm²', 37.42],
+      ['Pintura techo', 'm²', 7.18],
+      ['Impermeabilización piso', 'm²', 7.18],
+      ['Impermeabilización encuentro', 'ml', 19.00],
+      ['Porcelanato muros', 'm²', 37.42],
+      ['Porcelanato piso', 'm²', 7.18],
+      ['Guardaescoba', 'ml', 19.00],
+      ['Boquilla epóxica', 'm²', 44.60],
+      ['Sanitarios nuevos', 'und', 3],
+      ['Lavamanos nuevos', 'und', 3],
+      ['Griferías mezcladoras', 'und', 8],
+      ['Divisiones vidrio templado 6mm', 'und', 2],
+      ['Cerraduras (cambio)', 'und', 3],
+      ['Plafones + Apliques LED', 'und', 5],
+      ['Extractores / ventiladores', 'und', 2]
+    ];
+
+    // ============ RENDER ============
+    function calcChaptersCost() {
+      let total = 0;
+      const caps = {};
+      chapters.forEach(ch => {
+        if (ch.id === 'c11' || ch.id === 'c12') return;
+        let sub = 0;
+        ch.rows.forEach(r => {
+          const id = r[0];
+          const totalQty = typeof r[r.length - 1] === 'number' ? r[r.length - 1] : 0;
+          const price = apuPrices[id] || 0;
+          sub += price * totalQty;
+        });
+        caps[ch.id] = sub;
+        total += sub;
+      });
+      return { total, caps };
+    }
+
+    function render() {
+      const costData = calcChaptersCost();
+      const grandTotal = costData.total + chapter11Cost + chapter12Cost;
+      const moPct = 0.25, transpPct = 0.04;
+      const grandMO = Math.round(grandTotal * moPct);
+      const grandTransp = Math.round(grandTotal * transpPct);
+      const grandMat = grandTotal - grandMO - grandTransp;
+
+      document.getElementById('totalGeneral').textContent = '$ ' + grandTotal.toLocaleString('es-CO');
+      document.getElementById('totalMO').textContent = '$ ' + grandMO.toLocaleString('es-CO');
+      document.getElementById('totalMat').textContent = '$ ' + grandMat.toLocaleString('es-CO');
+      document.getElementById('totalTransp').textContent = '$ ' + grandTransp.toLocaleString('es-CO');
+
+      const grid = document.getElementById('chaptersGrid');
+      grid.innerHTML = chapters.map((ch, i) => {
+        const hasBaños = ch.rows[0].length > 4;
+        const ths = ch.cols.map(c => `<th>${c}</th>`).join('');
+        const trs = ch.rows.map(r => {
+          const tds = r.map((v, j) => {
+            if (j === 0) return `<td class="num"><strong>${v}</strong></td>`;
+            if (typeof v === 'number') return `<td class="num">${v}</td>`;
+            return `<td>${v}</td>`;
+          }).join('');
+          return `<tr>${tds}</tr>`;
+        }).join('');
+        const sub = costData.caps[ch.id] || 0;
+        const subDisplay = sub > 0 ? ` · <span style="color:#ffe066">$${sub.toLocaleString('es-CO')}</span>` : '';
+        return `
+          <div class="chapter-card ${ch.id}" data-chapter="${ch.id}">
+            <div class="chapter-header" onclick="toggleChapter(this)">
+              <div>
+                <span class="ch-number">${ch.icon}</span>
+                <strong>${ch.title}</strong>
+                <span style="margin-left:10px;font-size:0.85em">${subDisplay}</span>
+              </div>
+              <span class="ch-toggle">▼</span>
+            </div>
+            <div class="chapter-body">
+              <table>
+                <thead><tr>${ths}</tr></thead>
+                <tbody>${trs}</tbody>
+              </table>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      const sGrid = document.getElementById('summaryGrid');
+      sGrid.innerHTML = summaryData.map(d => `
+        <div class="summary-item">
+          <div class="sum-label">${d[0]}</div>
+          <div class="sum-value">${d[1]}</div>
+          <div class="sum-unit">${d[2]} ${typeof d[2] === 'number' ? '' : ''}</div>
+        </div>
+      `).join('') + `
+        <div class="summary-item" style="background:rgba(255,224,102,0.15);grid-column:1/-1;border:1px solid rgba(255,224,102,0.2)">
+          <div class="sum-label" style="font-size:1.1em">Costo Directo Total (estimado)</div>
+          <div class="sum-value" style="font-size:1.5em;font-weight:900;color:#ffe066">$ ${grandTotal.toLocaleString('es-CO')}</div>
+          <div class="sum-unit" style="font-size:0.8em;opacity:0.6">MO 25% · Materiales 71% · Transporte 4%</div>
+        </div>
+      `;
+    }
+
+    // ============ TOGGLE ============
+    function toggleChapter(el) {
+      const body = el.parentElement.querySelector('.chapter-body');
+      const toggle = el.querySelector('.ch-toggle');
+      body.classList.toggle('collapsed');
+      toggle.classList.toggle('open');
+    }
+
+    // ============ FILTERS ============
+    let currentFilter = 'all';
+
+    function filterAll() {
+      currentFilter = 'all';
+      document.querySelectorAll('.chapter-card').forEach(c => c.classList.remove('hidden'));
+      document.querySelectorAll('.filter-btns button').forEach(b => b.classList.remove('active'));
+      document.querySelector('.filter-btns button:first-child').classList.add('active');
+      document.getElementById('searchInput').value = '';
+    }
+
+    function filterChapter(id) {
+      currentFilter = id;
+      document.querySelectorAll('.chapter-card').forEach(c => {
+        c.classList.toggle('hidden', c.dataset.chapter !== id);
+      });
+      document.querySelectorAll('.filter-btns button').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+      document.getElementById('searchInput').value = '';
+    }
+
+    function filterData() {
+      const q = document.getElementById('searchInput').value.toLowerCase();
+      document.querySelectorAll('.chapter-card').forEach(card => {
+        const text = card.textContent.toLowerCase();
+        const match = text.includes(q);
+        if (currentFilter === 'all') {
+          card.classList.toggle('hidden', !match);
+        } else {
+          card.classList.toggle('hidden', card.dataset.chapter !== currentFilter || !match);
+        }
+      });
+    }
+
+    // ============ MEMORIA DE CÁLCULO ============
+    const memoriaData = {
+      projectData: [
+        { label: 'Ubicación', value: 'Bogotá, Colombia' },
+        { label: 'Altura entrepiso (h)', value: '2.20 m' },
+        { label: 'Baño 1', value: '1.20 × 1.50 m' },
+        { label: 'Baño 2', value: '1.25 × 2.15 m' },
+        { label: 'Baño 3', value: '1.25 × 2.15 m' },
+        { label: 'Acabados', value: 'Porcelanato' },
+        { label: 'Puerta (descuento)', value: '0.65 × 2.00 = 1.30 m²' },
+        { label: 'Ventana (descuento)', value: '0.40 × 0.40 = 0.16 m²' }
+      ],
+      chapters: [
+        {
+          id: 'mc1', title: '1. Demolición',
+          items: [
+            { title: '1.1 Demolición enchape muros', formula: 'Perímetro × h − Puerta − Ventana', details: [
+              'Baño 1: (2×(1.20+1.50)) × 2.20 − 1.30 − 0.16 = 5.40 × 2.20 − 1.46 = 10.42 m²',
+              'Baño 2: (2×(1.25+2.15)) × 2.20 − 1.30 − 0.16 = 6.80 × 2.20 − 1.46 = 13.50 m²',
+              'Baño 3: = 13.50 m² (idéntico al Baño 2)'
+            ], value: 37.42, unit: 'm²' },
+            { title: '1.2 Demolición piso', formula: 'Ancho × Largo', details: [
+              'Baño 1: 1.20 × 1.50 = 1.80 m²',
+              'Baño 2: 1.25 × 2.15 = 2.69 m²',
+              'Baño 3: 1.25 × 2.15 = 2.69 m²'
+            ], value: 7.18, unit: 'm²' },
+            { title: '1.3 Demolición pañete techo', formula: 'Ancho × Largo (misma área del piso)', details: [
+              'Baño 1: 1.20 × 1.50 = 1.80 m²',
+              'Baño 2: 1.25 × 2.15 = 2.69 m²',
+              'Baño 3: 1.25 × 2.15 = 2.69 m²'
+            ], value: 7.18, unit: 'm²' },
+            { title: '1.4 a 1.10 Desmontes', formula: 'Conteo directo por baño', details: [
+              'Sanitarios: 1+1+1 = 3 und',
+              'Lavamanos: 1+1+1 = 3 und',
+              'Duchas: 0+1+1 = 2 und',
+              'Divisiones vidrio: 0+1+1 = 2 und',
+              'Puntos eléctricos: 4+6+6 = 16 und',
+              'Puertas: 1+1+1 = 3 und'
+            ], value: '-', unit: '-' }
+          ]
+        },
+        {
+          id: 'mc2', title: '2. Hidráulicas',
+          items: [
+            { title: '2.1-2.6 Puntos hidráulicos', formula: 'Cada baño: lavamanos (FC+AC) + sanitario (FC+AC) + ducha (FC+AC, Baños 2,3)', details: [
+              'Baño 1: 2 (lav) + 2 (san) = 4 pto',
+              'Baño 2: 2 (lav) + 2 (san) + 2 (ducha) = 6 pto',
+              'Baño 3: 2 (lav) + 2 (san) + 2 (ducha) = 6 pto'
+            ], value: 16, unit: 'pto' },
+            { title: '2.7 Válvulas de corte', formula: '1 por cada aparato (lavamanos + sanitario ± ducha)', details: [
+              'Baño 1: 2 válvulas',
+              'Baño 2: 3 válvulas',
+              'Baño 3: 3 válvulas'
+            ], value: 8, unit: 'und' }
+          ]
+        },
+        {
+          id: 'mc3', title: '3. Eléctricas',
+          items: [
+            { title: '3.1-3.6 Puntos eléctricos', formula: 'Por baño según tipo de punto', details: [
+              'Luminaria techo: 1+1+1 = 3 pto',
+              'Aplique LED: 0+1+1 = 2 pto',
+              'Extractor: 0+1+1 = 2 pto',
+              'Toma GFCI: 1+1+1 = 3 pto',
+              'Apagador interior: 1+1+1 = 3 pto',
+              'Apagador exterior: 1+1+1 = 3 pto'
+            ], value: 16, unit: 'pto' }
+          ]
+        },
+        {
+          id: 'mc4', title: '4. Muros y Pañetes',
+          items: [
+            { title: '4.1 Pañete de muros', formula: 'Perímetro × h − Puerta − Ventana (misma área de muros demolida)', details: [
+              'Baño 1: 5.40 × 2.20 − 1.30 − 0.16 = 10.42 m²',
+              'Baño 2: 6.80 × 2.20 − 1.30 − 0.16 = 13.50 m²',
+              'Baño 3: = 13.50 m²'
+            ], value: 37.42, unit: 'm²' }
+          ]
+        },
+        {
+          id: 'mc5', title: '5. Pintura Techo',
+          items: [
+            { title: '5.1-5.2 Pintura de techo', formula: 'Ancho × Largo (área del piso)', details: [
+              'Baño 1: 1.20 × 1.50 = 1.80 m²',
+              'Baño 2: 1.25 × 2.15 = 2.69 m²',
+              'Baño 3: 1.25 × 2.15 = 2.69 m²'
+            ], value: 7.18, unit: 'm²' }
+          ]
+        },
+        {
+          id: 'mc6', title: '6. Impermeabilización',
+          items: [
+            { title: '6.1 Impermeabilización piso', formula: 'Ancho × Largo (área del piso)', details: [
+              'Baño 1: 1.20 × 1.50 = 1.80 m²',
+              'Baño 2: 1.25 × 2.15 = 2.69 m²',
+              'Baño 3: 1.25 × 2.15 = 2.69 m²'
+            ], value: 7.18, unit: 'm²' },
+            { title: '6.2 Impermeabilización encuentro muro-piso', formula: 'Perímetro del baño (banda elástica en todo el contorno)', details: [
+              'Baño 1: 2 × (1.20 + 1.50) = 5.40 ml',
+              'Baño 2: 2 × (1.25 + 2.15) = 6.80 ml',
+              'Baño 3: 2 × (1.25 + 2.15) = 6.80 ml'
+            ], value: 19.00, unit: 'ml' }
+          ]
+        },
+        {
+          id: 'mc7', title: '7. Porcelanato',
+          items: [
+            { title: '7.1 Porcelanato muros', formula: 'Perímetro × h − Puerta − Ventana', details: [
+              'Baño 1: 10.42 m²',
+              'Baño 2: 13.50 m²',
+              'Baño 3: 13.50 m²'
+            ], value: 37.42, unit: 'm²' },
+            { title: '7.2 Porcelanato piso', formula: 'Ancho × Largo', details: [
+              'Baño 1: 1.80 m²',
+              'Baño 2: 2.69 m²',
+              'Baño 3: 2.69 m²'
+            ], value: 7.18, unit: 'm²' },
+            { title: '7.3 Guardaescoba', formula: 'Perímetro del baño', details: [
+              'Baño 1: 2 × (1.20 + 1.50) = 5.40 ml',
+              'Baño 2: 2 × (1.25 + 2.15) = 6.80 ml',
+              'Baño 3: 2 × (1.25 + 2.15) = 6.80 ml'
+            ], value: 19.00, unit: 'ml' },
+            { title: '7.4 Boquilla epóxica', formula: 'Área muros + Área piso', details: [
+              'Muros: 37.42 m²',
+              'Piso: 7.18 m²'
+            ], value: 44.60, unit: 'm²' }
+          ]
+        },
+        {
+          id: 'mc8', title: '8. Aparatos',
+          items: [
+            { title: '8.1-8.9 Sanitarios, lavamanos, griferías', formula: 'Conteo directo por baño', details: [
+              'Sanitarios: 1+1+1 = 3 und',
+              'Lavamanos: 1+1+1 = 3 und',
+              'Grifería lavamanos (mezcladora): 1+1+1 = 3 und',
+              'Grifería sanitario (mezcladora): 1+1+1 = 3 und',
+              'Grifería ducha (mezcladora): 0+1+1 = 2 und',
+              'Válvulas empotradas ducha: 0+1+1 = 2 und',
+              'Divisiones vidrio templado 6mm: 0+1+1 = 2 und'
+            ], value: '-', unit: '-' }
+          ]
+        },
+        {
+          id: 'mc9', title: '9. Carpintería',
+          items: [
+            { title: '9.1-9.3 Puertas y cerraduras', formula: 'Conteo directo: 1 por baño', details: [
+              'Reparación puerta: 1+1+1 = 3 und',
+              'Cambio cerradura: 1+1+1 = 3 und',
+              'Tapetón/junquillo: 1+1+1 = 3 und'
+            ], value: 3, unit: 'und' }
+          ]
+        },
+        {
+          id: 'mc10', title: '10. Accesorios',
+          items: [
+            { title: '10.1-10.10 Accesorios y varios', formula: 'Conteo directo', details: [
+              'Espejos: 1+1+1 = 3 und',
+              'Toalleros: 1+1+1 = 3 und',
+              'Portarrollos: 1+1+1 = 3 und',
+              'Cortineros ducha: 0+1+1 = 2 und',
+              'Jaboneras: 0+1+1 = 2 und',
+              'Ganchos: 2+2+2 = 6 und',
+              'Plafones LED: 1+1+1 = 3 und',
+              'Apliques LED: 0+1+1 = 2 und',
+              'Extractores: 0+1+1 = 2 und',
+              'Tomas GFCI + apagadores: 2+3+3 = 8 und'
+            ], value: '-', unit: '-' }
+          ]
+        }
+      ]
+    };
+
+    let currentMemTab = 'mc1';
+
+    function toggleMemoria() {
+      const body = document.getElementById('memoriaBody');
+      const toggle = document.getElementById('memoriaToggle');
+      body.classList.toggle('collapsed');
+      toggle.classList.toggle('open');
+    }
+
+    function renderMemoria() {
+      // Project data
+      const dp = document.getElementById('memoriaDatosProyecto');
+      dp.innerHTML = memoriaData.projectData.map(d =>
+        `<div class="memoria-dp-item"><span class="dp-label">${d.label}</span><span class="dp-value">${d.value}</span></div>`
+      ).join('');
+
+      // Tabs
+      const tabs = document.getElementById('memoriaTabs');
+      tabs.innerHTML = memoriaData.chapters.map(ch =>
+        `<button class="${ch.id === currentMemTab ? 'active-mem' : ''}" onclick="switchMemTab('${ch.id}')">${ch.title}</button>`
+      ).join('');
+
+      // Content
+      renderMemItems();
+    }
+
+    function switchMemTab(id) {
+      currentMemTab = id;
+      document.querySelectorAll('.memoria-tabs button').forEach(b => b.classList.remove('active-mem'));
+      event.target.classList.add('active-mem');
+      renderMemItems();
+    }
+
+    function renderMemItems() {
+      const container = document.getElementById('memoriaContent');
+      const ch = memoriaData.chapters.find(c => c.id === currentMemTab);
+      if (!ch) return;
+      container.innerHTML = ch.items.map(item => {
+        const detailsHtml = item.details.map(d => `<div style="padding:2px 0 2px 16px;font-size:0.85em;opacity:0.7;border-left:2px solid rgba(85,239,196,0.3);margin:2px 0">${d}</div>`).join('');
+        const valDisplay = item.value !== '-' ? `<span class="mi-value">${item.value}</span><span class="mi-unit">${item.unit}</span>` : '<span class="mi-value" style="font-size:1em;font-weight:400">Varios</span>';
+        return `<div class="memoria-item">
+          <div class="mi-title">${item.title}</div>
+          <div class="mi-formula">${item.formula}</div>
+          ${detailsHtml}
+          <div class="mi-result">
+            <span class="mi-label">Total</span>
+            <span>${valDisplay}</span>
+          </div>
+        </div>`;
+      }).join('');
+    }
+
+    // ============ INIT ============
+    render();
+    renderMemoria();
+  </script>
+</body>
+</html>
