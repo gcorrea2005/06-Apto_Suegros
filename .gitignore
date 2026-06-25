@@ -6,6 +6,7 @@ dist/
 .DS_Store
 Thumbs.db
 # LaTeX build artifacts
+*.pdf
 *.aux
 *.log
 *.out
@@ -18,3 +19,5 @@ Informes/*.aux
 Informes/*.log
 Informes/*.out
 Informes/*.toc
+# LaTeX build system
+*.fdb_latexmk

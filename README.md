@@ -1,91 +1,260 @@
 <div align="center">
-  
-# 🏗️ Presupuesto 3 Baños  
 
-**App web full-stack para presupuesto de remodelación de 3 baños**  
-📍 Bogotá, Colombia · 📅 Junio 2026  
+# 🏗️ Presupuesto 3 Baños
 
-[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)](https://react.dev)
-[![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite&logoColor=white)](https://vitejs.dev)
-[![TypeScript](https://img.shields.io/badge/TypeScript-6-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
-[![Express](https://img.shields.io/badge/Express-5-000000?logo=express&logoColor=white)](https://expressjs.com)
-[![Prisma](https://img.shields.io/badge/Prisma-7-2D3748?logo=prisma&logoColor=white)](https://www.prisma.io)
-[![SQLite](https://img.shields.io/badge/SQLite-003B57?logo=sqlite&logoColor=white)](https://www.sqlite.org)
-[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
+**Sistema Integral de Presupuestación para Remodelación de Tres Áreas Húmedas**  
+📍 Bogotá, Colombia · 📅 Junio 2026 · 🏢 Reserva de Granada 3
+
+<!-- BADGES ROW 1 -->
+[![React](https://img.shields.io/badge/React_19-61DAFB?logo=react&logoColor=black&style=for-the-badge)](https://react.dev)
+[![Vite](https://img.shields.io/badge/Vite_8-646CFF?logo=vite&logoColor=white&style=for-the-badge)](https://vitejs.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript_6-3178C6?logo=typescript&logoColor=white&style=for-the-badge)](https://www.typescriptlang.org)
+[![Express](https://img.shields.io/badge/Express_5-000000?logo=express&logoColor=white&style=for-the-badge)](https://expressjs.com)
+
+<!-- BADGES ROW 2 -->
+[![Prisma](https://img.shields.io/badge/Prisma_7-2D3748?logo=prisma&logoColor=white&style=for-the-badge)](https://www.prisma.io)
+[![SQLite](https://img.shields.io/badge/SQLite-003B57?logo=sqlite&logoColor=white&style=for-the-badge)](https://www.sqlite.org)
+[![License](https://img.shields.io/badge/Licencia-MIT-22AA55?style=for-the-badge)](LICENSE)
+
+<!-- HERO STATS -->
+<br>
+
+| | | | | | |
+|---|---|---|---|---|---|
+| 🏗️ **13** Capítulos | 📋 **69** Ítems | 📊 **55** APUs | 🔩 **384** Componentes | 🚿 **3** Baños | 📑 **5** Reportes |
+
+<br>
+
+</div>
 
 ---
 
-</div>
+## 📋 Descripción del Proyecto
 
-## 📋 Descripción
+> **Sistema completo de presupuestación** para la **rehabilitación integral de tres áreas húmedas** en el Conjunto Residencial **Reserva de Granada 3**, ubicado en la Calle 78 B No. 120-49, Bloque 1, Apto 401, Bogotá.
 
-Sistema integral de presupuestación para la remodelación de **tres baños** en el Conjunto Residencial **Reserva de Granada 3** (Calle 78 B No. 120-49, Bloque 1, Apto 401). Incluye desde la demolición hasta los acabados finales, con:
+La aplicación cubre **todo el ciclo de vida del presupuesto**: desde la demolición de acabados existentes hasta los acabados finales, incluyendo instalaciones hidrosanitarias, eléctricas, drywall, impermeabilización, enchapes en porcelanato, aparatos sanitarios, carpintería, accesorios y transporte.
 
-<div align="center">
-
-| 📐 | 📊 | 📄 |
-|---|---|---|
-| **13** Capítulos | **67** Ítems | **53** APUs |
-| **~280** Componentes | **3** Baños | **5** Reportes |
-
-</div>
+> 🎯 **Objetivo:** Proveer una herramienta interactiva de código abierto para la elaboración de presupuestos de obra civil bajo el esquema **CD + AIU** (Costo Directo + Administración 15% + Utilidad 10% + IVA 19% sobre utilidad), con precios de referencia **Homecenter Colombia — Junio 2026**.
 
 ---
 
 ## 🎯 Stack Tecnológico
 
+<div align="center">
+
 ```mermaid
-graph LR
-    A[React 19] --> B[Vite 8]
-    B --> C[TypeScript 6]
-    D[Express 5] --> E[Prisma 7]
-    E --> F[SQLite]
-    B -- proxy :3001 --> D
+graph TB
+    subgraph Frontend ["🎨 Frontend — :5173"]
+        RE[React 19] --> VI[Vite 8]
+        VI --> TS[TypeScript 6]
+    end
+    
+    subgraph Backend ["⚙️ Backend — :3001"]
+        EX[Express 5] --> PR[Prisma 7]
+        PR --> SL[SQLite]
+    end
+    
+    VI -- "proxy :3001" --> EX
+    
+    style RE fill:#61DAFB,stroke:#333,color:#000
+    style VI fill:#646CFF,stroke:#333,color:#fff
+    style TS fill:#3178C6,stroke:#333,color:#fff
+    style EX fill:#000,stroke:#333,color:#fff
+    style PR fill:#2D3748,stroke:#333,color:#fff
+    style SL fill:#003B57,stroke:#333,color:#fff
 ```
 
-| Capa | Tecnología | Versión |
-|---|---|---|
-| 🎨 **Frontend** | React + Vite + TypeScript | 19 / 8 / 6 |
-| ⚙️ **Backend** | Express + Prisma | 5 / 7 |
-| 🗄️ **Base de datos** | SQLite (Better-SQLite3) | — |
-| 🔄 **Proxy** | Vite dev server | API → `:3001` |
+</div>
+
+| Capa | Tecnología | Propósito |
+|:---|:---|---|
+| 🎨 **Frontend** | React 19 + Vite 8 + TypeScript 6 | Interfaz reactiva con 4 tabs + dashboard |
+| ⚙️ **API** | Express 5 + Prisma 7 | CRUD completo + generación de reportes MD/HTML |
+| 🗄️ **Base de datos** | SQLite (via Better-SQLite3 + Prisma Adapter) | Persistencia local cero-config |
+| 🔄 **Proxy** | Vite dev server → `localhost:3001` | Comunicación integrada frontend-backend |
 
 ---
 
 ## ✨ Funcionalidades
 
 <details open>
-<summary><b>🔧 Gestión de Presupuesto</b></summary>
+<summary><b>🏠 Dashboard con Resumen Financiero</b></summary>
 
-- **Dashboard** con 4 tabs: Presupuesto, APUs, Insumos, Memoria de Cálculo
-- **CRUD inline** de capítulos, ítems, APUs y componentes
-- **AIU automático**: Administración 15% + Utilidad 10% + IVA 19% sobre utilidad
+- **Panel de control** con 3 tarjetas: Costo Directo, AIU, Precio Venta
+- **Barra de composición** visual: CD / Admin / Utilidad / IVA con porcentajes
+- **4 tabs** de navegación: Presupuesto, APU's, Insumos, Informes
+
+</details>
+
+<details open>
+<summary><b>📋 Presupuesto — CRUD Inline Completo</b></summary>
+
+- Tabla de ítems **agrupada por capítulo** con 7 columnas (Ítem, Actividad, Und, Cant, Vr/Unit, Vr/Total, TOTAL)
+- **Edición inline**: edita cualquier campo directamente en la tabla
+- **Creación/eliminación** de ítems con recálculo automático de totales
+- Cada ítem se vincula a un **APU** para calcular costo unitario + AIU
+- Cantidades **por baño** (ItemQuantity → Room)
+
+</details>
+
+<details open>
+<summary><b>📊 APU's — Análisis de Precios Unitarios</b></summary>
+
+- **55 APUs** con desglose completo de insumos (MO, MATERIAL, EQUIPO, TRANSPORT)
+- **Expansión inline** para ver componentes de cada APU
+- **CRUD** completo de APUs y sus componentes
+- **AIU automático**: al modificar componentes se recalcula admin, utilidad e IVA
 - **Códigos auto-generados** para insumos (MO-01, MA-01, EQ-01, TR-01)
 
 </details>
 
 <details open>
-<summary><b>📑 Reportes Técnicos</b></summary>
+<summary><b>📦 Catálogo de Insumos</b></summary>
 
-| Reporte | Formato | Descripción |
-|---|---|---|
-| 📊 Presupuesto General | MD / HTML | Tabla 7 cols con capítulos y TOTAL GENERAL |
-| 📋 APUs Detallados | MD / HTML | APU con insumos, composición %, AIU |
-| 📦 Catálogo de Insumos | MD / HTML | Agrupado por categoría (MO, MATERIAL, EQUIPO, TRANSPORT) |
-| 📐 Memoria de Cantidades | MD / HTML | Dimensiones baños, áreas, notas técnicas |
-| 📝 Especificaciones Técnicas | MD / HTML | 13 capítulos con normas, métodos, unidades de pago |
+- Vista agrupada por categoría: Mano de Obra, Materiales, Equipo, Transporte
+- Cantidades totales agregadas por insumo (sumando todos los APUs × cantidades de obra)
+- Costo Directo + AIU + Valor Total por insumo
+
+</details>
+
+<details open>
+<summary><b>📑 5 Reportes Profesionales</b></summary>
+
+| # | Reporte | Descripción | Formato |
+|:---:|---|---|---|
+| 1 | 📊 **Presupuesto General** | Tabla capitulada con TOTAL GENERAL diseñado | MD / HTML |
+| 2 | 📋 **APUs Detallados** | 55 APUs con insumos, composición %, AIU completo | MD / HTML |
+| 3 | 📦 **Catálogo de Insumos** | Costos agregados por insumo (MO, Mat, Eq, Trans) | MD / HTML |
+| 4 | 📐 **Memoria de Cantidades** | Dimensiones, áreas netas de muros, cálculo de cantidades | MD / HTML |
+| 5 | 📝 **Especificaciones Técnicas** | 13 capítulos con normas, métodos constructivos, unidad de pago | MD / HTML |
 
 </details>
 
 <details open>
 <summary><b>🖨️ Impresión Profesional</b></summary>
 
-- Ventana nueva con estilos B/W optimizados
-- `<thead>` se repite en cada página (`table-header-group`)
-- `print-color-adjust: exact` preserva fondos
-- Glass card en headers con `backdrop-filter: blur(12px)`
+- **Ventana nueva** con estilos B/W optimizados para papel
+- **`<thead>` repetido** en cada página (`table-header-group`)
+- **`print-color-adjust: exact`** preserva fondos y colores
+- Filas de capítulos con fondo gris, letra negrita, border-left 3px
+- **TOTAL GENERAL**: fondo gradiente oscuro con tipografía blanca
+- **Footer profesional**: Ingeniero a cargo con datos de contacto
 
 </details>
+
+<details open>
+<summary><b>⚙️ Administración de Capítulos</b></summary>
+
+- Componente **AdminChapters** para crear, editar y reordenar capítulos
+- Soporte para iconos personalizados (emojis)
+- Validación de código único y eliminación segura (bloquea si hay ítems asociados)
+
+</details>
+
+---
+
+## 💰 Resumen Financiero
+
+<div align="center">
+
+### Costo Directo
+
+| Componente | Valor | % del CD |
+|:---|---:|---:|
+| 👷 **Mano de Obra** | $7.963.045 | 36.9% |
+| 🧱 **Materiales** | $11.242.181 | 52.1% |
+| 🔧 **Equipo** | $836.126 | 3.9% |
+| 🚚 **Transporte** | $1.539.614 | 7.1% |
+| **💵 Costo Directo Total** | **$21.580.967** | **100%** |
+
+### AIU — Administración, Utilidad e IVA
+
+| Componente | Tasa | Valor |
+|:---|---:|---:|
+| 📋 **Administración** | 15% | $3.237.138 |
+| 💼 **Utilidad** | 10% | $2.158.097 |
+| 🧾 **IVA sobre Utilidad** | 19% | $410.127 |
+| **📊 Total AIU** | | **$5.805.382** |
+
+<!-- VISUAL BAR -->
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│  CD ████████████████████████████████████████████████████████████ 79% │
+│  Adm ██████████ 12%  │  Util ███████ 8%  │  IVA ██ 1%  │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### 🏆 Precio Venta
+
+| | |
+|:---|---:|
+| **💵 Costo Directo** | $21.580.967 |
+| **📊 AIU** | $5.805.382 |
+| | |
+| **🏆 VALOR TOTAL DEL PRESUPUESTO** | **$27.386.349 COP** |
+| | **≈ USD 6.850*** |
+
+<sub>\*Tasa de referencia aproximada $4.000 COP/USD. Precios Homecenter Colombia Junio 2026.</sub>
+
+</div>
+
+---
+
+## 📐 Dimensiones de los Baños
+
+| Baño | Ancho | Largo | Altura | Área Piso | Perímetro | Área Muros Neta | Ducha |
+|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| 🚿 **B1** | 1.20 m | 1.50 m | 2.20 m | 1.80 m² | 5.40 m | 10.42 m² | ❌ |
+| 🚿 **B2** | 1.25 m | 2.15 m | 2.22 m | 2.69 m² | 6.80 m | 13.50 m² | ✅ |
+| 🚿 **B3** | 1.25 m | 2.15 m | 2.20 m | 2.69 m² | 6.80 m | 13.50 m² | ✅ |
+| **Total** | | | | **7.18 m²** | | **37.42 m²** | **2** |
+
+> **Nota:** El área neta de muros descuenta puertas (0.65×2.00m = 1.30 m²) y ventanas (0.40×0.40m = 0.16 m²). Altura de entrepiso estándar Bogotá: 2.20 m.
+
+---
+
+## 🏗️ 13 Capítulos de Obra — Desglose Completo
+
+<div align="center">
+
+| # | Icono | Capítulo | Costo Directo | % CD |
+|:---:|:---:|---|---:|---:|
+| **C01** | 🔨 | Demolición y Desmonte | $1.759.351 | 8.2% |
+| **C02** | 💧 | Instalaciones Hidráulicas | $1.323.009 | 6.1% |
+| **C03** | ⚡ | Instalaciones Eléctricas | $1.308.000 | 6.1% |
+| **C04** | 🧱 | Muros y Pañetes | $1.171.192 | 5.4% |
+| **C05** | 🎨 | Cieloraso en Drywall y Pintura | $523.851 | 2.4% |
+| **C06** | 🛡️ | Impermeabilización | $442.140 | 2.0% |
+| **C07** | ✨ | Enchapes y Pisos en Porcelanato | **$5.104.995** | **23.7%** |
+| **C08** | 🚽 | Aparatos Sanitarios y Griferías | **$4.566.000** | **21.2%** |
+| **C09** | 🔧 | Carpintería | $286.501 | 1.3% |
+| **C10** | 🪞 | Accesorios y Varios | $2.132.006 | 9.9% |
+| **C11** | 🧹 | Aseo y Finales | $972.000 | 4.5% |
+| **C12** | 🚚 | Transporte y Logística | $1.308.000 | 6.1% |
+| **C13** | 🪟 | Ventanas | $684.000 | 3.2% |
+| | | **TOTAL** | **$21.580.967** | **100%** |
+
+</div>
+
+### 📊 Distribución Visual del Presupuesto
+
+```
+C07 ████████████████████████████████████████████████████████████ 23.7%
+C08 ███████████████████████████████████████████████████████    21.2%
+C10 ████████████████████████████                              9.9%
+C01 ███████████████████████                                   8.2%
+C02 ███████████████████                                       6.1%
+C03 ███████████████████                                       6.1%
+C12 ███████████████████                                       6.1%
+C04 █████████████████                                         5.4%
+C11 ███████████████                                           4.5%
+C13 ████████████                                              3.2%
+C05 ███████                                                   2.4%
+C06 ██████                                                    2.0%
+C09 ████                                                      1.3%
+```
 
 ---
 
@@ -93,95 +262,40 @@ graph LR
 
 ```
 06-Apto_Suegros/
-├── 📁 server/
-│   ├── 📄 index.ts            # API REST (Express 5) + generación de reportes
-│   └── ...
-├── 📁 src/
+│
+├── 📁 server/                        # 🖥️ Backend API
+│   └── 📄 index.ts                   #     Express 5 — CRUD completo + reportes
+│
+├── 📁 src/                           # 🎨 Frontend React
 │   ├── 📁 components/
-│   │   ├── 📄 Presupuesto.tsx      # Tabla items por capítulo con CRUD inline
-│   │   ├── 📄 APUs.tsx             # Lista APUs con expansión y CRUD
-│   │   ├── 📄 Insumos.tsx          # Catálogo de insumos agrupado
-│   │   └── 📄 MemoriaDeCalculo.tsx # 5 reportes con impresión
-│   ├── 📄 api.ts               # Interfaces + fetchJSON/sendJSON
-│   ├── 📄 App.tsx              # 4 tabs + dashboard
-│   └── 📄 index.css            # Estilos globales
-├── 📁 prisma/
-│   ├── 📄 schema.prisma        # 8 modelos (Unit, Room, Chapter, Item, ...)
-│   ├── 📄 seed.ts              # 53 APUs, 67 items, 13 capítulos
-│   └── 🗄️ dev.db              # Base de datos SQLite
-├── 📁 informes/
-│   ├── 📄 00-Justificacion_Remodelacion.pdf   # 🏆 Documento completo (141 pág)
+│   │   ├── 📄 Presupuesto.tsx        #     Tabla capítulos/ítems + CRUD inline
+│   │   ├── 📄 APUs.tsx               #     Análisis de Precios Unitarios
+│   │   ├── 📄 Insumos.tsx            #     Catálogo de insumos agrupado
+│   │   ├── 📄 MemoriaDeCalculo.tsx   #     5 reportes profesionales + impresión
+│   │   └── 📄 AdminChapters.tsx      #     CRUD de capítulos
+│   ├── 📄 api.ts                     #     Interfaces + fetchJSON/sendJSON
+│   ├── 📄 App.tsx                    #     4 tabs + dashboard + footer
+│   └── 📄 App.css                    #     Estilos: glassmorphism, grid, animaciones
+│
+├── 📁 prisma/                        # 🗄️ Base de datos
+│   ├── 📄 schema.prisma              #     8 modelos (Unit, Room, Chapter, ...)
+│   ├── 📄 seed.ts                    #     55 APUs · 69 items · 13 capítulos
+│   └── 🗄️ dev.db                    #     SQLite con datos semilla
+│
+├── 📁 informes/                      # 📑 Documentación técnica PDF
+│   ├── 📄 00-Justificacion_Remodelacion.pdf   # 🏆 141 páginas (completo)
 │   ├── 📄 01-Presupuesto_General.pdf
 │   ├── 📄 02-APUs_Detallados.pdf
 │   ├── 📄 03-Insumos.pdf
 │   ├── 📄 04-Memoria_Cantidades.pdf
 │   └── 📄 05-Especificaciones_Tecnicas.pdf
-├── 📁 reports/                 # Markdown base para reportes
-├── 📄 AGENTS.md                # Contexto completo del proyecto
+│
+├── 📁 reports/                       # 📝 Markdown base para reportes
+├── 📄 AGENTS.md                      # Contexto completo para asistentes AI
 ├── 📄 package.json
+├── 📄 tsconfig.json
 └── 📄 vite.config.ts
 ```
-
----
-
-## 🧮 Datos del Proyecto
-
-<div align="center">
-
-| Concepto | Valor |
-|---|---|
-| 👤 **Propietario** | Francisco Javier Rondon Lagos |
-| 📍 **Dirección** | Calle 78 B No. 120-49, Bloque 1, Apto 401 |
-| 🏙️ **Conjunto** | Reserva de Granada 3 · Bogotá |
-| 🏢 **Edificio** | 12 pisos + parqueadero a nivel + 1 sótano |
-
-</div>
-
-### 📐 Dimensiones de los Baños
-
-| Baño | Ancho | Largo | Altura | Área Piso | Área Muros | Ducha |
-|---|---|---|---|---|---|---|
-| 🚿 B1 | 1.20 m | 1.50 m | 2.20 m | 1.80 m² | 10.42 m² | ❌ |
-| 🚿 B2 | 1.25 m | 2.15 m | 2.20 m | 2.69 m² | 13.50 m² | ✅ |
-| 🚿 B3 | 1.25 m | 2.15 m | 2.20 m | 2.69 m² | 13.50 m² | ✅ |
-| **Total** | | | | **7.18 m²** | **37.42 m²** | 2 |
-
-### 💰 Resumen Financiero
-
-<div align="center">
-
-| Concepto | Valor |
-|---|---|
-| 💵 **Costo Directo** | **$21.580.967 COP** |
-| 📊 **AIU** (Adm 15% + Util 10% + IVA 19%/util) | **$5.805.382 COP** |
-| 🏆 **Valor Total** | **$27.386.349 COP** |
-
-</div>
-
----
-
-## 🏗️ 13 Capítulos de Obra
-
-<div align="center">
-
-| # | Capítulo | Costo Directo | % |
-|---|---|---|---|
-| 🔨 | **C01** Demolición y Desmonte | $1.759.351 | 8.2% |
-| 💧 | **C02** Instalaciones Hidráulicas | $1.323.009 | 6.1% |
-| ⚡ | **C03** Instalaciones Eléctricas | $1.308.000 | 6.1% |
-| 🧱 | **C04** Muros y Pañetes | $1.171.192 | 5.4% |
-| 🎨 | **C05** Cieloraso Drywall + Pintura | $523.851 | 2.4% |
-| 🛡️ | **C06** Impermeabilización | $442.140 | 2.0% |
-| ✨ | **C07** Enchapes y Pisos Porcelanato | **$5.104.995** | **23.7%** |
-| 🚽 | **C08** Aparatos Sanitarios y Griferías | **$4.566.000** | **21.2%** |
-| 🔧 | **C09** Carpintería | $286.501 | 1.3% |
-| 🪞 | **C10** Accesorios y Varios | $2.132.006 | 9.9% |
-| 🧹 | **C11** Aseo y Finales | $972.000 | 4.5% |
-| 🚚 | **C12** Transporte y Logística | $1.308.000 | 6.1% |
-| 🪟 | **C13** Ventanas | $684.000 | 3.2% |
-| | **TOTAL** | **$21.580.967** | **100%** |
-
-</div>
 
 ---
 
@@ -189,68 +303,122 @@ graph LR
 
 ### 📥 Prerrequisitos
 
-- Node.js ≥ 22
-- npm ≥ 10
+```
+🟢 Node.js ≥ 22
+🟢 npm ≥ 10
+```
 
 ### ⚙️ Instalación
 
 ```bash
-# Clonar
+# 1. Clonar el repositorio
 git clone https://github.com/gcorrea2005/06-Apto_Suegros.git
 cd 06-Apto_Suegros
 
-# Dependencias
+# 2. Instalar dependencias
 npm install
 
-# Inicializar base de datos + seed
+# 3. Inicializar base de datos (crea tablas + datos semilla)
 npx prisma db push --force-reset
 npx prisma generate
 npx tsx prisma/seed.ts
 ```
 
-### 🖥️ Desarrollo
+### 🖥️ Desarrollo (dos terminales)
 
 ```bash
-# Terminal 1: API Server → http://localhost:3001
+# Terminal 1 — API Server
 npm run dev:server
+# → http://localhost:3001
 
-# Terminal 2: Cliente → http://localhost:5173
+# Terminal 2 — Frontend
 npm run dev:client
-
-# O todo en uno
-npm run dev
+# → http://localhost:5173
 ```
 
-### 🏗️ Producción
+> 💡 **Tip:** Usa `npm run dev` para correr ambos simultáneamente con `concurrently`.
+
+### 🏗️ Build de Producción
 
 ```bash
 npm run build
 npm run preview
 ```
 
+### 🛠️ Comandos Útiles
+
+| Comando | Descripción |
+|:---|---|
+| `npm run dev:server` | API Express en `:3001` con hot-reload (tsx watch) |
+| `npm run dev:client` | Vite dev server en `:5173` |
+| `npm run dev` | Ambos servidores simultáneos |
+| `npm run build` | Compilación TypeScript + Vite build |
+| `npm run lint` | ESLint en todo el proyecto |
+| `npx prisma studio` | GUI para explorar la base de datos |
+| `npx prisma db push --force-reset` | Regenerar BD desde schema |
+| `npx tsc --noEmit` | Verificar tipos TypeScript |
+
 ---
 
 ## 📄 Documento Técnico
 
-El informe completo se encuentra en:
+El informe completo de **141 páginas** se encuentra en:
 
 ```
 📁 informes/00-Justificacion_Remodelacion.pdf
 ```
 
-**141 páginas** con:
+### Contenido del Documento
 
-| Sección | Contenido |
-|---|---|
-| **1. Introducción** | Contexto del proyecto, objetivos |
-| **2. Diagnóstico** | Estado actual de los 3 baños, patologías |
-| **3. Alcance** | 13 capítulos de obra detallados |
-| **4. Justificación Técnica** | Sísmica, geotecnia, morteros, asentamientos, deformaciones, humedad capilar |
-| **5. Justificación Económica** | Presupuesto, AIU, análisis costo-beneficio |
-| **6. Cronograma** | Diagrama de Gantt (5 semanas) |
-| **7. Conclusiones** | Recomendaciones y cierre |
-| **8. Anexos** | 5 documentos técnicos completos |
-| **Bibliografía** | 30 referencias (NTC, ASTM, ISO, decretos) |
+| Sección | Páginas | Contenido |
+|:---:|:---:|---|
+| **1** | 1-8 | 📝 **Introducción** — Contexto, objetivos generales y específicos |
+| **2** | 9-22 | 🔍 **Diagnóstico** — Estado actual de los 3 baños, patologías identificadas |
+| **3** | 23-35 | 📋 **Alcance del Proyecto** — 13 capítulos de obra detallados |
+| **4** | 36-72 | 🏛️ **Justificación Técnica** — NSR-10, microzonificación sísmica, geotecnia, morteros, asentamientos diferenciales, deformaciones, humedad capilar, fichas técnicas |
+| **5** | 73-92 | 💰 **Justificación Económica** — Presupuesto detallado, AIU, análisis costo-beneficio, viabilidad financiera |
+| **6** | 93-105 | 📅 **Cronograma** — Diagrama de Gantt (5 semanas), ruta crítica |
+| **7** | 106-112 | ✅ **Conclusiones y Recomendaciones** |
+| **8** | 113-135 | 📎 **Anexos** — 5 documentos técnicos completos |
+| **Ref** | 136-141 | 📚 **Bibliografía** — 30 referencias (NTC, ASTM, ISO, NSR, decretos) |
+
+---
+
+## 🧪 API REST — Endpoints
+
+### Unidades y Salas
+
+| Método | Ruta | Descripción |
+|:---:|---|---|
+| `GET` | `/api/units` | Lista unidades (m², und, ml, pto, gl...) |
+| `GET` | `/api/rooms` | Lista los 3 baños con dimensiones |
+| `GET` | `/api/chapters` | 13 capítulos ordenados |
+
+### Gestión de Capítulos, Ítems y APUs
+
+| Método | Ruta | Descripción |
+|:---:|---|---|
+| `POST` | `/api/chapters` | Crear capítulo |
+| `PUT` | `/api/chapters/:code` | Editar capítulo |
+| `DELETE` | `/api/chapters/:code` | Eliminar capítulo (si no tiene ítems) |
+| `GET` | `/api/chapters/:code/items` | Ítems de un capítulo |
+| `POST` | `/api/items` | Crear ítem (con cantidades por baño) |
+| `PUT` | `/api/items/:id` | Editar ítem |
+| `DELETE` | `/api/items/:id` | Eliminar ítem |
+| `GET` | `/api/apus` | Lista 55 APUs con componentes |
+| `POST` | `/api/apus` | Crear APU (con códigos auto-generados) |
+| `PUT` | `/api/apus/:id` | Editar APU (recalcula AIU) |
+| `DELETE` | `/api/apus/:id` | Eliminar APU |
+| `POST` | `/api/apus/:apuId/components` | Agregar componente |
+| `PUT` | `/api/apus/:apuId/components/:compId` | Editar componente |
+| `DELETE` | `/api/apus/:apuId/components/:compId` | Eliminar componente |
+
+### Reportes y Resumen
+
+| Método | Ruta | Descripción |
+|:---:|---|---|
+| `GET` | `/api/budget/summary` | Dashboard: CD, AIU, PV, desglose MO/MAT/EQ/TR |
+| `GET` | `/api/reports/:type?format=html` | Reportes en MD o HTML renderizado |
 
 ---
 
@@ -258,38 +426,69 @@ El informe completo se encuentra en:
 
 <div align="center">
 
-| Norma | Descripción |
-|---|---|
-| 🏛️ **NSR-10** | Reglamento Colombiano de Construcción Sismo Resistente |
-| ⚡ **RETIE** | Reglamento Técnico de Instalaciones Eléctricas |
-| 💧 **RAS 2000** | Reglamento Técnico de Agua Potable y Saneamiento |
-| 🔌 **NTC 2050** | Código Eléctrico Colombiano |
-| 🧱 **NTC 4321** | Baldosas cerámicas |
-| 🚽 **NTC 179** | Aparatos sanitarios de cerámica |
-| 🚿 **NTC 2186** | Grifería para baño |
-| 🧱 **NTC 5618** | Placas de yeso (drywall) |
-| 🛡️ **NTC 3184** | Membranas impermeabilizantes |
-| 🪟 **NTC 4425** | Ventanas de aluminio |
-| 🪟 **NTC 1522** | Vidrio para construcción |
-| 🇺🇸 **ASTM C1396** | Gypsum Board |
-| 🇺🇸 **ASTM D6083** | Liquid Applied Acrylic Coating |
-| 🌐 **ISO 13007** | Ceramic tiles — Grouts and adhesives |
-| 📜 **Decreto 1077/2015** | Gestión de RCD |
-| 📜 **Decreto 523/2010** | Microzonificación Sísmica de Bogotá |
+| Norma | Descripción | Aplicación |
+|:---:|---|:---:|
+| 🏛️ **NSR-10** | Reglamento Colombiano de Construcción Sismo Resistente | Supervisión técnica, cargas, demoliciones |
+| ⚡ **RETIE** | Reglamento Técnico de Instalaciones Eléctricas | Instalaciones eléctricas en áreas húmedas |
+| 💧 **RAS 2000** | Reglamento Técnico de Agua Potable y Saneamiento | Red hidráulica y sanitaria |
+| 🔌 **NTC 2050** | Código Eléctrico Colombiano | Tomas GFCI, circuitos |
+| 🧱 **NTC 4321** | Baldosas cerámicas — Especificaciones | Enchape porcelanato |
+| 🚽 **NTC 179** | Aparatos sanitarios de cerámica | Sanitarios, lavamanos |
+| 🚿 **NTC 2186** | Grifería para baño | Grifería mezcladora |
+| 🧱 **NTC 5618** | Placas de yeso (drywall) | Cieloraso en drywall |
+| 🛡️ **NTC 3184** | Membranas impermeabilizantes | Impermeabilización de pisos |
+| 🪟 **NTC 4425** | Ventanas de aluminio | Ventanas |
+| 🪟 **NTC 1522** | Vidrio para construcción | Divisiones de ducha |
+| 🇺🇸 **ASTM C1396** | Standard Specification for Gypsum Board | Placa de yeso |
+| 🇺🇸 **ASTM D6083** | Standard for Liquid Applied Acrylic Coating | Membrana acrílica |
+| 🌐 **ISO 13007** | Ceramic tiles — Grouts and adhesives | Pegantes y boquillas |
+| 📜 **Decreto 1077/2015** | Gestión de Residuos de Construcción y Demolición | Manejo de RCD |
+| 📜 **Decreto 523/2010** | Microzonificación Sísmica de Bogotá | Amenaza sísmica |
 
 </div>
 
 ---
 
+## 📸 Capturas de Pantalla
+
+> *Las imágenes ilustrativas representan la aplicación en funcionamiento.*
+
+<details>
+<summary><b>🖼️ Vista previa del Dashboard</b></summary>
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│  🏗️ Presupuesto 3 Baños                                       │
+│  Remodelación completa · Bogotá, Colombia                       │
+│                                                                 │
+│  [Presupuesto] [APU's] [Insumos] [Informes]                     │
+│                                                                 │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────────────┐  │
+│  │ Costo Directo │  │ AIU          │  │   Precio Venta        │  │
+│  │ MO   $7.96M   │  │ Adm  $3.24M  │  │   $27.386.349         │  │
+│  │ Mat  $11.24M  │  │ Util $2.16M  │  │   ┌─┬──┬───┬─┐        │  │
+│  │ Eq   $836K    │  │ IVA  $410K   │  │   │C│A│U│I│        │  │
+│  │ Trans $1.54M  │  │              │  │   └─┴──┴───┴─┘        │  │
+│  │ Total $21.58M │  │ Total $5.81M │  │   79% 12% 8% 1%      │  │
+│  └──────────────┘  └──────────────┘  └──────────────────────┘  │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+</details>
+
+---
+
 ## 🤝 Contribuciones
 
-Las contribuciones son bienvenidas. Por favor:
+Las contribuciones son bienvenidas y apreciadas:
 
-1. Fork el proyecto
-2. Crea una rama (`git checkout -b feature/amazing`)
-3. Commit (`git commit -m 'feat: algo increíble'`)
-4. Push (`git push origin feature/amazing`)
-5. Abre un Pull Request
+1. 🍴 Fork el proyecto
+2. 🌿 Crea una rama (`git checkout -b feature/mejora-increible`)
+3. 💾 Commit (`git commit -m 'feat: descripción clara del cambio'`)
+4. 🚀 Push (`git push origin feature/mejora-increible`)
+5. 🔀 Abre un Pull Request
+
+> 📌 Por favor, asegúrate de que `npm run lint` y `npx tsc --noEmit` pasen antes de enviar tu PR.
 
 ---
 
@@ -297,23 +496,47 @@ Las contribuciones son bienvenidas. Por favor:
 
 <div align="center">
 
+<br>
+
 **Ing. Jorge Giovanni Correa Mejía**  
-📧 gcorrea2005@gmail.com  
-📍 Bogotá, Colombia
+**Diseñador Estructural**
+
+📧 [gcorrea2005@gmail.com](mailto:gcorrea2005@gmail.com)  
+📱 **Cel.** 304 445 2987  
+📍 **Bogotá, Colombia**  
+🆔 **CC** 4.252.533
 
 </div>
 
 ---
 
-<p align="center">
-  <sub>Hecho con ❤️, ☕ y mucha 🎨 en Bogotá — Junio 2026</sub><br>
-  <sub>Precios Homecenter Colombia · Normas Técnicas Colombianas Vigentes</sub>
-</p>
+## 📄 Licencia
+
+```
+MIT License
+
+Copyright (c) 2026 Jorge Giovanni Correa Mejía
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files...
+```
+
+---
 
 <div align="center">
-  
-[![GitHub last commit](https://img.shields.io/github/last-commit/gcorrea2005/06-Apto_Suegros)](https://github.com/gcorrea2005/06-Apto_Suegros/commits/master)
-[![GitHub repo size](https://img.shields.io/github/repo-size/gcorrea2005/06-Apto_Suegros)](https://github.com/gcorrea2005/06-Apto_Suegros)
-[![GitHub top language](https://img.shields.io/github/languages/top/gcorrea2005/06-Apto_Suegros)](https://github.com/gcorrea2005/06-Apto_Suegros)
+
+<br>
+
+| | |
+|:---|:---|
+| 🏗️ | **Hecho con ❤️, ☕ y mucha 🎨 en Bogotá — Junio 2026** |
+| 💰 | **Precios Homecenter Colombia** |
+| 📜 | **Normas Técnicas Colombianas Vigentes** |
+
+<br>
+
+[![GitHub last commit](https://img.shields.io/github/last-commit/gcorrea2005/06-Apto_Suegros?style=flat-square&label=Último%20commit)](https://github.com/gcorrea2005/06-Apto_Suegros/commits/master)
+[![GitHub repo size](https://img.shields.io/github/repo-size/gcorrea2005/06-Apto_Suegros?style=flat-square&label=Tamaño)](https://github.com/gcorrea2005/06-Apto_Suegros)
+[![GitHub top language](https://img.shields.io/github/languages/top/gcorrea2005/06-Apto_Suegros?style=flat-square&label=Lenguaje%20principal)](https://github.com/gcorrea2005/06-Apto_Suegros)
 
 </div>
