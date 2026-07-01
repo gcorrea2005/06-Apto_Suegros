@@ -1,1 +1,78 @@
-/* reset handled in App.css */
+/* ═══════════════════════════════════════════════════════════════════
+   PRESUPUESTO 3 BAÑOS — Design System (Stripe-Inspired)
+   Paleta vibrante: purple (#7c3aed) + navy (#0f172a) + warm white
+   Tipografía: Inter + JetBrains Mono
+   ═══════════════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  /* ── Backgrounds ── */
+  --bg-canvas: #0b1120;
+  --bg-surface: #111827;
+  --bg-elevated: #1e293b;
+  --bg-card: rgba(30, 41, 59, 0.6);
+  --bg-card-hover: rgba(30, 41, 59, 0.85);
+
+  /* ── Brand / Accent ── */
+  --brand: #7c3aed;
+  --brand-light: #a78bfa;
+  --brand-glow: rgba(124, 58, 237, 0.25);
+  --accent-gold: #fbbf24;
+  --accent-gold-soft: rgba(251, 191, 36, 0.12);
+
+  /* ── Gradients ── */
+  --grad-hero: linear-gradient(135deg, #7c3aed 0%, #a78bfa 50%, #fbbf24 100%);
+  --grad-card: linear-gradient(160deg, rgba(124,58,237,0.08), rgba(124,58,237,0.02));
+  --grad-surface: linear-gradient(180deg, rgba(30,41,59,0.5), rgba(15,23,42,0.3));
+
+  /* ── Text ── */
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-dim: #475569;
+
+  /* ── Borders ── */
+  --border-subtle: rgba(148, 163, 184, 0.08);
+  --border-default: rgba(148, 163, 184, 0.14);
+  --border-strong: rgba(148, 163, 184, 0.22);
+
+  /* ── Shadows (Stripe-inspired: purple-tinted) ── */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 20px rgba(0,0,0,0.25), 0 1px 3px rgba(0,0,0,0.15);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,0.3), 0 2px 8px rgba(0,0,0,0.2);
+  --shadow-glow: 0 0 20px rgba(124,58,237,0.15);
+
+  /* ── Category Colors ── */
+  --cat-mo: #f87171;
+  --cat-material: #60a5fa;
+  --cat-equipo: #c084fc;
+  --cat-transporte: #34d399;
+
+  /* ── Sizing ── */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--bg-canvas);
+  color: var(--text-primary);
+  min-height: 100vh;
+  padding: 24px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (max-width: 768px) {
+  body { padding: 12px; }
+}

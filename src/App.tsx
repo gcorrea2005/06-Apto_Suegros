@@ -129,7 +129,7 @@ function App() {
           <div className="app-footer-seal-icon">&#x2699; &#x2696;</div>
           <div className="app-footer-seal-content">
             <div className="app-footer-name">Ing. Jorge Giovanni Correa Mejía</div>
-            <div className="app-footer-role">Diseñador Estructural</div>
+            <div className="app-footer-role">Constructor Responsable</div>
           </div>
         </div>
         <div className="app-footer-meta">

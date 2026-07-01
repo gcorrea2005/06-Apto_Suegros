@@ -5,6 +5,8 @@ dist/
 .env
 .DS_Store
 Thumbs.db
+# Optimized images (derived from img/)
+img_opt/
 # LaTeX build artifacts
 *.pdf
 *.aux

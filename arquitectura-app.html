@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arquitectura — Presupuesto 3 Baños</title>
+<style>
+/* ═══════════════════════════════════════════════════════════════════
+   ARQUITECTURA APP — Presupuesto 3 Baños
+   Archivo: arquitectura-app.html
+   Descripción: Diagrama visual de la arquitectura full-stack de la app
+                React 19 + Vite 8 + Express 5 + Prisma 7 + SQLite
+   Autor: Documentación del proyecto
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── Reset & Base ──────────────────────────────────────────────── */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  color: #e2e8f0;
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── Container ─────────────────────────────────────────────────── */
+.container {
+  max-width: 1400px;
+  width: 100%;
+}
+
+/* ── Hero Header ───────────────────────────────────────────────── */
+header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #facc15, #f97316, #ef4444);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+}
+
+header .subtitle {
+  font-size: 1rem;
+  color: #94a3b8;
+  margin-top: 0.4rem;
+}
+
+header .subtitle strong {
+  color: #facc15;
+  -webkit-text-fill-color: #facc15;
+}
+
+/* ── Legend / Key ──────────────────────────────────────────────── */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem 2rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  padding: 1rem 1.5rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.legend-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legend-dot.frontend   { background: #22d3ee; box-shadow: 0 0 8px rgba(34,211,238,0.5); }
+.legend-dot.backend    { background: #10b981; box-shadow: 0 0 8px rgba(16,185,129,0.5); }
+.legend-dot.database   { background: #a78bfa; box-shadow: 0 0 8px rgba(167,139,250,0.5); }
+.legend-dot.component  { background: #facc15; box-shadow: 0 0 8px rgba(250,204,21,0.5); }
+.legend-dot.conn       { background: #fb7185; box-shadow: 0 0 8px rgba(251,113,133,0.5); }
+
+/* ── SVG Diagram ───────────────────────────────────────────────── */
+.diagram-card {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(8px);
+}
+
+.diagram-card svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ── Info Panel ────────────────────────────────────────────────── */
+.info-panel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.info-card {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+  backdrop-filter: blur(6px);
+  transition: transform 0.2s, border-color 0.2s;
+}
+.info-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(250,204,21,0.3);
+}
+
+.info-card .card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.8rem;
+}
+
+.info-card .card-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  animation: pulse-dot 2s infinite;
+}
+.info-card .card-dot.cyan    { background:#22d3ee; box-shadow:0 0 6px #22d3ee; }
+.info-card .card-dot.emerald { background:#10b981; box-shadow:0 0 6px #10b981; }
+.info-card .card-dot.violet  { background:#a78bfa; box-shadow:0 0 6px #a78bfa; }
+.info-card .card-dot.yellow  { background:#facc15; box-shadow:0 0 6px #facc15; }
+
+@keyframes pulse-dot {
+  0%, 100% { opacity:1; transform:scale(1); }
+  50%      { opacity:0.6; transform:scale(0.85); }
+}
+
+.info-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #f1f5f9;
+}
+
+.info-card ul {
+  list-style: none;
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: #94a3b8;
+}
+
+.info-card ul li::before {
+  content: "▸ ";
+  color: #facc15;
+  font-weight: 700;
+}
+
+/* ── Data Flow Section ─────────────────────────────────────────── */
+.flow-section {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.flow-section h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #facc15;
+  margin-bottom: 1rem;
+}
+
+.flow-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.flow-step {
+  background: rgba(34,211,238,0.1);
+  border: 1px solid rgba(34,211,238,0.25);
+  border-radius: 8px;
+  padding: 0.4rem 0.8rem;
+  font-weight: 600;
+  color: #22d3ee;
+}
+
+.flow-arrow {
+  color: #475569;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+/* ── Table (modelos) ───────────────────────────────────────────── */
+.model-table-wrap {
+  overflow-x: auto;
+}
+
+.model-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+.model-table th {
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  background: rgba(250,204,21,0.08);
+  color: #facc15;
+  font-weight: 700;
+  border-bottom: 2px solid rgba(250,204,21,0.2);
+}
+.model-table td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  color: #cbd5e1;
+}
+.model-table tr:hover td {
+  background: rgba(255,255,255,0.03);
+}
+.model-table code {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.75rem;
+  background: rgba(167,139,250,0.12);
+  color: #a78bfa;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+}
+
+/* ── Footer ────────────────────────────────────────────────────── */
+footer.doc-footer {
+  text-align: center;
+  font-size: 0.75rem;
+  color: #475569;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+/* ── Responsive ────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  body { padding: 1rem; }
+  header h1 { font-size: 1.5rem; }
+  .legend { gap: 0.6rem 1rem; font-size: 0.75rem; }
+  .info-panel { grid-template-columns: 1fr; }
+  .flow-steps { flex-direction: column; align-items: flex-start; }
+  .flow-arrow { transform: rotate(90deg); }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ══ HEADER ══ -->
+  <header>
+    <h1>🏗️ Presupuesto 3 Baños — Arquitectura de la App</h1>
+    <p class="subtitle">
+      Full-stack · React 19 + Vite 8 · Express 5 · Prisma 7 · SQLite &nbsp;·&nbsp;
+      <strong>CD ~$21.58M</strong> · <strong>PV ~$27.39M</strong>
+    </p>
+  </header>
+
+  <!-- ══ LEGEND ══ -->
+  <div class="legend">
+    <span class="legend-item"><span class="legend-dot frontend"></span> Frontend</span>
+    <span class="legend-item"><span class="legend-dot backend"></span> Backend</span>
+    <span class="legend-item"><span class="legend-dot database"></span> Base de Datos</span>
+    <span class="legend-item"><span class="legend-dot component"></span> Componente React</span>
+    <span class="legend-item"><span class="legend-dot conn"></span> Conexión / HTTP</span>
+  </div>
+
+  <!-- ══ SVG DIAGRAM ══ -->
+  <div class="diagram-card">
+    <svg viewBox="0 0 1300 820" xmlns="http://www.w3.org/2000/svg" style="background:transparent;">
+      <defs>
+        <!-- Glow filters -->
+        <filter id="glow-cyan"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <filter id="glow-emerald"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <filter id="glow-violet"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <filter id="shadow-sm"><feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/></filter>
+        <!-- Arrow markers -->
+        <marker id="arrow-cyan" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0, 10 3.5, 0 7" fill="#22d3ee" opacity="0.7"/>
+        </marker>
+        <marker id="arrow-rose" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0, 10 3.5, 0 7" fill="#fb7185" opacity="0.7"/>
+        </marker>
+        <!-- Gradient fills -->
+        <linearGradient id="g-frontend" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.18"/>
+          <stop offset="100%" stop-color="#22d3ee" stop-opacity="0.06"/>
+        </linearGradient>
+        <linearGradient id="g-backend" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#10b981" stop-opacity="0.18"/>
+          <stop offset="100%" stop-color="#10b981" stop-opacity="0.06"/>
+        </linearGradient>
+        <linearGradient id="g-db" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.18"/>
+          <stop offset="100%" stop-color="#a78bfa" stop-opacity="0.06"/>
+        </linearGradient>
+        <linearGradient id="g-react" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#facc15" stop-opacity="0.2"/>
+          <stop offset="100%" stop-color="#facc15" stop-opacity="0.05"/>
+        </linearGradient>
+      </defs>
+
+      <!-- Background grid -->
+      <pattern id="grid-svg" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/>
+      </pattern>
+      <rect width="1300" height="820" fill="url(#grid-svg)" rx="12"/>
+
+      <!-- ═══ LAYER 1 — CLIENT ═══ -->
+      <rect x="30" y="20" width="1240" height="240" rx="12" fill="rgba(34,211,238,0.05)" stroke="#22d3ee" stroke-width="1" stroke-opacity="0.25" stroke-dasharray="6,4"/>
+      <text x="50" y="48" font-family="system-ui" font-size="11" font-weight="700" fill="#22d3ee">CAPA 1 · FRONTEND — React 19 + Vite 8 (puerto :5173)</text>
+
+      <!-- App.tsx -->
+      <rect x="50" y="62" width="290" height="56" rx="8" fill="rgba(34,211,238,0.12)" stroke="#22d3ee" stroke-width="1.2"/>
+      <text x="66" y="85" font-family="system-ui" font-size="11" font-weight="700" fill="#e2e8f0">src/App.tsx</text>
+      <text x="66" y="100" font-family="system-ui" font-size="9" fill="#94a3b8">Dashboard + Tabs + Footer</text>
+      <text x="66" y="112" font-family="monospace" font-size="8" fill="#64748b">useState, useEffect, BudgetSummary</text>
+
+      <!-- api.ts -->
+      <rect x="480" y="62" width="260" height="56" rx="8" fill="rgba(34,211,238,0.12)" stroke="#22d3ee" stroke-width="1.2"/>
+      <text x="496" y="85" font-family="system-ui" font-size="11" font-weight="700" fill="#e2e8f0">src/api.ts</text>
+      <text x="496" y="100" font-family="system-ui" font-size="9" fill="#94a3b8">Cliente HTTP — fetchJSON / sendJSON</text>
+      <text x="496" y="112" font-family="monospace" font-size="8" fill="#64748b">14 endpoints · interfaces TS · api.budgetSummary()</text>
+
+      <!-- Arrow: api.ts → Express backend -->
+      <line x1="740" y1="90" x2="780" y2="90" stroke="#fb7185" stroke-width="1.5" marker-end="url(#arrow-rose)" stroke-dasharray="4,3" opacity="0.6"/>
+      <text x="748" y="82" font-family="monospace" font-size="7" fill="#fb7185">proxy Vite :5173→:3001</text>
+
+      <!-- Components -->
+      <rect x="50" y="132" width="1200" height="110" rx="8" fill="rgba(250,204,21,0.04)" stroke="#facc15" stroke-width="0.8" stroke-opacity="0.2"/>
+
+      <!-- Component boxes -->
+      <g filter="url(#shadow-sm)">
+        <rect x="70" y="150" width="210" height="74" rx="6" fill="rgba(250,204,21,0.07)" stroke="#facc15" stroke-width="0.8"/>
+        <text x="82" y="171" font-family="system-ui" font-size="10" font-weight="600" fill="#facc15">Presupuesto.tsx</text>
+        <text x="82" y="185" font-family="system-ui" font-size="8" fill="#94a3b8">Tabla items por capítulo</text>
+        <text x="82" y="199" font-family="monospace" font-size="7" fill="#64748b">CRUD inline · columnas: código, desc, und, cant, APU, total</text>
+        <text x="82" y="214" font-family="monospace" font-size="7" fill="#64748b">onNavigateToApus → nav callback</text>
+      </g>
+
+      <g filter="url(#shadow-sm)">
+        <rect x="300" y="150" width="200" height="74" rx="6" fill="rgba(250,204,21,0.07)" stroke="#facc15" stroke-width="0.8"/>
+        <text x="312" y="171" font-family="system-ui" font-size="10" font-weight="600" fill="#facc15">APUs.tsx</text>
+        <text x="312" y="185" font-family="system-ui" font-size="8" fill="#94a3b8">Lista expandible de APUs</text>
+        <text x="312" y="199" font-family="monospace" font-size="7" fill="#64748b">CRUD componentes · códigos MO/MA/EQ/TR</text>
+        <text x="312" y="214" font-family="monospace" font-size="7" fill="#64748b">expansión inline · recalculo automático</text>
+      </g>
+
+      <g filter="url(#shadow-sm)">
+        <rect x="520" y="150" width="200" height="74" rx="6" fill="rgba(250,204,21,0.07)" stroke="#facc15" stroke-width="0.8"/>
+        <text x="532" y="171" font-family="system-ui" font-size="10" font-weight="600" fill="#facc15">Insumos.tsx</text>
+        <text x="532" y="185" font-family="system-ui" font-size="8" fill="#94a3b8">Catálogo agrupado</text>
+        <text x="532" y="199" font-family="monospace" font-size="7" fill="#64748b">Por categoría: MO, MATERIAL, EQUIPO, TRANSPORT</text>
+        <text x="532" y="214" font-family="monospace" font-size="7" fill="#64748b">vista general de insumos únicos</text>
+      </g>
+
+      <g filter="url(#shadow-sm)">
+        <rect x="740" y="150" width="220" height="74" rx="6" fill="rgba(250,204,21,0.07)" stroke="#facc15" stroke-width="0.8"/>
+        <text x="752" y="171" font-family="system-ui" font-size="10" font-weight="600" fill="#facc15">MemoriaDeCalculo.tsx</text>
+        <text x="752" y="185" font-family="system-ui" font-size="8" fill="#94a3b8">5 reportes imprimibles</text>
+        <text x="752" y="199" font-family="monospace" font-size="7" fill="#64748b">Presupuesto Gral · APUs · Insumos · Cantidades · Esp. Técnicas</text>
+        <text x="752" y="214" font-family="monospace" font-size="7" fill="#64748b">cabecera propietario · footer ing. Giovanni Correa</text>
+      </g>
+
+      <g filter="url(#shadow-sm)">
+        <rect x="980" y="150" width="200" height="74" rx="6" fill="rgba(250,204,21,0.07)" stroke="#facc15" stroke-width="0.8"/>
+        <text x="992" y="171" font-family="system-ui" font-size="10" font-weight="600" fill="#facc15">AdminChapters.tsx</text>
+        <text x="992" y="185" font-family="system-ui" font-size="8" fill="#94a3b8">CRUD capítulos + reorden</text>
+        <text x="992" y="199" font-family="monospace" font-size="7" fill="#64748b">iconos · sortOrder · drag-to-reorder</text>
+        <text x="992" y="214" font-family="monospace" font-size="7" fill="#64748b">13 capítulos predefinidos</text>
+      </g>
+
+
+      <!-- ═══ ARROW: Frontend → Backend ═══ -->
+      <line x1="650" y1="262" x2="650" y2="290" stroke="#fb7185" stroke-width="2" marker-end="url(#arrow-rose)" stroke-dasharray="5,3" opacity="0.5"/>
+      <text x="660" y="280" font-family="monospace" font-size="8" fill="#fb7185">HTTP (fetch) · JSON</text>
+
+
+      <!-- ═══ LAYER 2 — BACKEND ═══ -->
+      <rect x="30" y="295" width="1240" height="240" rx="12" fill="rgba(16,185,129,0.04)" stroke="#10b981" stroke-width="1" stroke-opacity="0.25" stroke-dasharray="6,4"/>
+      <text x="50" y="320" font-family="system-ui" font-size="11" font-weight="700" fill="#10b981">CAPA 2 · BACKEND — Express 5 (puerto :3001)</text>
+
+      <!-- server/index.ts -->
+      <rect x="50" y="335" width="1200" height="56" rx="8" fill="rgba(16,185,129,0.08)" stroke="#10b981" stroke-width="1"/>
+      <text x="66" y="358" font-family="system-ui" font-size="12" font-weight="700" fill="#e2e8f0">server/index.ts</text>
+      <text x="66" y="375" font-family="monospace" font-size="9" fill="#94a3b8">calcAIU(totalCost, adminPct=15, utilityPct=10, ivaPct=19) → { adminCost, utilityCost, ivaCost, totalPrice }</text>
+
+      <!-- API endpoints grid -->
+      <g filter="url(#shadow-sm)">
+        <rect x="50" y="405" width="280" height="110" rx="6" fill="rgba(16,185,129,0.06)" stroke="#10b981" stroke-width="0.6"/>
+        <text x="62" y="424" font-family="system-ui" font-size="9" font-weight="600" fill="#10b981">🔷 Capítulos</text>
+        <text x="62" y="440" font-family="monospace" font-size="8" fill="#94a3b8">GET    /api/chapters</text>
+        <text x="62" y="455" font-family="monospace" font-size="8" fill="#94a3b8">POST   /api/chapters</text>
+        <text x="62" y="470" font-family="monospace" font-size="8" fill="#94a3b8">PUT    /api/chapters/:code</text>
+        <text x="62" y="485" font-family="monospace" font-size="8" fill="#94a3b8">DELETE /api/chapters/:code</text>
+        <text x="62" y="502" font-family="monospace" font-size="7" fill="#475569">Valida items asociados antes de eliminar</text>
+      </g>
+
+      <g filter="url(#shadow-sm)">
+        <rect x="350" y="405" width="260" height="110" rx="6" fill="rgba(16,185,129,0.06)" stroke="#10b981" stroke-width="0.6"/>
+        <text x="362" y="424" font-family="system-ui" font-size="9" font-weight="600" fill="#10b981">🔷 Items & APUs</text>
+        <text x="362" y="440" font-family="monospace" font-size="8" fill="#94a3b8">GET    /api/items</text>
+        <text x="362" y="455" font-family="monospace" font-size="8" fill="#94a3b8">POST/PUT/DEL /api/items/:id</text>
+        <text x="362" y="470" font-family="monospace" font-size="8" fill="#94a3b8">GET    /api/apus</text>
+        <text x="362" y="485" font-family="monospace" font-size="8" fill="#94a3b8">POST/PUT/DEL /api/apus/:id</text>
+        <text x="362" y="502" font-family="monospace" font-size="7" fill="#475569">CRUD componentes anidados /api/apus/:id/components/*</text>
+      </g>
+
+      <g filter="url(#shadow-sm)">
+        <rect x="630" y="405" width="280" height="110" rx="6" fill="rgba(16,185,129,0.06)" stroke="#10b981" stroke-width="0.6"/>
+        <text x="642" y="424" font-family="system-ui" font-size="9" font-weight="600" fill="#10b981">🔷 Agregados</text>
+        <text x="642" y="440" font-family="monospace" font-size="8" fill="#94a3b8">GET  /api/budget/summary</text>
+        <text x="642" y="458" font-family="monospace" font-size="8" fill="#94a3b8">→ totalGeneral, totalPrice</text>
+        <text x="642" y="473" font-family="monospace" font-size="8" fill="#94a3b8">→ totalMO/Mat/Equipo/Transp</text>
+        <text x="642" y="488" font-family="monospace" font-size="8" fill="#94a3b8">→ chapters[] desglose por cap.</text>
+        <text x="642" y="505" font-family="monospace" font-size="7" fill="#475569">Agrega costos × cantidad de cada item</text>
+      </g>
+
+      <g filter="url(#shadow-sm)">
+        <rect x="930" y="405" width="280" height="110" rx="6" fill="rgba(16,185,129,0.06)" stroke="#10b981" stroke-width="0.6"/>
+        <text x="942" y="424" font-family="system-ui" font-size="9" font-weight="600" fill="#10b981">🔷 Reportes</text>
+        <text x="942" y="440" font-family="monospace" font-size="8" fill="#94a3b8">GET /api/reports/:type?format=html</text>
+        <text x="942" y="458" font-family="monospace" font-size="8" fill="#94a3b8">5 tipos: presupuesto, apus</text>
+        <text x="942" y="473" font-family="monospace" font-size="8" fill="#94a3b8">insumos, cantidades, tecnicas</text>
+        <text x="942" y="488" font-family="monospace" font-size="8" fill="#94a3b8">HTML inline (parser markdown → HTML)</text>
+        <text x="942" y="505" font-family="monospace" font-size="7" fill="#475569">Cabecera + Total General + Footer Ing.</text>
+      </g>
+
+      <!-- Arrow: Backend → Database -->
+      <line x1="650" y1="537" x2="650" y2="570" stroke="#fb7185" stroke-width="2" marker-end="url(#arrow-rose)" stroke-dasharray="5,3" opacity="0.5"/>
+      <text x="660" y="558" font-family="monospace" font-size="8" fill="#fb7185">Prisma ORM · SQL</text>
+
+
+      <!-- ═══ LAYER 3 — DATABASE ═══ -->
+      <rect x="30" y="575" width="1240" height="220" rx="12" fill="rgba(167,139,250,0.04)" stroke="#a78bfa" stroke-width="1" stroke-opacity="0.25" stroke-dasharray="6,4"/>
+      <text x="50" y="600" font-family="system-ui" font-size="11" font-weight="700" fill="#a78bfa">CAPA 3 · BASE DE DATOS — Prisma 7 + SQLite (prisma/dev.db)</text>
+
+      <!-- Prisma Schema -->
+      <rect x="50" y="615" width="360" height="160" rx="8" fill="rgba(167,139,250,0.06)" stroke="#a78bfa" stroke-width="0.6"/>
+      <text x="62" y="637" font-family="system-ui" font-size="10" font-weight="600" fill="#a78bfa">📐 Schema Prisma — 8 modelos</text>
+      <text x="62" y="658" font-family="monospace" font-size="8" fill="#94a3b8">Unit          → code (unique), name</text>
+      <text x="62" y="673" font-family="monospace" font-size="8" fill="#94a3b8">Room          → name, width, length, height</text>
+      <text x="62" y="688" font-family="monospace" font-size="8" fill="#94a3b8">Chapter       → code, title, icon, sortOrder</text>
+      <text x="62" y="703" font-family="monospace" font-size="8" fill="#94a3b8">Item          → code, desc, unitId, chapterId, apuId?</text>
+      <text x="62" y="718" font-family="monospace" font-size="8" fill="#94a3b8">ItemQuantity  → roomId, itemId, quantity</text>
+      <text x="62" y="733" font-family="monospace" font-size="8" fill="#94a3b8">APU           → code, title, unitId, totalCost + AIU</text>
+      <text x="62" y="748" font-family="monospace" font-size="8" fill="#94a3b8">APUComponent  → code, desc, unitId, qty, uPrice, category</text>
+
+      <!-- Relations -->
+      <text x="460" y="637" font-family="system-ui" font-size="10" font-weight="600" fill="#22d3ee">🔗 Relaciones clave</text>
+
+      <rect x="460" y="648" width="340" height="28" rx="4" fill="rgba(34,211,238,0.06)" stroke="#22d3ee" stroke-width="0.5"/>
+      <text x="468" y="667" font-family="monospace" font-size="8" fill="#22d3ee">Item ──belongsTo──▶ Chapter · Unit · (APU)</text>
+
+      <rect x="460" y="683" width="340" height="28" rx="4" fill="rgba(34,211,238,0.06)" stroke="#22d3ee" stroke-width="0.5"/>
+      <text x="468" y="702" font-family="monospace" font-size="8" fill="#22d3ee">ItemQuantity ──belongsTo──▶ Room · Item</text>
+
+      <rect x="460" y="718" width="340" height="28" rx="4" fill="rgba(34,211,238,0.06)" stroke="#22d3ee" stroke-width="0.5"/>
+      <text x="468" y="737" font-family="monospace" font-size="8" fill="#22d3ee">APUComponent ──belongsTo──▶ APU · Unit</text>
+
+      <!-- Seed box -->
+      <rect x="840" y="615" width="360" height="160" rx="8" fill="rgba(250,204,21,0.06)" stroke="#facc15" stroke-width="0.6"/>
+      <text x="852" y="637" font-family="system-ui" font-size="10" font-weight="600" fill="#facc15">🌱 Seed — prisma/seed.ts</text>
+      <text x="852" y="660" font-family="monospace" font-size="8" fill="#94a3b8">13 capítulos de obra</text>
+      <text x="852" y="678" font-family="monospace" font-size="8" fill="#94a3b8">3 baños: B1 (sin ducha), B2 y B3 (con ducha)</text>
+      <text x="852" y="696" font-family="monospace" font-size="8" fill="#94a3b8">69 ítems · 55 APUs · ~384 componentes</text>
+      <text x="852" y="718" font-family="monospace" font-size="8" fill="#94a3b8">CD: ~$21.580.967 COP</text>
+      <text x="852" y="736" font-family="monospace" font-size="8" fill="#94a3b8">PV: ~$27.386.349 COP (con AIU)</text>
+      <text x="852" y="754" font-family="monospace" font-size="8" fill="#94a3b8">Npx prisma db push · seed · generate</text>
+      <text x="852" y="770" font-family="monospace" font-size="7" fill="#475569">Comandos: npm run db:seed | npx prisma db push --force-reset</text>
+    </svg>
+  </div>
+
+  <!-- ══ INFO CARDS ══ -->
+  <div class="info-panel">
+    <div class="info-card">
+      <div class="card-header">
+        <span class="card-dot cyan"></span>
+        <h3>Frontend</h3>
+      </div>
+      <ul>
+        <li><strong>Stack:</strong> React 19 + Vite 8 + TypeScript 6</li>
+        <li><strong>Puerto:</strong> :5173 (proxy → :3001)</li>
+        <li><strong>5 componentes:</strong> Presupuesto, APUs, Insumos, MemoriaDeCalculo, AdminChapters</li>
+        <li><strong>Dashboard:</strong> CD + AIU + barra visual Precio Venta</li>
+        <li><strong>Tab:</strong> Presupuesto → items por capítulo con CRUD inline</li>
+      </ul>
+    </div>
+    <div class="info-card">
+      <div class="card-header">
+        <span class="card-dot emerald"></span>
+        <h3>Backend (API REST)</h3>
+      </div>
+      <ul>
+        <li><strong>Stack:</strong> Express 5 + Prisma 7 + BetterSQLite3</li>
+        <li><strong>Puerto:</strong> :3001</li>
+        <li><strong>~18 endpoints</strong> REST: chapters, items, apus, components</li>
+        <li><strong>calcAIU():</strong> Admin 15% + Utilidad 10% + IVA 19% s/utilidad</li>
+        <li><strong>Reportes:</strong> HTML inline con 5 formatos, cabecera propietario + footer</li>
+      </ul>
+    </div>
+    <div class="info-card">
+      <div class="card-header">
+        <span class="card-dot violet"></span>
+        <h3>Base de Datos</h3>
+      </div>
+      <ul>
+        <li><strong>Motor:</strong> SQLite via Prisma 7</li>
+        <li><strong>Archivo:</strong> prisma/dev.db</li>
+        <li><strong>8 modelos:</strong> Unit, Room, Chapter, Item, ItemQuantity, APU, APUComponent</li>
+        <li><strong>Seed:</strong> 13 capítulos, 3 baños, 69 ítems, 55 APUs</li>
+        <li><strong>CD ~$21.58M · PV ~$27.39M</strong></li>
+      </ul>
+    </div>
+    <div class="info-card">
+      <div class="card-header">
+        <span class="card-dot yellow"></span>
+        <h3>Cliente / Presupuesto</h3>
+      </div>
+      <ul>
+        <li><strong>Propietario:</strong> Francisco Rondon Lagos CC 4.251.576</li>
+        <li><strong>Dirección:</strong> Calle 78 B No. 120-49, Apto 401, Bogotá</li>
+        <li><strong>13 capítulos:</strong> C01 Preliminares → C13 Ventanas</li>
+        <li><strong>Cap. 5:</strong> Cieloraso en Drywall + Pintura</li>
+        <li><strong>Mayor rubro:</strong> Enchapes porcelanato (23.7%) y Aparatos sanitarios (21.2%)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ══ DATA FLOW ══ -->
+  <div class="flow-section">
+    <h2>⚡ Flujo de datos — Request/Response</h2>
+    <div class="flow-steps">
+      <span class="flow-step">App.tsx</span>
+      <span class="flow-arrow">→</span>
+      <span class="flow-step">api.budgetSummary()</span>
+      <span class="flow-arrow">→</span>
+      <span class="flow-step">fetch GET /api/budget/summary</span>
+      <span class="flow-arrow">→</span>
+      <span class="flow-step">Vite proxy :5173 → :3001</span>
+      <span class="flow-arrow">→</span>
+      <span class="flow-step">Express: prisma.item.findMany()</span>
+      <span class="flow-arrow">→</span>
+      <span class="flow-step">SQLite</span>
+      <span class="flow-arrow">→</span>
+      <span class="flow-step">calcAIU()</span>
+      <span class="flow-arrow">→</span>
+      <span class="flow-step">JSON → App.tsx → Dashboard</span>
+    </div>
+  </div>
+
+  <!-- ══ TABLA MODELOS ══ -->
+  <div class="flow-section">
+    <h2>📦 Modelos de Datos (Prisma Schema)</h2>
+    <div class="model-table-wrap">
+      <table class="model-table">
+        <thead>
+          <tr><th>Modelo</th><th>Campos clave</th><th>Relaciones</th><th>Descripción</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>Unit</code></td>
+            <td><code>@id, code:unique, name</code></td>
+            <td>→ Item, APU, APUComponent</td>
+            <td>Unidades de medida (m², und, gl, etc.)</td>
+          </tr>
+          <tr>
+            <td><code>Room</code></td>
+            <td><code>@id, name, width, length, height</code></td>
+            <td>→ ItemQuantity</td>
+            <td>Baños: B1 (sin ducha), B2, B3 (con ducha)</td>
+          </tr>
+          <tr>
+            <td><code>Chapter</code></td>
+            <td><code>@id, code:unique, title, icon, sortOrder</code></td>
+            <td>→ Item[]</td>
+            <td>13 capítulos de obra, ordenados por sortOrder</td>
+          </tr>
+          <tr>
+            <td><code>Item</code></td>
+            <td><code>@@unique[code], description, unitId, chapterId, apuId?</code></td>
+            <td>→ Unit, Chapter, APU, ItemQuantity[]</td>
+            <td>69 ítems de presupuesto</td>
+          </tr>
+          <tr>
+            <td><code>ItemQuantity</code></td>
+            <td><code>@@unique[roomId,itemId], quantity</code></td>
+            <td>→ Room, Item (onDelete:Cascade)</td>
+            <td>Cantidad por baño (1:1 room:item)</td>
+          </tr>
+          <tr>
+            <td><code>APU</code></td>
+            <td><code>code:unique, title, totalCost, +AIU fields</code></td>
+            <td>→ Unit, Item[], APUComponent[]</td>
+            <td>55 APUs con AIU calculado automáticamente</td>
+          </tr>
+          <tr>
+            <td><code>APUComponent</code></td>
+            <td><code>code, description, quantity, unitPrice, totalCost, category</code></td>
+            <td>→ APU (onDelete:Cascade), Unit</td>
+            <td>~384 insumos, categorizados MO/MATERIAL/EQUIPO/TRANSPORT</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="doc-footer">
+    Presupuesto 3 Baños · Diagrama de Arquitectura · Generado desde el código fuente<br>
+    Bogotá, Colombia · Junio 2026 · Ing. Giovanni Correa — CC 4.252.533
+  </footer>
+
+</div>
+</body>
+</html>
